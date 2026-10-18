@@ -1,57 +1,87 @@
 @echo off
-chcp 65001 >nul
+chcp 936 >nul
+setlocal
 cd /d "%~dp0"
 
 echo ========================================
-echo   ShopMind é¦–æ¬¡å®‰è£…
+echo   ShopMind »·¾³°²×° / ÐÞ¸´
 echo ========================================
 echo.
 
-where python >nul 2>&1
-if errorlevel 1 (
-    echo [é”™è¯¯] æœªæ‰¾åˆ° Pythonã€‚è¯·å…ˆå®‰è£… Python 3.11 æˆ–æ›´é«˜ç‰ˆæœ¬ï¼š
-    echo   https://www.python.org/downloads/
-    echo å®‰è£…æ—¶å‹¾é€‰ "Add Python to PATH"ã€‚
-    pause
-    exit /b 1
-)
+rem ---- 1. ÕÒÒ»¸ö¿ÉÓÃµÄ Python (>= 3.11) ----
+rem   ÓÅÏÈ py Æô¶¯Æ÷£¨±ÜÃâ Windows ×Ô´øµÄÓ¦ÓÃÉÌµêÕ¼Î»·û£©
+set "BASEPY="
+call :try "py -3.12"
+call :try "py -3.11"
+call :try "py -3.13"
+call :try "py -3.14"
+call :try "py -3"
+call :try "python"
+if not defined BASEPY goto :nopython
+echo Ê¹ÓÃ½âÊÍÆ÷: %BASEPY%
+echo.
 
-for /f "delims=" %%v in ('python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')"') do set PYVER=%%v
-echo æ£€æµ‹åˆ° Python %PYVER%
+set "VPY=%CD%\.venv\Scripts\python.exe"
 
-if not exist ".venv\Scripts\python.exe" (
-    echo æ­£åœ¨åˆ›å»ºè™šæ‹ŸçŽ¯å¢ƒ .venv ...
-    python -m venv .venv
+rem ---- 2. ÒÑÓÐ .venv ¾ÍÏÈÕæÅÜÒ»ÏÂ£¬ÅÐ¶ÏÊÇ·ñ¿ÉÓÃ ----
+if exist "%VPY%" (
+    "%VPY%" -c "import sys" >nul 2>&1
     if errorlevel 1 (
-        echo [é”™è¯¯] åˆ›å»ºè™šæ‹ŸçŽ¯å¢ƒå¤±è´¥ã€‚
-        pause
-        exit /b 1
+        echo ¼ì²âµ½ .venv ²»¿ÉÓÃ£¨³£¼ûÓÚ´ÓÆäËüµçÄÔ¿½±´¹ýÀ´µÄ»·¾³£©£¬ÕýÔÚÖØ½¨...
+        rmdir /s /q ".venv" >nul 2>&1
     )
 )
 
-set "PY=%CD%\.venv\Scripts\python.exe"
-set "PIP=%CD%\.venv\Scripts\pip.exe"
+rem ---- 3. ´´½¨ÐéÄâ»·¾³ ----
+if not exist "%VPY%" (
+    echo ÕýÔÚ´´½¨ÐéÄâ»·¾³ .venv ...
+    %BASEPY% -m venv ".venv"
+    if errorlevel 1 (
+        echo [´íÎó] ´´½¨ÐéÄâ»·¾³Ê§°Ü¡£
+        goto :fail
+    )
+)
 
-echo æ­£åœ¨å®‰è£…ä¾èµ–ï¼ˆé¦–æ¬¡å¯èƒ½éœ€è¦å‡ åˆ†é’Ÿï¼‰...
-"%PIP%" install -U pip setuptools wheel >nul
-"%PIP%" install -e .
+rem ---- 4. °²×°ÒÀÀµ ----
+echo ÕýÔÚ°²×°ÒÀÀµ£¨Ê×´Î¿ÉÄÜÐèÒª¼¸·ÖÖÓ£¬ÇëÄÍÐÄµÈ´ý£©...
+"%VPY%" -m pip install -U pip setuptools wheel
+"%VPY%" -m pip install -e .
 if errorlevel 1 (
-    echo [é”™è¯¯] ä¾èµ–å®‰è£…å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘ç»œæˆ–ä»£ç†ã€‚
-    pause
-    exit /b 1
+    echo.
+    echo [´íÎó] ÒÀÀµ°²×°Ê§°Ü¡£Çë¼ì²éÍøÂç / ´úÀíºóÖØÊÔ¡£
+    goto :fail
 )
 
+rem ---- 5. Éú³É .env ----
 if not exist ".env" (
-    if exist ".env.example" (
-        copy /Y ".env.example" ".env" >nul
-        echo å·²ç”Ÿæˆ .envï¼Œè¯·å¡«å…¥ DASHSCOPE_API_KEYï¼ˆå¯é€‰ï¼‰ã€‚
-    ) else if exist "env.example" (
-        copy /Y "env.example" ".env" >nul
-        echo å·²ç”Ÿæˆ .envï¼Œè¯·å¡«å…¥ DASHSCOPE_API_KEYï¼ˆå¯é€‰ï¼‰ã€‚
-    )
+    if exist ".env.example" copy /Y ".env.example" ".env" >nul
+    if exist "env.example" copy /Y "env.example" ".env" >nul
 )
 
 echo.
-echo [å®Œæˆ] å®‰è£…æˆåŠŸã€‚è¯·åŒå‡»ã€Œå¯åŠ¨ç½‘ç«™.batã€è¿è¡Œã€‚
+echo [Íê³É] »·¾³ÒÑ¾ÍÐ÷£¬ÇëË«»÷¡¸Æô¶¯ÍøÕ¾.bat¡¹ÔËÐÐ¡£
 echo.
 pause
+exit /b 0
+
+:nopython
+echo [´íÎó] Î´ÕÒµ½¿ÉÓÃµÄ Python£¨ÐèÒª 3.11 »ò¸ü¸ß°æ±¾£©¡£
+echo.
+echo   1) ÇëÏÂÔØ°²×° Python: https://www.python.org/downloads/
+echo   2) °²×°Ê±Îñ±Ø¹´Ñ¡ "Add Python to PATH"
+echo.
+start "" "https://www.python.org/downloads/"
+pause
+exit /b 1
+
+:fail
+echo.
+pause
+exit /b 1
+
+rem ---- ×Ó¹ý³Ì£ºÌ½²âÄ³¸ö½âÊÍÆ÷ÊÇ·ñ¿ÉÓÃÇÒ°æ±¾´ï±ê ----
+:try
+if defined BASEPY exit /b 0
+%~1 -c "import sys;raise SystemExit(0 if sys.version_info[:2]>=(3,11) else 3)" >nul 2>&1
+if not errorlevel 1 set "BASEPY=%~1"
+exit /b 0

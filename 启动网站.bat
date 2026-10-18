@@ -1,33 +1,65 @@
 @echo off
-chcp 65001 >nul
+chcp 936 >nul
+setlocal
 cd /d "%~dp0"
 
-set "PY=%CD%\.venv\Scripts\python.exe"
+set "VPY=%CD%\.venv\Scripts\python.exe"
+set "PYCMD="
 
-if not exist "%PY%" (
-    echo æœªæ£€æµ‹åˆ°è™šæ‹ŸçŽ¯å¢ƒï¼Œæ­£åœ¨è¿è¡Œé¦–æ¬¡å®‰è£…...
-    call "%~dp0é¦–æ¬¡å®‰è£….bat"
-    if not exist "%PY%" exit /b 1
+rem ---- 1. Ð£Ñé .venv ÊÇ·ñÕæµÄÄÜÅÜ£¨²»Ö»ÊÇÎÄ¼þ´æÔÚ£©----
+if exist "%VPY%" (
+    "%VPY%" -c "import fastapi, uvicorn" >nul 2>&1
+    if not errorlevel 1 set "PYCMD="%VPY%""
 )
 
+rem ---- 2. venv ²»¿ÉÓÃ£º½èÓÃÏµÍ³ÀïÒÑ×°ºÃÒÀÀµµÄ Python ----
+if not defined PYCMD (
+    for %%C in ("py -3.12" "py -3.11" "py -3.13" "py -3.14" "py -3" "python") do (
+        if not defined PYCMD (
+            %%~C -c "import fastapi, uvicorn" >nul 2>&1
+            if not errorlevel 1 set "PYCMD=%%~C"
+        )
+    )
+)
+
+rem ---- 3. ÈÔ²»¿ÉÓÃ£º×Ô¶¯µ÷ÓÃ°²×° / ÐÞ¸´ ----
+if not defined PYCMD (
+    echo Î´¼ì²âµ½¿ÉÓÃµÄÔËÐÐ»·¾³£¬ÕýÔÚÖ´ÐÐ°²×° / ÐÞ¸´...
+    echo.
+    call "%~dp0Ê×´Î°²×°.bat"
+    if exist "%VPY%" (
+        "%VPY%" -c "import fastapi, uvicorn" >nul 2>&1
+        if not errorlevel 1 set "PYCMD="%VPY%""
+    )
+)
+
+if not defined PYCMD (
+    echo.
+    echo [´íÎó] ÔËÐÐ»·¾³ÈÔÎ´¾ÍÐ÷£¬Çë²é¿´ÉÏ·½ÌáÊ¾ºóÖØÊÔ¡£
+    pause
+    exit /b 1
+)
+
+rem ---- 4. ÊÍ·Å 8080 ¶Ë¿ÚÉÏµÄ¾É½ø³Ì ----
 for /f "tokens=5" %%a in ('netstat -ano ^| findstr /R /C:":8080 .*LISTENING"') do (
-    echo æ­£åœ¨åœæ­¢æ—§æœåŠ¡ PID %%a ...
+    echo ÕýÔÚÍ£Ö¹¾É·þÎñ PID %%a ...
     taskkill /PID %%a /F >nul 2>&1
 )
 timeout /t 1 /nobreak >nul
 
 echo ========================================
 echo   ShopMind Web
-echo   åœ°å€: http://127.0.0.1:8080
-echo   å…³é—­æœ¬çª—å£å³åœæ­¢æœåŠ¡
+echo   µØÖ·: http://127.0.0.1:8080
+echo   ¹Ø±Õ±¾´°¿Ú¼´Í£Ö¹·þÎñ
 echo ========================================
 echo.
-echo é¦–æ¬¡ä½¿ç”¨è¯·å…ˆé…ç½® .env ä¸­çš„ API Keyï¼ˆè§ æŠ€æœ¯è¯´æ˜Ž.txtï¼‰
+echo Ê×´ÎÊ¹ÓÃÇëÏÈÅäÖÃ .env ÖÐµÄ API Key£¨¼û ¼¼ÊõËµÃ÷.txt£©£¬Î´ÅäÖÃÒ²¿ÉÀëÏßÔËÐÐ¡£
 echo.
 
-set SHOPMIND_OPEN_BROWSER=1
-"%PY%" -m app.web_main
+set "SHOPMIND_OPEN_BROWSER=1"
+%PYCMD% -m app.web_main
 
 echo.
-echo æœåŠ¡å·²åœæ­¢ã€‚
+echo ·þÎñÒÑÍ£Ö¹¡£
 pause
+exit /b 0
