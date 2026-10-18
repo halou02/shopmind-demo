@@ -290,6 +290,70 @@
     margin-top:44px;padding-top:22px;border-top:1px solid #2b3d3a;
     font-size:12.4px;color:#7d9490;
   }
+
+  /* ---------- DEMO TOUR ---------- */
+  .demo-head{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .live-dot{
+    display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;
+    color:var(--teal-dark);background:var(--teal-soft);padding:5px 13px;border-radius:999px;
+  }
+  .live-dot i{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 1.8s infinite}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(47,157,142,.5)}
+    70%{box-shadow:0 0 0 9px rgba(47,157,142,0)}
+    100%{box-shadow:0 0 0 0 rgba(47,157,142,0)}
+  }
+  .demo-player{margin-top:36px}
+  .demo-player video{display:block;width:100%;height:auto;background:#0e1413}
+
+  .tour{display:grid;grid-template-columns:262px 1fr;gap:26px;margin-top:32px;align-items:start}
+  @media(max-width:880px){.tour{grid-template-columns:1fr;gap:20px}}
+  .tour-steps{display:flex;flex-direction:column;gap:10px}
+  .tour-step{
+    position:relative;display:flex;gap:13px;align-items:center;text-align:left;width:100%;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 15px;
+    cursor:pointer;font-family:inherit;box-shadow:var(--shadow);
+    transition:border-color .22s,transform .22s,box-shadow .22s;
+  }
+  .tour-step .tn{
+    flex:0 0 auto;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+    font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;font-weight:700;
+    background:var(--sand-2);color:var(--ink-3);transition:background .22s,color .22s;
+  }
+  .tour-step .txt{flex:1;min-width:0}
+  .tour-step b{font-size:14.5px;font-weight:800;display:block;letter-spacing:-.01em}
+  .tour-step .sub{font-size:12.2px;color:var(--ink-3);display:block;line-height:1.4}
+  .tour-step:hover{border-color:var(--teal);transform:translateX(2px)}
+  .tour-step.is-active{border-color:var(--teal);box-shadow:0 12px 28px -16px rgba(31,121,109,.65)}
+  .tour-step.is-active .tn{background:var(--teal);color:#fff}
+  .tour-step.is-done .tn{background:var(--teal-soft);color:var(--teal-dark)}
+
+  .tour-stage{
+    position:relative;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg);
+  }
+  .tour-screen{position:relative;aspect-ratio:16/10;background:#f3f1ea;overflow:hidden}
+  .tour-screen img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;
+    opacity:0;transform:scale(1.05);
+    transition:opacity .65s ease,transform 5s ease;
+  }
+  .tour-screen img.is-active{opacity:1;transform:scale(1)}
+  .tour-caption{padding:16px 22px 20px;border-top:1px solid var(--line)}
+  .tour-caption .cap-k{
+    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal-dark);font-weight:700;
+  }
+  .tour-caption b{font-size:16.5px;font-weight:800;display:block;margin-top:5px;letter-spacing:-.01em}
+  .tour-caption p{margin:6px 0 0;font-size:14px;color:var(--ink-2);min-height:2.9em}
+  .tour-caption .cursor{
+    display:inline-block;width:8px;height:1.05em;background:var(--teal);
+    margin-left:2px;vertical-align:-2px;animation:blink 1s steps(1) infinite;
+  }
+  @keyframes blink{50%{opacity:0}}
+  .tour-progress{height:3px;background:var(--sand-2)}
+  .tour-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3fb3a1,#1f796d)}
+  @media(max-width:600px){.tour-caption p{min-height:0}}
 </style>
 </head>
 <body>
@@ -303,6 +367,7 @@
     <nav class="nav-links">
       <a href="#value">亮点</a>
       <a href="#flow">创意五步</a>
+      <a href="#demo">演示</a>
       <a href="#ui">界面</a>
       <a href="#output">成品示例</a>
       <a href="#run">本地运行</a>
@@ -412,6 +477,72 @@
         <h3>导出</h3>
         <p>打包为标准内容包（manifest + contentpackage + content/*.md），附 SHA256 校验便于审阅集成。</p>
         <code>app/export/content_package.py</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- DEMO -->
+<section id="demo" style="background:linear-gradient(180deg,#fbfaf6,var(--sand))">
+  <div class="wrap">
+    <span class="eyebrow">Live Demo · 真机录屏</span>
+    <h2 class="section-title">五步走完，一整套创意包就绪</h2>
+    <p class="section-sub">下面是 ShopMind 在本地真实运行的录屏与逐步截图 —— 从新建任务到导出内容包，全程可回溯，均为真机操作，非概念图。</p>
+
+    <div class="demo-head" style="margin-top:20px">
+      <span class="live-dot"><i></i>真实运行录屏 · 127.0.0.1:8080</span>
+      <span class="pill ai">步骤截图取自同一次真实任务</span>
+    </div>
+
+    <div class="demo-player">
+      <div class="frame">
+        <div class="bar"><i></i><i></i><i></i><span class="url">http://127.0.0.1:8080</span></div>
+        <video id="tourVideo" muted loop playsinline autoplay preload="metadata" poster="./assets/demo-tour-poster.jpg">
+          <source src="./assets/demo-tour.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="tour">
+      <div class="tour-steps" id="tourSteps">
+        <button type="button" class="tour-step is-active">
+          <span class="tn">01</span>
+          <span class="txt"><b>录入商品资料</b><span class="sub">填写信息 / 从素材库挑素材</span></span>
+        </button>
+        <button type="button" class="tour-step">
+          <span class="tn">02</span>
+          <span class="txt"><b>AI 理解商品</b><span class="sub">抽取证据 · 生成理解卡</span></span>
+        </button>
+        <button type="button" class="tour-step">
+          <span class="tn">03</span>
+          <span class="txt"><b>生成创意方向</b><span class="sub">多个带证据的方向可选</span></span>
+        </button>
+        <button type="button" class="tour-step">
+          <span class="tn">04</span>
+          <span class="txt"><b>生成多平台内容</b><span class="sub">文案 / 脚本 / 视觉方案</span></span>
+        </button>
+        <button type="button" class="tour-step">
+          <span class="tn">05</span>
+          <span class="txt"><b>导出标准内容包</b><span class="sub">manifest + SHA256 校验</span></span>
+        </button>
+      </div>
+
+      <div class="tour-stage">
+        <div class="tour-screen">
+          <img class="is-active" src="./assets/shot-step1.jpg" alt="新建创意任务 · 录入商品资料" loading="lazy">
+          <img src="./assets/shot-step2.jpg" alt="AI 理解商品 · 商品理解报告" loading="lazy">
+          <img src="./assets/shot-step3.jpg" alt="选择创意方向" loading="lazy">
+          <img src="./assets/shot-step4.jpg" alt="创意内容生成" loading="lazy">
+          <img src="./assets/shot-step5.jpg" alt="导出创意内容" loading="lazy">
+        </div>
+        <div class="tour-caption">
+          <span class="cap-k">STEP 01</span>
+          <b>录入商品资料</b>
+          <p></p>
+        </div>
+        <div class="tour-progress"><i></i></div>
       </div>
     </div>
   </div>
@@ -619,6 +750,110 @@ pip install -e .
     </p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var section = document.getElementById("demo");
+  if(!section) return;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var STEPS = [
+    {k:"STEP 01", t:"录入商品资料", d:"填写商品名称、类别与价格，或从素材库挑选图片、参数表与文档作为 AI 参考资料。"},
+    {k:"STEP 02", t:"AI 理解商品", d:"扫描资料、抽取评价证据，生成商品理解卡与经营判断，结论可手动修正。"},
+    {k:"STEP 03", t:"生成创意方向", d:"产出多个带证据的创意方向，每个方向都标注推荐素材与禁忌表达。"},
+    {k:"STEP 04", t:"生成多平台内容", d:"一次产出小红书 / 抖音文案、20 秒视频脚本与视觉方案，全部标注来源。"},
+    {k:"STEP 05", t:"导出标准内容包", d:"打包 manifest + 文案 + 脚本，附 SHA256 校验，并归档到历史记录。"}
+  ];
+
+  var stepBtns = Array.prototype.slice.call(document.querySelectorAll(".tour-step"));
+  var imgs     = Array.prototype.slice.call(document.querySelectorAll(".tour-screen img"));
+  var capK     = section.querySelector(".tour-caption .cap-k");
+  var capB     = section.querySelector(".tour-caption b");
+  var capP     = section.querySelector(".tour-caption p");
+  var bar      = section.querySelector(".tour-progress i");
+  var video    = document.getElementById("tourVideo");
+  if(!stepBtns.length || !imgs.length || !bar) return;
+
+  var idx = 0, timer = null, typeTimer = null, active = false;
+  var DUR = 4200;
+
+  function typeInto(el, text){
+    clearInterval(typeTimer);
+    if(reduce){ el.textContent = text; return; }
+    el.textContent = "";
+    var i = 0;
+    typeTimer = setInterval(function(){
+      i += 1;
+      el.textContent = text.slice(0, i);
+      if(i >= text.length) clearInterval(typeTimer);
+    }, 22);
+  }
+
+  function restartBar(){
+    bar.style.transition = "none";
+    bar.style.width = "0%";
+    void bar.offsetWidth;
+    if(active && !reduce){
+      bar.style.transition = "width " + DUR + "ms linear";
+      bar.style.width = "100%";
+    }
+  }
+
+  function render(i){
+    idx = (i % STEPS.length + STEPS.length) % STEPS.length;
+    stepBtns.forEach(function(b, n){
+      b.classList.toggle("is-active", n === idx);
+      b.classList.toggle("is-done", n < idx);
+    });
+    imgs.forEach(function(im, n){ im.classList.toggle("is-active", n === idx); });
+    var s = STEPS[idx];
+    capK.textContent = s.k;
+    capB.textContent = s.t;
+    typeInto(capP, s.d);
+    restartBar();
+  }
+
+  function play(){
+    if(active) return;
+    active = true;
+    if(video && !reduce){ var pr = video.play(); if(pr && pr.catch) pr.catch(function(){}); }
+    render(idx);
+    clearInterval(timer);
+    if(!reduce) timer = setInterval(function(){ render(idx + 1); }, DUR);
+  }
+
+  function pause(){
+    if(!active) return;
+    active = false;
+    clearInterval(timer); timer = null;
+    clearInterval(typeTimer); typeTimer = null;
+    if(video){ try{ video.pause(); }catch(e){} }
+    bar.style.transition = "none";
+  }
+
+  stepBtns.forEach(function(b, n){
+    b.addEventListener("click", function(){
+      clearInterval(timer);
+      render(n);
+      if(active && !reduce){
+        clearInterval(timer);
+        timer = setInterval(function(){ render(idx + 1); }, DUR);
+      }
+    });
+  });
+
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ e.isIntersecting ? play() : pause(); });
+    }, {threshold: 0.22}).observe(section);
+  }else{
+    play();
+  }
+
+  render(0);
+  if(reduce) pause();
+})();
+</script>
 
 </body>
 </html>
