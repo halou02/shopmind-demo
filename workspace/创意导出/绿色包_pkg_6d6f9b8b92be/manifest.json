@@ -1,0 +1,85 @@
+{
+  "manifest_version": "1.0",
+  "package_id": "pkg_6d6f9b8b92be",
+  "product_id": "prod_0c33fa8336cb",
+  "direction_id": "dir_d4f760f3bd8a",
+  "app_version": "0.1.0",
+  "prompt_version": "0.1.0",
+  "brand_rules_version": "0.1.0",
+  "offline": true,
+  "demo_data": true,
+  "evidence_count": 21,
+  "pending_count": 21,
+  "conflict_count": 0,
+  "stale_count": 0,
+  "files": [
+    {
+      "path": "business_judgment.json",
+      "size": 1996,
+      "sha256": "025d45bcf90b4fa439d656fb026cdf2b00f726cf6ef455915d94ce123bec95bd"
+    },
+    {
+      "path": "content/douyin.md",
+      "size": 754,
+      "sha256": "7cbdb4e614536a5fd438cc184b2a84ff1e361ff999140cd6e3fe5dd21df7b1c0"
+    },
+    {
+      "path": "content/kuaishou.md",
+      "size": 515,
+      "sha256": "5832e0e89640efd95f66cda8b24f331bf993206bc6e4d785bd184bdf2b4d42ab"
+    },
+    {
+      "path": "content/shopping.md",
+      "size": 646,
+      "sha256": "af93d6b6d913c20e3fe536329025382c845647af212633f98b070d5feeaced5b"
+    },
+    {
+      "path": "content/video.md",
+      "size": 761,
+      "sha256": "c79ade248331e0545476b5568a0ae37c31c44d344ea16671cc293ca5cedeaef0"
+    },
+    {
+      "path": "content/visual.md",
+      "size": 891,
+      "sha256": "b45b2d7e0baf78fc799061595822c1de1ddd3bd5d80ff5ae97488c0d811f91a1"
+    },
+    {
+      "path": "content/xiaohongshu.md",
+      "size": 689,
+      "sha256": "f0406d8725622a664d7ae2a264dbb95f82294e87f665126ee28b1f1c34033e0c"
+    },
+    {
+      "path": "content_package.json",
+      "size": 9363,
+      "sha256": "96d8a21b4676082ebbba4c1d6afd5051b206745dc33cb8fb0b482848d8b80dbc"
+    },
+    {
+      "path": "creative_directions.json",
+      "size": 3924,
+      "sha256": "5bf4e1e454a3753e4f316e8f996435616853a38f2415f2187630e520736b12f7"
+    },
+    {
+      "path": "evidence.json",
+      "size": 12014,
+      "sha256": "5577f0f6c9c3256f259bb1de106b05cc86f92a4947eb3bceb6bb001b7107c649"
+    },
+    {
+      "path": "product_understanding.json",
+      "size": 9889,
+      "sha256": "392bc11a1b058b7b444615206148b4d3f0b4316e0de875088045008927473a7e"
+    },
+    {
+      "path": "README.md",
+      "size": 646,
+      "sha256": "0a79606735873a19aed0dd9ecedeefc6576f411cf33db8e75a2f7ba032985e70"
+    },
+    {
+      "path": "source_index.json",
+      "size": 1281,
+      "sha256": "c664d2d356364d800d226f67eaffd61d432f0ca9b89e3b0c8c0985edc47ee1e5"
+    }
+  ],
+  "export_status": "partial",
+  "direction_name": "早八不慌的一包秩序",
+  "boundary_notice": "仅基于本地资料"
+}

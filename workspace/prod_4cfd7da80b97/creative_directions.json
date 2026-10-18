@@ -1,0 +1,106 @@
+{
+  "product_id": "prod_4cfd7da80b97",
+  "product_name": "牛仔裤",
+  "judgment_id": "jud_2df38025c736",
+  "direction_count": 3,
+  "directions": [
+    {
+      "direction_id": "dir_085f92994f09",
+      "product_id": "prod_4cfd7da80b97",
+      "name": "坐一整天 腰里也有余量",
+      "audience": "工作日需要久坐、经常从工位直接去见朋友的女性。",
+      "scenes": [
+        "办公室久坐",
+        "起身走动",
+        "工位到会面"
+      ],
+      "main_selling_point": "高腰有边界，坐下有余量。",
+      "platform_expression": "小红书用前后对比展示坐下后的腰头状态；抖音前 3 秒先拍“坐下后”的真实感受。",
+      "evidence_ids": [],
+      "asset_ids": [],
+      "risks": [
+        "历史内容高频使用“显瘦”，本方向不应回到身材焦虑叙事。",
+        "J12 提示初穿面料偏挺，需要坐下实拍支撑。"
+      ],
+      "open_questions": [
+        "缺少不同身高与三档裤长的上身对照（资料不足）。",
+        "缺少浅色面料耐脏测试记录（资料不足）",
+        "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+        "本次未成功完成云端 AI 理解，当前为本地规则结果"
+      ],
+      "avoid_expression": "不讲“显瘦神裤”，不把穿衣体验变成身材焦虑。"
+    },
+    {
+      "direction_id": "dir_f8abdc7b204d",
+      "product_id": "prod_4cfd7da80b97",
+      "name": "从会议室到咖啡馆 不用换掉自己",
+      "audience": "希望通勤着装有分寸、下班后仍想保留个人状态的城市女性。",
+      "scenes": [
+        "通勤",
+        "会议",
+        "咖啡馆",
+        "下班切换"
+      ],
+      "main_selling_point": "一条裤，接住工作和自己的时间。",
+      "platform_expression": "用中靛蓝在同一天内的两个场景切换做叙事，不用“百搭”一笔带过。",
+      "evidence_ids": [
+        "evd_389c319becc54535",
+        "evd_9bb82dd246defd3b",
+        "evd_4e9c0b541f1e95ad",
+        "evd_44db4dd6596be0f1",
+        "evd_ea6d8eae5db31a60",
+        "evd_284e849a8882349b",
+        "evd_976bcf2f693548c4"
+      ],
+      "asset_ids": [
+        "ast_0be4a0d5894c4e1d"
+      ],
+      "risks": [
+        "“百搭”在历史内容中出现 3 次，本方向需展示具体场景而非空泛万能。"
+      ],
+      "open_questions": [
+        "缺少从办公室到咖啡馆的连续动线视频（资料不足）。",
+        "缺少浅色面料耐脏测试记录（资料不足）",
+        "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+        "本次未成功完成云端 AI 理解，当前为本地规则结果"
+      ],
+      "avoid_expression": "不要只说“百搭”，要展示从工作到生活的具体变化。"
+    },
+    {
+      "direction_id": "dir_31303a38ac0b",
+      "product_id": "prod_4cfd7da80b97",
+      "name": "三档裤长减少改裤脚负担",
+      "audience": "不同身高、担心裤脚堆积或频繁改裤脚的用户。",
+      "scenes": [
+        "选裤长",
+        "试穿上身",
+        "城市步行"
+      ],
+      "main_selling_point": "98 / 102 / 106 cm 三档裤长，减少改裤脚麻烦。",
+      "platform_expression": "先讲三档裤长差异，再展示不同身高上身效果；没有完整身高表时标注待验证。",
+      "evidence_ids": [
+        "evd_0e5a80a0283745b1",
+        "evd_6cf85c8bbffd1f15",
+        "evd_d4108cafc33c14df",
+        "evd_41430f6c09521cfb",
+        "evd_f0d87bfae1fe3604",
+        "evd_657c57cbee6ee8d9"
+      ],
+      "asset_ids": [
+        "ast_0be4a0d5894c4e1d"
+      ],
+      "risks": [
+        "J11/J13/J14 提示尺码、身高与裤长参考不足。",
+        "历史内容高频“小个子必入”，避免过度承诺。"
+      ],
+      "open_questions": [
+        "缺少完整腰围/臀围/身高选择表（资料不足）。",
+        "缺少不同身高与三档裤长的上身参考（资料不足）。",
+        "缺少浅色面料耐脏测试记录（资料不足）",
+        "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+        "本次未成功完成云端 AI 理解，当前为本地规则结果"
+      ],
+      "avoid_expression": "不用“小个子必入”和“腿长滤镜”等过度承诺。"
+    }
+  ]
+}

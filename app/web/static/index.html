@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopMind - AI商品创意导演</title>
+  <link rel="stylesheet" href="/prototype.css?v=20261018c">
+  <link rel="stylesheet" href="/app-overrides.css?v=20261018c">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="logo-icon">✦</div>
+            <div class="sidebar-brand-text">
+                <span class="logo-title">ShopMind</span>
+                <span class="logo-subtitle">AI 商品创意导演</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="nav-links">
+                <li>
+                    <a href="#" class="active" onclick="showNavPage('home', this)">
+                        <span class="nav-icon">🏠</span>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-action="start-flow-nav">
+                        <span class="nav-icon">✨</span>
+                        <span>创意任务</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showNavPage('product', this)">
+                        <span class="nav-icon">📦</span>
+                        <span>商品库</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showNavPage('material', this)">
+                        <span class="nav-icon">🖼️</span>
+                        <span>素材库</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showNavPage('history', this)">
+                        <span class="nav-icon">📋</span>
+                        <span>历史记录</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="btn btn-ghost" data-action="show-ai-settings">AI 设置</button>
+            <button class="btn btn-ghost sidebar-help" data-action="show-help">帮助中心</button>
+            <button class="btn btn-primary sidebar-cta" data-action="start-flow">新建创意任务</button>
+            <div class="sidebar-timing" id="sidebarTiming" aria-live="polite"></div>
+        </div>
+    </aside>
+
+    <main class="app-main">
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+    <div class="bg-glow"></div>
+    <div class="bg-glow"></div>
+
+    <!-- 加载动画 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text" id="loadingText">AI 正在理解您的商品...</div>
+        <div class="loading-subtext" id="loadingSubtext"></div>
+        <div class="loading-elapsed" id="loadingElapsed" aria-live="polite"></div>
+    </div>
+
+    <!-- 首页 -->
+    <div class="page active" id="page-home">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-badge">
+                    <span>🚀</span>
+                    <span>AI 商品创意导演</span>
+                </div>
+                <h1>让好商品，<br>被更多人喜欢</h1>
+                <p>从商品到创意表达，你的专属 AI 电商创意编辑部。上传商品，让 AI 成为你的创意搭档。</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" data-action="start-flow">
+                        <span>✨</span>
+                        开始创作
+                    </button>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI 理解商品</h3>
+                    <p>智能分析商品特征、卖点与受众，深度理解你的商品</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>创意方向提案</h3>
+                    <p>基于商品理解，生成多个差异化创意策略方向</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>多模态内容生成</h3>
+                    <p>文案、视觉概念、视频脚本，一站式创意产出</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>多渠道适配</h3>
+                    <p>自动适配淘宝、小红书、抖音等平台规范</p>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>最近项目</h2>
+                <a href="#" data-action="show-projects" onclick="return false;">查看全部 →</a>
+            </div>
+
+            <div class="projects-grid" id="homeProjects"></div>
+        </div>
+    </div>
+
+    <!-- 创意流程 - 步骤1：商品录入 -->
+    <div class="page" id="page-step1">
+        <div class="flow-container">
+            <div class="flow-header">
+                <h2>新建创意任务</h2>
+                <p>告诉 AI 你的商品信息，让它理解并为你创作</p>
+            </div>
+
+            <div class="step-indicator">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <span class="step-label">商品录入</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <span class="step-label">AI 理解</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <span class="step-label">创意方向</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <span class="step-label">内容生成</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <span class="step-label">导出</span>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <h3>添加 AI 参考资料</h3>
+                <p class="subtitle">上传图片、Excel、文档等资料，或从素材库选取（支持按「我的素材夹」筛选）。支持 JPG/PNG、Excel、TXT/MD、CSV、PDF、Word 等格式，供 AI 分析使用。</p>
+
+                <div class="upload-area upload-area-simple">
+                    <div class="upload-icon">📎</div>
+                    <h4>添加参考资料</h4>
+                    <p>从本地上传文件，或从素材库挑选已有素材</p>
+                    <div class="upload-actions-row">
+                        <button type="button" class="btn btn-primary btn-large" data-action="upload-local-files">📤 本地上传</button>
+                        <button type="button" class="btn btn-secondary btn-large" data-action="open-library-picker">📂 从素材库选（含素材夹）</button>
+                    </div>
+                    <input type="file" id="localFileInput" multiple accept=".jpg,.jpeg,.png,.webp,.gif,.bmp,.xlsx,.xls,.csv,.txt,.md,.json,.pdf,.doc,.docx,image/*" hidden>
+                    <div class="path-hint" id="materialPathHint">请上传或选择参考资料</div>
+                </div>
+
+                <div class="upload-preview" id="uploadPreview"></div>
+                <div class="reference-file-list" id="referenceFileList"></div>
+                <p class="upload-confirm-hint" id="uploadConfirmHint">上传或从素材库选取后，填写商品信息即可进入下一步</p>
+            </div>
+
+            <div class="form-card">
+                <h3>填写商品信息</h3>
+                <p class="subtitle">基本信息将帮助 AI 更准确地理解你的商品</p>
+
+                <div class="form-group">
+                    <label for="prodName">商品名称 <span>*</span></label>
+                    <input type="text" class="form-input" id="prodName" name="product_name" autocomplete="off" placeholder="请输入商品名称">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="prodCatKey">商品类别 <span>*</span></label>
+                        <select class="form-input" id="prodCatKey" name="product_category_key">
+                            <option value="">请选择类别</option>
+                            <option value="bag">箱包</option>
+                            <option value="shoes">鞋子</option>
+                            <option value="pants">裤子</option>
+                            <option value="top">上衣</option>
+                            <option value="coat">外套</option>
+                            <option value="custom">自定义（自行输入）</option>
+                        </select>
+                        <p class="form-field-hint" id="prodCatHint">选择「自定义」后，在下方输入你的类别名称</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="prodPrice">价格区间 <span>*</span></label>
+                        <input type="text" class="form-input" id="prodPrice" name="product_price" autocomplete="off" placeholder="例如：259">
+                    </div>
+                </div>
+                <div class="product-cat-custom-wrap" id="prodCatCustomWrap" hidden>
+                    <label for="prodCatCustom">自定义类别名称 <span class="required-mark">*</span></label>
+                    <input type="text" class="form-input" id="prodCatCustom" name="product_category_custom" autocomplete="off" placeholder="例如：配饰、家居、数码…">
+                </div>
+
+                <div class="form-group">
+                    <label for="prodDesc">商品描述</label>
+                    <textarea class="form-input" id="prodDesc" name="product_desc" autocomplete="off" placeholder="描述商品的特点、材质、使用场景等"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="prodBrand">品牌名称</label>
+                    <input type="text" class="form-input" id="prodBrand" name="product_brand" autocomplete="off" placeholder="例如：轻序 QINGXU">
+                </div>
+            </div>
+        </div>
+
+        <div class="action-bar">
+            <div class="action-bar-left">
+                <button class="btn btn-ghost" onclick="showPage('home')">取消</button>
+            </div>
+            <div class="action-bar-right">
+                <button class="btn btn-primary" data-action="go-step-2">
+                    下一步：AI 理解商品
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 创意流程 - 步骤2：AI 理解 -->
+    <div class="page" id="page-step2">
+        <div class="flow-container">
+            <div class="flow-header">
+                <h2>AI 理解商品</h2>
+                <p>AI 正在分析你的商品，提取特征与卖点</p>
+            </div>
+
+            <div class="step-indicator">
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span class="step-label">商品录入</span>
+                </div>
+                <div class="step-divider completed"></div>
+                <div class="step active">
+                    <div class="step-number">2</div>
+                    <span class="step-label">AI 理解</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <span class="step-label">创意方向</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <span class="step-label">内容生成</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <span class="step-label">导出</span>
+                </div>
+            </div>
+
+            <div class="understanding-result">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <h3 style="font-size: 20px; font-weight: 600;">商品理解报告</h3>
+                    <button class="btn btn-ghost" style="font-size: 13px;" data-action="edit-understanding">✏️ 修正理解结果</button>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 24px;">AI 基于你提供的图片、Excel 参数表与评价数据，对商品进行了深度分析</p>
+
+                <div class="understanding-grid" id="understandingGrid">
+                </div>
+
+                <div class="understanding-item" style="margin-top: 20px;">
+                    <h4>评价洞察（来自用户评价 Excel）</h4>
+                    <div id="reviewInsight" style="font-size: 15px; line-height: 1.6;"></div>
+                    <div class="tag-list" id="reviewTags"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-bar">
+            <div class="action-bar-left">
+                <button class="btn btn-ghost" data-action="go-step-1">← 上一步</button>
+            </div>
+            <div class="action-bar-right">
+                <button class="btn btn-primary" data-action="go-step-3">
+                    下一步：生成创意方向
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 创意流程 - 步骤3：创意方向 -->
+    <div class="page" id="page-step3">
+        <div class="flow-container">
+            <div class="flow-header">
+                <h2>选择创意方向</h2>
+                <p>AI 为你的商品生成了以下创意策略方向，选择最符合你品牌调性的一个</p>
+            </div>
+
+            <div class="step-indicator">
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span class="step-label">商品录入</span>
+                </div>
+                <div class="step-divider completed"></div>
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span class="step-label">AI 理解</span>
+                </div>
+                <div class="step-divider completed"></div>
+                <div class="step active">
+                    <div class="step-number">3</div>
+                    <span class="step-label">创意方向</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <span class="step-label">内容生成</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <span class="step-label">导出</span>
+                </div>
+            </div>
+
+            <div class="directions-grid" id="directionsGrid">
+            </div>
+        </div>
+
+        <div class="action-bar">
+            <div class="action-bar-left">
+                <button class="btn btn-ghost" data-action="go-step-2">← 上一步</button>
+            </div>
+            <div class="action-bar-right">
+                <button class="btn btn-secondary" data-action="regenerate-directions">🔄 重新生成方向</button>
+                <button class="btn btn-primary" data-action="go-step-4">
+                    下一步：生成内容
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 创意流程 - 步骤4：内容生成 -->
+    <div class="page" id="page-step4">
+        <div class="flow-container">
+            <div class="flow-header">
+                <h2>创意内容生成</h2>
+                <p id="step4Subtitle">基于所选创意方向，为你生成的完整创意内容</p>
+            </div>
+
+            <div class="step-indicator">
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span class="step-label">商品录入</span>
+                </div>
+                <div class="step-divider completed"></div>
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span class="step-label">AI 理解</span>
+                </div>
+                <div class="step-divider completed"></div>
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span class="step-label">创意方向</span>
+                </div>
+                <div class="step-divider completed"></div>
+                <div class="step active">
+                    <div class="step-number">4</div>
+                    <span class="step-label">内容生成</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <span class="step-label">导出</span>
+                </div>
+            </div>
+
+            <div class="step4-reference-section">
+                <div class="step4-reference-header">
+                    <h4>参考图管理</h4>
+                    <span class="step4-reference-hint">可添加或删除参考图，用于图片提示词与视频生成</span>
+                    <button class="btn btn-ghost btn-small" data-action="open-library-picker-images">从素材库选（含素材夹）</button>
+                    <button class="btn btn-ghost btn-small" data-action="open-image-picker-step4">＋ 添加图片</button>
+                </div>
+                <div class="step4-reference-grid" id="step4ReferenceGrid"></div>
+            </div>
+
+            <div class="content-showcase">
+                <div class="content-tabs">
+                    <button class="content-tab active" onclick="switchTab(this, 'copy')">商品文案</button>
+                    <button class="content-tab" onclick="switchTab(this, 'visual')">视觉概念</button>
+                    <button class="content-tab" onclick="switchTab(this, 'video')">视频脚本</button>
+                </div>
+
+                <div class="content-panel active" id="panel-copy">
+                    <div id="copyContent"></div>
+                </div>
+
+                <div class="content-panel" id="panel-visual">
+                    <div id="visualContent"></div>
+                    <div class="visual-prompts-section">
+                        <h4>图片生成</h4>
+                        <div class="prompt-input-block">
+                            <label for="imageGenPrompt">图片提示词（可编辑，将用于 AI 绘图）</label>
+                            <textarea id="imageGenPrompt" class="form-input prompt-textarea" rows="3" placeholder="描述你想要的商品图风格、场景、光线、构图…"></textarea>
+                            <label for="imageNegPrompt" style="margin-top:10px;display:block;">负向提示词（可选）</label>
+                            <textarea id="imageNegPrompt" class="form-input prompt-textarea" rows="2" placeholder="不希望出现的元素，如：模糊、变形、杂乱背景"></textarea>
+                        </div>
+                        <div id="imagePromptsContent"></div>
+                        <div class="media-tools">
+                            <button class="btn btn-secondary btn-small" data-action="generate-image-prompts">本地生成提示词</button>
+                            <label class="video-toggle">
+                                <input type="checkbox" id="generateImageToggle" onchange="syncGenerateImageToggle(this)">
+                                是否生成图片
+                            </label>
+                            <button class="btn btn-primary btn-small" data-action="generate-images">根据提示词生成图片</button>
+                        </div>
+                        <div id="generatedImagesContent" class="generated-media-area"></div>
+                    </div>
+                </div>
+
+                <div class="content-panel" id="panel-video">
+                    <div id="videoContent"></div>
+                    <div class="prompt-input-block">
+                        <label for="videoGenPrompt">视频创意提示词（将用于分镜字幕/口播参考）</label>
+                        <textarea id="videoGenPrompt" class="form-input prompt-textarea" rows="3" placeholder="描述视频要传达的氛围、节奏、核心卖点…"></textarea>
+                    </div>
+                    <div class="media-tools video-panel-tools">
+                        <label class="video-toggle">
+                            <input type="checkbox" id="generateVideoToggleVideo" onchange="syncGenerateVideoToggle(this)">
+                            是否生成视频
+                        </label>
+                        <button class="btn btn-secondary btn-small" data-action="generate-video">根据提示词生成视频</button>
+                        <div id="videoPreviewArea" class="generated-media-area"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-bar">
+            <div class="action-bar-left">
+                <button class="btn btn-ghost" data-action="go-step-3">← 上一步</button>
+            </div>
+            <div class="action-bar-right">
+                <button class="btn btn-secondary" data-action="regenerate-content">🔄 重新生成</button>
+                <button class="btn btn-primary" data-action="go-step-5">
+                    下一步：导出内容
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 创意流程 - 步骤5：导出 -->
+    <div class="page" id="page-step5">
+        <div class="flow-container">
+            <div class="flow-header">
+                <h2>导出创意内容</h2>
+                <p>内容已自动保存到「创意导出」文件夹、商品库和素材库，可在此下载到本地</p>
+            </div>
+
+            <div class="step-indicator">
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span class="step-label">商品录入</span>
+                </div>
+                <div class="step-divider completed"></div>
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span class="step-label">AI 理解</span>
+                </div>
+                <div class="step-divider completed"></div>
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span class="step-label">创意方向</span>
+                </div>
+                <div class="step-divider completed"></div>
+                <div class="step completed">
+                    <div class="step-number">✓</div>
+                    <span class="step-label">内容生成</span>
+                </div>
+                <div class="step-divider completed"></div>
+                <div class="step active">
+                    <div class="step-number">5</div>
+                    <span class="step-label">导出</span>
+                </div>
+            </div>
+
+            <div class="export-grid">
+                <div class="export-card" onclick="simulateExport('文案')">
+                    <div class="export-icon">📝</div>
+                    <h4>导出文案</h4>
+                    <p>商品文案、品牌标语等所有文字内容</p>
+                    <div class="export-formats">
+                        <span class="format-tag">Word</span>
+                        <span class="format-tag">Markdown</span>
+                        <span class="format-tag">TXT</span>
+                    </div>
+                </div>
+
+                <div class="export-card" onclick="simulateExport('视觉')">
+                    <div class="export-icon">🎨</div>
+                    <h4>导出视觉方案</h4>
+                    <p>KV 概念、配色方案、构图建议、氛围关键词</p>
+                    <div class="export-formats">
+                        <span class="format-tag">PDF</span>
+                        <span class="format-tag">PPT</span>
+                    </div>
+                </div>
+
+                <div class="export-card" onclick="simulateExport('全包')">
+                    <div class="export-icon">📦</div>
+                    <h4>导出完整内容包</h4>
+                    <p>包含所有文案、视觉方案、视频脚本的完整压缩包</p>
+                    <div class="export-formats">
+                        <span class="format-tag">ZIP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding: 32px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px;">
+                <div style="font-size: 48px; margin-bottom: 16px;">🎉</div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">创意内容已生成完毕！</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">整个创作过程仅用了 3 分钟，而传统方式需要 2-3 天</p>
+                <button class="btn btn-primary btn-large" data-action="start-flow">
+                    开始新任务
+                </button>
+                <button class="btn btn-ghost" style="margin-top: 12px;" data-action="return-home-after-task">
+                    返回首页
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 历史记录 -->
+    <div class="page" id="page-history">
+        <div class="container history-page">
+            <div class="history-header">
+                <div>
+                    <h1>历史记录</h1>
+                    <p>创意任务生成记录：使用的素材文件、生成的文案、图片与视频</p>
+                </div>
+            </div>
+            <div class="history-list" id="historyList">
+                <p class="history-empty">暂无历史记录，完成一次创意任务后会自动保存</p>
+            </div>
+            <section class="history-detail-panel" id="historyDetailPanel" hidden>
+                <div class="history-detail-header">
+                    <div>
+                        <p class="history-detail-kicker">创意任务详情</p>
+                        <h3 id="historyDetailTitle">任务记录</h3>
+                        <p class="history-detail-meta" id="historyDetailMeta"></p>
+                    </div>
+                    <button type="button" class="btn btn-ghost btn-small" data-action="close-history-detail">关闭</button>
+                </div>
+                <div class="history-detail-body" id="historyDetailBody"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 素材库 -->
+    <div class="page" id="page-material">
+        <div class="container">
+            <div class="material-header">
+                <div>
+                    <h1 style="font-size: 32px; font-weight: 700; margin-bottom: 8px;">素材库</h1>
+                    <p style="color: var(--text-secondary); font-size: 15px;">上传图片、视频与文本资料，并用自定义文件夹整理归类</p>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn btn-ghost" data-action="download-library-zip">⬇ 下载到本地</button>
+                    <button class="btn btn-ghost" data-action="upload-library-files">📤 本地上传</button>
+                </div>
+                <input type="file" id="libraryFileInput" multiple accept=".jpg,.jpeg,.png,.webp,.gif,.bmp,.mp4,.mov,.avi,.mkv,.webm,.xlsx,.xls,.csv,.txt,.md,.json,.pdf,.doc,.docx,image/*,video/*" hidden>
+            </div>
+
+            <!-- 搜索与筛选 -->
+            <div class="material-toolbar">
+                <div class="material-search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted); flex-shrink: 0;">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" placeholder="搜索素材名称、标签、品牌..." onkeyup="filterMaterials(this.value)">
+                </div>
+                <div class="material-filters">
+                    <button class="filter-btn active" data-filter-cat="all" onclick="filterByCategory(this, 'all')">全部</button>
+                    <button class="filter-btn" data-filter-cat="image" onclick="filterByCategory(this, 'image')">图片素材</button>
+                    <button class="filter-btn" data-filter-cat="video" onclick="filterByCategory(this, 'video')">视频素材</button>
+                    <button class="filter-btn" data-filter-cat="text" onclick="filterByCategory(this, 'text')">文本资料</button>
+                </div>
+                <div class="material-view-toggle">
+                    <button class="view-btn active" onclick="setViewMode(this, 'grid')" title="网格视图">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                    </button>
+                    <button class="view-btn" onclick="setViewMode(this, 'list')" title="列表视图">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="8" y1="6" x2="21" y2="6"></line>
+                            <line x1="8" y1="12" x2="21" y2="12"></line>
+                            <line x1="8" y1="18" x2="21" y2="18"></line>
+                            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 分类文件夹概览 -->
+            <div class="material-folders">
+                <div class="folder-card" onclick="filterByCategory(null, 'image')">
+                    <div class="folder-icon" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(59, 130, 246, 0.15));">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                    <div class="folder-info">
+                        <h4>图片素材</h4>
+                        <p id="folderStatImage">0 个文件 · 0 B</p>
+                    </div>
+                </div>
+                <div class="folder-card" onclick="filterByCategory(null, 'video')">
+                    <div class="folder-icon" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(168, 85, 247, 0.15));">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-pink)" stroke-width="2">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                    </div>
+                    <div class="folder-info">
+                        <h4>视频素材</h4>
+                        <p id="folderStatVideo">0 个文件 · 0 B</p>
+                    </div>
+                </div>
+                <div class="folder-card" onclick="filterByCategory(null, 'text')">
+                    <div class="folder-icon" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.15));">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                    </div>
+                    <div class="folder-info">
+                        <h4>文本资料</h4>
+                        <p id="folderStatText">0 个文件 · 0 B</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="material-user-folders-section">
+                <div class="material-section-title material-user-folders-header">
+                    <div>
+                        <h3>我的素材夹</h3>
+                        <p class="material-section-desc">「添加素材」从下方素材库已有文件中勾选；点「查看」只看该文件夹内的素材。创意任务里「从素材库选」也可按素材夹筛选。</p>
+                    </div>
+                    <button type="button" class="btn btn-ghost btn-small" data-action="create-material-folder">+ 新建文件夹</button>
+                </div>
+                <div class="material-user-folders" id="materialUserFolders"></div>
+            </section>
+
+            <!-- 素材网格 -->
+            <div class="material-section-title">
+                <div class="material-grid-title-wrap">
+                    <h3 id="materialGridSectionTitle">全部素材</h3>
+                    <button type="button" class="btn btn-ghost btn-small material-folder-clear-btn" id="materialFolderClearBtn" hidden data-action="clear-material-folder-view">← 返回全部素材</button>
+                </div>
+                <span class="material-count">共 <span id="materialTotalCount">12</span> 个</span>
+            </div>
+
+            <div class="material-grid" id="materialGrid"></div>
+        </div>
+    </div>
+
+    <!-- 商品库 -->
+    <div class="page" id="page-product">
+        <div class="product-page">
+            <header class="product-page-header">
+                <div class="product-page-intro">
+                    <h1>商品库</h1>
+                    <p>管理 Demo 素材包与本地创作项目，一键发起 AI 创意任务</p>
+                </div>
+                <div class="product-page-actions">
+                    <button class="btn btn-ghost" data-action="open-add-product">添加商品</button>
+                    <button class="btn btn-primary" data-action="start-creative-task">新建创意任务</button>
+                </div>
+            </header>
+
+            <div class="product-summary">
+                <div class="product-summary-card">
+                    <span class="product-summary-label">商品总数</span>
+                    <strong id="productStatTotal">0</strong>
+                </div>
+                <div class="product-summary-card">
+                    <span class="product-summary-label">已生成创意</span>
+                    <strong id="productStatCompleted">0</strong>
+                </div>
+            </div>
+
+            <div class="product-panel">
+                <div class="product-panel-top">
+                    <div class="product-search">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" id="productSearchInput" placeholder="搜索商品名称、品牌..." autocomplete="off">
+                    </div>
+                    <button type="button" class="btn btn-primary product-search-btn" data-action="apply-product-search">搜索</button>
+                </div>
+                <div class="product-panel-sub">
+                    <div class="product-filters" id="productFilters">
+                        <button class="filter-btn active" onclick="filterProductByCategory(this, 'all')">全部</button>
+                        <button class="filter-btn" onclick="filterProductByCategory(this, 'bag')">箱包</button>
+                        <button class="filter-btn" onclick="filterProductByCategory(this, 'shoes')">鞋子</button>
+                        <button class="filter-btn" onclick="filterProductByCategory(this, 'pants')">裤子</button>
+                        <button class="filter-btn" onclick="filterProductByCategory(this, 'top')">上衣</button>
+                        <button class="filter-btn" onclick="filterProductByCategory(this, 'coat')">外套</button>
+                        <button class="filter-btn" onclick="filterProductByCategory(this, 'custom')">自定义</button>
+                    </div>
+                    <div class="product-view-toggle">
+                        <button class="view-btn active" onclick="setProductViewMode(this, 'grid')" title="卡片视图">卡片</button>
+                        <button class="view-btn" onclick="setProductViewMode(this, 'list')" title="列表视图">列表</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-list-header">
+                <h3>全部商品</h3>
+                <span class="product-count">共 <span id="productTotalCount">0</span> 个</span>
+            </div>
+
+            <div class="product-grid" id="productGrid"></div>
+
+            <div class="product-empty" id="productEmpty" style="display:none;">
+                <div class="product-empty-icon">📦</div>
+                <h4>还没有商品</h4>
+                <p>点击「添加商品」手动录入，或「新建创意任务」从 AI 分析开始</p>
+                <div class="product-empty-actions">
+                    <button class="btn btn-ghost" data-action="open-add-product">添加商品</button>
+                    <button class="btn btn-primary" data-action="start-creative-task">新建创意任务</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+</div>
+    <div class="product-detail-modal" id="productDetailModal" aria-hidden="true">
+        <div class="product-detail-modal-backdrop" data-action="close-product-detail" aria-hidden="true"></div>
+        <div class="product-detail-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="productDetailTitle">
+            <section class="product-detail-panel" id="productDetailPanel">
+                <div class="product-detail-panel-header">
+                    <div>
+                        <p class="product-detail-panel-kicker">商品资料与创意总结</p>
+                        <h3 class="product-detail-panel-title" id="productDetailTitle">商品详情</h3>
+                        <p class="product-detail-panel-meta" id="productDetailMeta"></p>
+                    </div>
+                    <div class="product-detail-panel-actions">
+                        <button type="button" class="btn btn-ghost btn-small" data-action="edit-product-detail" id="productDetailEditBtn">修改</button>
+                        <button type="button" class="btn btn-primary btn-small" data-action="save-product-detail" id="productDetailSaveBtn">保存</button>
+                        <button type="button" class="btn btn-ghost btn-small" data-action="close-product-detail">关闭</button>
+                    </div>
+                </div>
+                <div class="product-detail-panel-body" id="productDetailBody"></div>
+                <input type="file" id="productFileInput" multiple accept="image/*,.xlsx,.xls,.csv,.txt,.md,.json,.pdf,.doc,.docx" hidden>
+            </section>
+        </div>
+    </div>
+    <div class="image-picker-modal" id="addProductModal">
+        <div class="image-picker-dialog add-product-dialog">
+            <div class="image-picker-header">
+                <h3>添加商品</h3>
+                <p>填写基本信息后可在商品详情中继续补充文字和上传相关文件</p>
+            </div>
+            <form class="add-product-form" id="addProductForm">
+                <label class="add-product-field">
+                    <span>商品名称 *</span>
+                    <input type="text" id="addProductName" required placeholder="例如：界线直筒牛仔裤 01">
+                </label>
+                <div class="add-product-row">
+                    <label class="add-product-field">
+                        <span>类别</span>
+                        <select id="addProductCatKey">
+                            <option value="">请选择</option>
+                            <option value="bag">箱包</option>
+                            <option value="shoes">鞋子</option>
+                            <option value="pants">裤子</option>
+                            <option value="top">上衣</option>
+                            <option value="coat">外套</option>
+                            <option value="custom">自定义（自行输入）</option>
+                        </select>
+                    </label>
+                    <label class="add-product-field">
+                        <span>价格</span>
+                        <input type="text" id="addProductPrice" placeholder="329">
+                    </label>
+                </div>
+                <label class="add-product-field" id="addProductCatCustomWrap" hidden>
+                    <span>自定义类别名称 *</span>
+                    <input type="text" id="addProductCatCustom" placeholder="例如：配饰、家居、数码…">
+                </label>
+                <label class="add-product-field">
+                    <span>品牌</span>
+                    <input type="text" id="addProductBrand" placeholder="界线 JIEXIAN">
+                </label>
+                <label class="add-product-field">
+                    <span>商品描述</span>
+                    <textarea id="addProductDesc" rows="3" placeholder="简要描述商品特点、材质、适用场景…"></textarea>
+                </label>
+                <label class="add-product-field">
+                    <span>视觉概念</span>
+                    <textarea id="addProductVisual" rows="3" placeholder="描述画面风格、构图、色彩、氛围等视觉方向…"></textarea>
+                </label>
+                <label class="add-product-field">
+                    <span>视频脚本</span>
+                    <textarea id="addProductVideo" rows="3" placeholder="分镜、口播、节奏与核心卖点…"></textarea>
+                </label>
+                <div class="add-product-field">
+                    <div class="add-product-field-head">
+                        <span>参考资料</span>
+                        <button type="button" class="btn btn-ghost btn-small" data-action="upload-add-product-files">📤 本地上传</button>
+                    </div>
+                    <p class="add-product-field-hint">支持图片、Excel、文档等，创建商品后保存到该商品资料库</p>
+                    <div class="add-product-file-list" id="addProductFileList"></div>
+                </div>
+            </form>
+            <input type="file" id="addProductFileInput" multiple accept="image/*,.xlsx,.xls,.csv,.txt,.md,.json,.pdf,.doc,.docx" hidden>
+            <div class="image-picker-actions">
+                <span></span>
+                <div class="image-picker-buttons">
+                    <button type="button" class="btn btn-ghost" data-action="close-add-product">取消</button>
+                    <button type="button" class="btn btn-primary" data-action="submit-add-product">创建商品</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-picker-modal" id="libraryPickerModal">
+        <div class="image-picker-dialog">
+            <div class="image-picker-header">
+                <h3>从素材库选择参考资料</h3>
+                <p id="libraryPickerSubtitle">可从「全部素材」或「我的素材夹」中多选，选完后点「导入到当前任务」</p>
+            </div>
+            <div class="library-picker-folders" id="libraryPickerFolders" hidden></div>
+            <div class="material-picker-grid" id="libraryPickerGrid"></div>
+            <div class="image-picker-empty" id="libraryPickerEmpty" style="display:none;">
+                <p>素材库暂无文件</p>
+                <button type="button" class="btn btn-primary btn-small" data-action="goto-material-upload">去素材库上传</button>
+            </div>
+            <div class="image-picker-actions">
+                <span class="image-picker-count" id="libraryPickerCount">已选 0 个</span>
+                <div class="image-picker-buttons">
+                    <button type="button" class="btn btn-ghost" data-action="close-library-picker">取消</button>
+                    <button type="button" class="btn btn-primary" data-action="confirm-library-picker">导入到当前任务</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-picker-modal" id="imagePickerModal">
+        <div class="image-picker-dialog">
+            <div class="image-picker-header">
+                <h3>从素材文件夹选择参考图</h3>
+                <p id="imagePickerSubtitle">逐张点选图片，可继续补充，最多 10 张，选完后点「确定」</p>
+            </div>
+            <div class="image-picker-grid" id="imagePickerGrid"></div>
+            <div class="image-picker-empty" id="imagePickerEmpty" style="display:none;">该文件夹里没有找到图片，请换一个包含 JPG/PNG 的素材文件夹。</div>
+            <div class="image-picker-actions">
+                <span class="image-picker-count" id="imagePickerCount">已选 0 / 10 张</span>
+                <div class="image-picker-buttons">
+                    <button type="button" class="btn btn-ghost" data-action="close-image-picker">取消</button>
+                    <button type="button" class="btn btn-primary" data-action="confirm-image-picker">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="help-center-modal" id="helpCenterModal">
+        <div class="help-center-dialog" role="dialog" aria-labelledby="helpCenterTitle">
+            <div class="help-center-header">
+                <div>
+                    <p class="help-center-kicker">ShopMind Guide</p>
+                    <h2 id="helpCenterTitle">帮助中心</h2>
+                    <p class="help-center-subtitle" id="helpCenterSubtitle"></p>
+                </div>
+                <button type="button" class="help-center-close" data-action="close-help-center" aria-label="关闭">×</button>
+            </div>
+            <div class="help-center-tabs" id="helpCenterTabs"></div>
+            <div class="help-center-body" id="helpCenterBody"></div>
+            <div class="help-center-footer">
+                <p id="helpCenterFooter"></p>
+                <button type="button" class="btn btn-primary" data-action="close-help-center">我知道了</button>
+            </div>
+        </div>
+    </div>
+    <div class="image-picker-modal" id="materialRenameModal">
+        <div class="image-picker-dialog material-rename-dialog">
+            <div class="image-picker-header">
+                <h3>重命名素材</h3>
+                <p>修改显示名称，扩展名需与原文件保持一致</p>
+            </div>
+            <label class="material-rename-field">
+                <span>文件名</span>
+                <input type="text" id="materialRenameInput" autocomplete="off" spellcheck="false" placeholder="输入新文件名">
+            </label>
+            <p class="material-rename-hint" id="materialRenameExtensionHint"></p>
+            <div class="image-picker-actions">
+                <div class="image-picker-buttons">
+                    <button type="button" class="btn btn-ghost" data-action="cancel-material-rename">取消</button>
+                    <button type="button" class="btn btn-primary" data-action="confirm-material-rename">确认重命名</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-picker-modal" id="materialFolderDeleteModal">
+        <div class="image-picker-dialog material-folder-delete-dialog">
+            <div class="image-picker-header">
+                <h3>删除素材夹</h3>
+                <p id="materialFolderDeleteHint">仅删除分类整理，素材库中的文件不会被删除。</p>
+            </div>
+            <p class="material-folder-delete-name" id="materialFolderDeleteName"></p>
+            <div class="image-picker-actions">
+                <div class="image-picker-buttons">
+                    <button type="button" class="btn btn-ghost" data-action="cancel-delete-material-folder">取消</button>
+                    <button type="button" class="btn btn-primary material-folder-delete-confirm" data-action="confirm-delete-material-folder">确认删除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-picker-modal" id="materialFolderAddModal">
+        <div class="image-picker-dialog material-folder-add-dialog">
+            <div class="image-picker-header">
+                <h3 id="materialFolderAddTitle">添加素材到文件夹</h3>
+                <p id="materialFolderAddHint">从素材库已有素材中勾选，点「确定」即可加入该文件夹（不会重复上传文件）</p>
+            </div>
+            <div class="material-picker-grid" id="materialFolderAddList"></div>
+            <div class="image-picker-actions">
+                <span class="image-picker-count" id="materialFolderAddCount">已选 0 个</span>
+                <div class="image-picker-buttons">
+                    <button type="button" class="btn btn-ghost" data-action="close-material-folder-add">取消</button>
+                    <button type="button" class="btn btn-primary" data-action="confirm-material-folder-add">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-picker-modal" id="aiSettingsModal">
+        <div class="image-picker-dialog add-product-dialog" role="dialog" aria-modal="true" aria-labelledby="aiSettingsTitle">
+            <div class="image-picker-header">
+                <h3 id="aiSettingsTitle">AI 设置（仅保存在本机）</h3>
+                <p>保存不会调用模型。每次云端发送仍需授权，可能产生费用。密钥为本机明文私有文件，勿随文件夹打包分享。</p>
+            </div>
+            <p class="ai-settings-notice" id="aiMigrationNotice">各能力独立启用、独立保存。图片/视频生成会把参考图与提示词发送到 OpenAI 兼容接口。</p>
+            <div class="ai-capability-tabs" role="group" aria-label="选择要配置的能力">
+                <button type="button" class="btn btn-ghost" data-action="select-ai-capability" data-capability="text" aria-pressed="true">文字推理与文案</button>
+                <button type="button" class="btn btn-ghost" data-action="select-ai-capability" data-capability="vision" aria-pressed="false">图片理解</button>
+                <button type="button" class="btn btn-ghost" data-action="select-ai-capability" data-capability="image" aria-pressed="false">图片生成</button>
+                <button type="button" class="btn btn-ghost" data-action="select-ai-capability" data-capability="video" aria-pressed="false">视频生成</button>
+            </div>
+            <form class="add-product-form" id="aiSettingsForm" autocomplete="off">
+                <p id="aiCapabilityDescription" class="ai-capability-description"></p>
+                <label class="ai-enabled-field"><input id="aiEnabled" type="checkbox">启用当前能力（关闭后使用本地规则或模板）</label>
+                <label class="add-product-field"><span>执行位置</span><select id="aiLocation"><option value="cloud">云端 · OpenAI 兼容聊天接口</option><option value="local" id="aiLocationLocal">本地 · 图片理解与文字推理都可启用</option></select></label>
+                <p class="ai-capability-description" id="aiLocalNotice" hidden></p>
+                <label class="add-product-field"><span>API 地址（HTTPS 或 HTTP 本机 loopback）</span><input id="aiBaseUrl" type="url" autocomplete="off"></label>
+                <label class="add-product-field"><span>模型名称（请填写服务商支持的名称）</span><input id="aiModel" maxlength="200" autocomplete="off"></label>
+                <label class="add-product-field"><span>超时（秒，1–600）</span><input id="aiTimeout" type="number" min="1" max="600" step="1" required></label>
+                <label class="add-product-field" id="aiMaxImagesField" hidden><input id="aiMaxImages" type="number" min="0" max="20" step="1"></label>
+                <label class="add-product-field"><span>密钥操作</span><select id="aiCredentialAction"><option value="keep">保留已保存密钥</option><option value="replace">填写或替换密钥</option><option value="clear">清除密钥并关闭当前能力</option></select></label>
+                <label class="add-product-field"><span>API Key（不回显，保存、切换或关闭后清空）</span><input id="aiKey" type="password" autocomplete="new-password" maxlength="4096" disabled></label>
+                <p class="ai-capability-description">更换服务地址或执行位置时，必须重新填写或清除旧密钥；不会向新地址沿用旧密钥。</p>
+                <p id="aiSettingsStatus" role="status" aria-live="polite">尚未测试连接</p>
+                <button type="button" class="btn btn-ghost" id="aiConnectionTest" data-action="test-local-connection" hidden>测试连接（会真的调用本机模型）</button>
+                <p class="ai-probe-result" id="aiProbeResult" role="status" aria-live="polite" hidden></p>
+            </form>
+            <div class="image-picker-actions"><div class="image-picker-buttons">
+                <button type="button" class="btn btn-ghost" data-action="close-ai-settings">关闭</button>
+                <button type="button" class="btn btn-primary" id="aiSettingsSave" data-action="save-ai-settings">保存当前能力</button>
+            </div></div>
+        </div>
+    </div>
+    <div class="toast" id="toastMsg"></div>
+    <script src="/app.js?v=20261018c"></script>
+</body>
+</html>

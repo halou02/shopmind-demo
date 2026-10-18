@@ -1,0 +1,19 @@
+[Unit]
+Description=ShopMind Web Demo
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/shopmind
+Environment=SHOPMIND_HOST=0.0.0.0
+Environment=SHOPMIND_PORT=8080
+Environment=SHOPMIND_OPEN_BROWSER=0
+EnvironmentFile=-/opt/shopmind/.env
+ExecStart=/opt/shopmind/.venv/bin/python -m app.web_main
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

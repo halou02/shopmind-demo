@@ -1,0 +1,318 @@
+{
+  "product_id": "prod_4cfd7da80b97",
+  "product_name": "牛仔裤",
+  "boundary_notice": "仅基于本地资料",
+  "not_connected_notice": "未接入，不作判断",
+  "evidence_count": 21,
+  "global_gaps": [
+    "缺少浅色面料耐脏测试记录（资料不足）",
+    "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+    "本次未成功完成云端 AI 理解，当前为本地规则结果"
+  ],
+  "assets": [
+    {
+      "asset_id": "ast_0be4a0d5894c4e1d",
+      "product_id": "prod_4cfd7da80b97",
+      "source_id": "src_49d65c2611218a96",
+      "relative_path": "商品图片/02_正面上身图.png",
+      "asset_type": "png",
+      "role": "on_body",
+      "file_hash": "701dd5764f5ef95f121e3bb6b905d2adc2e11d171408f2d0d7d9b88199f1c16d",
+      "processing_status": "ready"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "product_facts",
+      "title": "商品参数",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_6df2676f0424",
+          "section_id": "product_facts",
+          "label": "商品名称",
+          "summary": "牛仔裤",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_25845fdf9814",
+          "section_id": "product_facts",
+          "label": "建议价格",
+          "summary": "120-150",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_24b1379f9a73",
+          "section_id": "product_facts",
+          "label": "材质",
+          "summary": "待补充",
+          "evidence_ids": [
+            "evd_9bb82dd246defd3b"
+          ],
+          "source_locators": [
+            "商品资料.xlsx!商品参数!B10"
+          ],
+          "status": "pending",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_a4594d4eaa13",
+          "section_id": "product_facts",
+          "label": "主要场景",
+          "summary": "牛仔裤，百搭，休闲，适合夏天",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_834eee9ffa24",
+          "section_id": "product_facts",
+          "label": "品类定位",
+          "summary": "裤子，牛仔裤，百搭，休闲，适合夏天。 本次使用本地规则，未完成云端图片识别，颜色、材质与细节需人工核对。",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_51b690808f8e",
+          "section_id": "product_facts",
+          "label": "商品类别",
+          "summary": "裤子",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_1f11e9cba446",
+          "section_id": "product_facts",
+          "label": "品牌名称",
+          "summary": "OKK",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_903db5f62d9f",
+          "section_id": "product_facts",
+          "label": "已上传图片",
+          "summary": "1 张商品图待视觉分析",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_8e4435f89ecc",
+          "section_id": "product_facts",
+          "label": "图片类型",
+          "summary": "场景图",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_435e797a9fe4",
+          "section_id": "product_facts",
+          "label": "核心人群",
+          "summary": "关注裤子、预算约 120-150 元的消费者",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "review_insights",
+      "title": "评价洞察",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_d6910c3285e4",
+          "section_id": "review_insights",
+          "label": "用户真正喜欢",
+          "summary": "牛仔裤，百搭，休闲，适合夏天；面向裤子品类需求",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_3da767caea88",
+          "section_id": "review_insights",
+          "label": "评价样本量",
+          "summary": "共 1 条本地评价",
+          "evidence_ids": [
+            "evd_0e5a80a0283745b1"
+          ],
+          "source_locators": [
+            "商品资料.xlsx!用户评价!A5"
+          ],
+          "status": "pending",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_f6d7d3f6871f",
+          "section_id": "review_insights",
+          "label": "被忽略的表达机会",
+          "summary": "牛仔裤，百搭，休闲，适合夏天",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "brand_memory",
+      "title": "品牌记忆",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_f6710ee0f1b5",
+          "section_id": "brand_memory",
+          "label": "品牌语气",
+          "summary": "OKK 品牌调性",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_fec9cf9e063d",
+          "section_id": "brand_memory",
+          "label": "视觉关键词",
+          "summary": "牛仔裤、百搭、休闲、适合夏天",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "history_patterns",
+      "title": "历史重复表达",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_714e323f36ff",
+          "section_id": "history_patterns",
+          "label": "历史重复表达风险",
+          "summary": "2026-01-01：低",
+          "evidence_ids": [
+            "evd_976bcf2f693548c4"
+          ],
+          "source_locators": [
+            "商品资料.xlsx!历史内容!E5"
+          ],
+          "status": "pending",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "available_assets",
+      "title": "可用本地素材",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_ab834993cd33",
+          "section_id": "available_assets",
+          "label": "on_body",
+          "summary": "商品图片/02_正面上身图.png",
+          "evidence_ids": [],
+          "source_locators": [
+            "商品图片/02_正面上身图.png"
+          ],
+          "status": "pending",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "data_gaps",
+      "title": "资料缺口",
+      "gaps": [
+        "缺少浅色面料耐脏测试记录（资料不足）",
+        "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+        "本次未成功完成云端 AI 理解，当前为本地规则结果"
+      ],
+      "facts": [
+        {
+          "fact_id": "fact_68bfb0bac402",
+          "section_id": "data_gaps",
+          "label": "资料不足",
+          "summary": "缺少浅色面料耐脏测试记录（资料不足）",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "pending",
+          "is_gap": true
+        },
+        {
+          "fact_id": "fact_11d9f736a145",
+          "section_id": "data_gaps",
+          "label": "资料不足",
+          "summary": "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "pending",
+          "is_gap": true
+        },
+        {
+          "fact_id": "fact_86307f96822b",
+          "section_id": "data_gaps",
+          "label": "资料不足",
+          "summary": "本次未成功完成云端 AI 理解，当前为本地规则结果",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "pending",
+          "is_gap": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "product_id": "prod_bbb01ed8048e",
+  "product_name": "包测试1",
+  "boundary_notice": "仅基于本地资料",
+  "not_connected_notice": "未接入，不作判断",
+  "evidence_count": 21,
+  "global_gaps": [
+    "缺少浅色面料耐脏测试记录（资料不足）",
+    "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+    "本次未成功完成云端 AI 理解，当前为本地规则结果"
+  ],
+  "assets": [
+    {
+      "asset_id": "ast_2400f2724c17b73d",
+      "product_id": "prod_bbb01ed8048e",
+      "source_id": "src_2a0e318918ba1e23",
+      "relative_path": "商品图片/03_通勤场景图.png",
+      "asset_type": "png",
+      "role": "scene",
+      "file_hash": "bc5888ef2b82b89ce4dc5146778ddcea98e929357520aefa7389af87c0c617c1",
+      "processing_status": "ready"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "product_facts",
+      "title": "商品参数",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_f9b8c0f40c44",
+          "section_id": "product_facts",
+          "label": "商品名称",
+          "summary": "包测试1",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_5be874680a38",
+          "section_id": "product_facts",
+          "label": "建议价格",
+          "summary": "40 元",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_72803a97ce65",
+          "section_id": "product_facts",
+          "label": "材质",
+          "summary": "待补充",
+          "evidence_ids": [
+            "evd_c4b09e5e63fd77a5"
+          ],
+          "source_locators": [
+            "商品资料.xlsx!商品参数!B10"
+          ],
+          "status": "pending",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_a2e71d0d8db9",
+          "section_id": "product_facts",
+          "label": "主要场景",
+          "summary": "好看，上班背",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_4a1a0bcf17cf",
+          "section_id": "product_facts",
+          "label": "品类定位",
+          "summary": "箱包，好看，上班背。 本次使用本地规则，未完成云端图片识别，颜色、材质与细节需人工核对。",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_4247a7334ec1",
+          "section_id": "product_facts",
+          "label": "商品类别",
+          "summary": "箱包",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_211dc1701f6a",
+          "section_id": "product_facts",
+          "label": "品牌名称",
+          "summary": "okkk",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_4059ffcfbd87",
+          "section_id": "product_facts",
+          "label": "已上传图片",
+          "summary": "1 张商品图待视觉分析",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_737d45b3286f",
+          "section_id": "product_facts",
+          "label": "图片类型",
+          "summary": "场景图",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_62f9b36e7cb1",
+          "section_id": "product_facts",
+          "label": "核心人群",
+          "summary": "关注箱包、预算约 40 元的消费者",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "review_insights",
+      "title": "评价洞察",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_c262bd5ab387",
+          "section_id": "review_insights",
+          "label": "用户真正喜欢",
+          "summary": "好看，上班背；面向箱包品类需求",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_436db5a02994",
+          "section_id": "review_insights",
+          "label": "评价样本量",
+          "summary": "共 1 条本地评价",
+          "evidence_ids": [
+            "evd_75bc6876cefb5431"
+          ],
+          "source_locators": [
+            "商品资料.xlsx!用户评价!A5"
+          ],
+          "status": "pending",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_699be3b7ffa4",
+          "section_id": "review_insights",
+          "label": "被忽略的表达机会",
+          "summary": "好看，上班背",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "brand_memory",
+      "title": "品牌记忆",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_10e11997e15f",
+          "section_id": "brand_memory",
+          "label": "品牌语气",
+          "summary": "okkk 品牌调性",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_ede1c5d50083",
+          "section_id": "brand_memory",
+          "label": "视觉关键词",
+          "summary": "好看、上班背、1张商品图",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "history_patterns",
+      "title": "历史重复表达",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_83aa2c8f417b",
+          "section_id": "history_patterns",
+          "label": "历史重复表达风险",
+          "summary": "2026-01-01：低",
+          "evidence_ids": [
+            "evd_b27c4d1bd885f721"
+          ],
+          "source_locators": [
+            "商品资料.xlsx!历史内容!E5"
+          ],
+          "status": "pending",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "available_assets",
+      "title": "可用本地素材",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_c39d740dca56",
+          "section_id": "available_assets",
+          "label": "scene",
+          "summary": "商品图片/03_通勤场景图.png",
+          "evidence_ids": [],
+          "source_locators": [
+            "商品图片/03_通勤场景图.png"
+          ],
+          "status": "pending",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "data_gaps",
+      "title": "资料缺口",
+      "gaps": [
+        "缺少浅色面料耐脏测试记录（资料不足）",
+        "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+        "本次未成功完成云端 AI 理解，当前为本地规则结果"
+      ],
+      "facts": [
+        {
+          "fact_id": "fact_8317454645b7",
+          "section_id": "data_gaps",
+          "label": "资料不足",
+          "summary": "缺少浅色面料耐脏测试记录（资料不足）",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "pending",
+          "is_gap": true
+        },
+        {
+          "fact_id": "fact_cb83ebe38045",
+          "section_id": "data_gaps",
+          "label": "资料不足",
+          "summary": "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "pending",
+          "is_gap": true
+        },
+        {
+          "fact_id": "fact_afe2e1d8209e",
+          "section_id": "data_gaps",
+          "label": "资料不足",
+          "summary": "本次未成功完成云端 AI 理解，当前为本地规则结果",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "pending",
+          "is_gap": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "index_version": "1.0",
+  "library_id": "lib_0c33fa8336cb",
+  "library_name": "20261018_120510",
+  "library_root": "D:/Users/20250/Desktop/demo/workspace/uploads/20261018_120510",
+  "given_root": "D:/Users/20250/Desktop/demo/workspace/uploads/20261018_120510",
+  "product_id": "prod_0c33fa8336cb",
+  "source_count": 2,
+  "sources": [
+    {
+      "source_id": "src_37217fe34105530d",
+      "product_id": "prod_0c33fa8336cb",
+      "file_name": "01_商品主图_云苔绿.png",
+      "relative_path": "商品图片/01_商品主图_云苔绿.png",
+      "source_kind": "image",
+      "file_type": "png",
+      "file_hash": "16af5010b9f90367f3d66ffd4a1af36b991dc9635dabe4848e77735432c51364",
+      "parse_status": "ready",
+      "associated_product_id": null,
+      "source_folder": "商品图片"
+    },
+    {
+      "source_id": "src_8cfa7e303332e2a4",
+      "product_id": "prod_0c33fa8336cb",
+      "file_name": "商品资料.xlsx",
+      "relative_path": "商品资料.xlsx",
+      "source_kind": "unknown",
+      "file_type": "xlsx",
+      "file_hash": "281524e10303a081792d13695ca0cce8dfd8804fb1cb0a6739fe0869a4e6e692",
+      "parse_status": "needs_confirmation",
+      "associated_product_id": null,
+      "source_folder": null
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "_summary": {
+    "说明": "本地素材来源索引。source_id 由库 ID 与库内相对路径算出，绝对路径不参与业务身份。",
+    "只读声明": "扫描只读取素材包内文件，未在素材包目录内写入任何文件。",
+    "用户所选目录": "D:/Users/20250/Desktop/ShopMind-发给同伴-带密钥-20261016/workspace/uploads/20261018_110719",
+    "索引库根目录": "D:/Users/20250/Desktop/ShopMind-发给同伴-带密钥-20261016/workspace/uploads/20261018_110719",
+    "解套记录": [],
+    "文件计数": {
+      "已索引": 2,
+      "跳过": 0,
+      "忽略": 0
+    },
+    "分类计数": {
+      "image": 1,
+      "unknown": 1
+    },
+    "状态计数": {
+      "ready": 1,
+      "needs_confirmation": 1
+    },
+    "商品名候选": [],
+    "跳过清单": [],
+    "忽略清单": [],
+    "素材明细": [
+      {
+        "source_id": "src_49d65c2611218a96",
+        "相对路径": "商品图片/02_正面上身图.png",
+        "所选目录内路径": "商品图片/02_正面上身图.png",
+        "所属文件夹": "商品图片",
+        "分类": "image",
+        "分类依据": "extension",
+        "未能归类原因": null,
+        "文件类型": "png",
+        "字节": 1841280,
+        "解析状态": "ready",
+        "关联商品依据": "no_product_name_found",
+        "文件名命中信号": [],
+        "内容命中信号": [],
+        "目录命中信号": []
+      },
+      {
+        "source_id": "src_02e34b4b9abd6f9b",
+        "相对路径": "商品资料.xlsx",
+        "所选目录内路径": "商品资料.xlsx",
+        "所属文件夹": null,
+        "分类": "unknown",
+        "分类依据": "none",
+        "未能归类原因": "no_classification_signal",
+        "文件类型": "xlsx",
+        "字节": 7338,
+        "解析状态": "needs_confirmation",
+        "关联商品依据": "no_product_name_found",
+        "文件名命中信号": [],
+        "内容命中信号": [],
+        "目录命中信号": []
+      }
+    ]
+  },
+  "index_version": "1.0",
+  "library_id": "lib_4cfd7da80b97",
+  "library_name": "20261018_110719",
+  "library_root": "D:/Users/20250/Desktop/ShopMind-发给同伴-带密钥-20261016/workspace/uploads/20261018_110719",
+  "given_root": "D:/Users/20250/Desktop/ShopMind-发给同伴-带密钥-20261016/workspace/uploads/20261018_110719",
+  "product_id": "prod_4cfd7da80b97",
+  "source_count": 2,
+  "sources": [
+    {
+      "source_id": "src_49d65c2611218a96",
+      "product_id": "prod_4cfd7da80b97",
+      "file_name": "02_正面上身图.png",
+      "relative_path": "商品图片/02_正面上身图.png",
+      "source_kind": "image",
+      "file_type": "png",
+      "file_hash": "701dd5764f5ef95f121e3bb6b905d2adc2e11d171408f2d0d7d9b88199f1c16d",
+      "parse_status": "ready",
+      "associated_product_id": null,
+      "source_folder": "商品图片"
+    },
+    {
+      "source_id": "src_02e34b4b9abd6f9b",
+      "product_id": "prod_4cfd7da80b97",
+      "file_name": "商品资料.xlsx",
+      "relative_path": "商品资料.xlsx",
+      "source_kind": "unknown",
+      "file_type": "xlsx",
+      "file_hash": "05bf30f6b67a03d3550b6aad72b07d68ca6c9b4685f12b35e78a9cb3fffd988c",
+      "parse_status": "needs_confirmation",
+      "associated_product_id": null,
+      "source_folder": null
+    }
+  ]
+}

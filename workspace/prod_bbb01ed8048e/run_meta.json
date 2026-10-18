@@ -1,0 +1,20 @@
+{
+  "product_id": "prod_bbb01ed8048e",
+  "material_path": "D:\\Users\\20250\\Desktop\\demo\\workspace\\uploads\\20261018_130315",
+  "product_name": "包测试1",
+  "category": "箱包",
+  "brand": "okkk",
+  "price": "40",
+  "product_form": {
+    "product_name": "包测试1",
+    "product_category": "箱包",
+    "product_category_key": "bag",
+    "product_price": "40",
+    "product_desc": "好看，上班背",
+    "product_brand": "okkk"
+  },
+  "latest_package_id": "pkg_f81f35e1c483",
+  "latest_export_folder": "D:\\Users\\20250\\Desktop\\demo\\workspace\\创意导出\\包测试1_pkg_f81f35e1c483",
+  "library_saved_at": "2026-10-18T05:04:32+00:00",
+  "status": "completed"
+}

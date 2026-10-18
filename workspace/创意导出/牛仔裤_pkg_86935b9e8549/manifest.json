@@ -1,0 +1,85 @@
+{
+  "manifest_version": "1.0",
+  "package_id": "pkg_86935b9e8549",
+  "product_id": "prod_4cfd7da80b97",
+  "direction_id": "dir_085f92994f09",
+  "app_version": "0.1.0",
+  "prompt_version": "0.1.0",
+  "brand_rules_version": "0.1.0",
+  "offline": true,
+  "demo_data": true,
+  "evidence_count": 21,
+  "pending_count": 21,
+  "conflict_count": 0,
+  "stale_count": 0,
+  "files": [
+    {
+      "path": "business_judgment.json",
+      "size": 2017,
+      "sha256": "0fee895b752fcd9af71357c0cc8769de3374d190fd07f52aa849e2d4164a7fe8"
+    },
+    {
+      "path": "content/douyin.md",
+      "size": 767,
+      "sha256": "773fdab81238d250e81527926f0474a7f689c458c6780c0de72ca21e4c61dbf5"
+    },
+    {
+      "path": "content/kuaishou.md",
+      "size": 734,
+      "sha256": "14e127b4d7f13a23693b04935f6389668db9ff80cbabbfdddd68ae2fa8ad730e"
+    },
+    {
+      "path": "content/shopping.md",
+      "size": 907,
+      "sha256": "3289c36a7a21a09beab7762569c5aa4b6c9e52336220579ab8bce61308d89381"
+    },
+    {
+      "path": "content/video.md",
+      "size": 937,
+      "sha256": "fe28eb45fc50fd1a4b8ef0589adec2c6a43c1b54e0bc39131cadbed2165c6d3a"
+    },
+    {
+      "path": "content/visual.md",
+      "size": 996,
+      "sha256": "abb97061e0fb6c12fd44b80e01b3e6e4dd466bfca78557c2b5389c6b36888093"
+    },
+    {
+      "path": "content/xiaohongshu.md",
+      "size": 1000,
+      "sha256": "3463a2546502fe768e064692c6c745db6f6d18455cd3a0514c45f64d7c3b0223"
+    },
+    {
+      "path": "content_package.json",
+      "size": 10482,
+      "sha256": "d0a52e5014ddb32483f3a654fc5adfdd5314b3c5592b752c18eea5f224d594e2"
+    },
+    {
+      "path": "creative_directions.json",
+      "size": 4459,
+      "sha256": "8419c55925907006beeb0cc7fcb31ee0878c266b1cf55405cffefb2950f2bc58"
+    },
+    {
+      "path": "evidence.json",
+      "size": 12007,
+      "sha256": "7ec6960356cda64135cf16749ab75b31b1932f7cec992799b1e649a1a15e3348"
+    },
+    {
+      "path": "product_understanding.json",
+      "size": 9574,
+      "sha256": "3e08107334cee3bf980d8c16cbf6e18df62061574c2089867bd989f3bec1b652"
+    },
+    {
+      "path": "README.md",
+      "size": 650,
+      "sha256": "8cf4cfa3b4c7ccb8f358bfa84237401c6a4949b74fbc654d7fd93ac85a2be5e8"
+    },
+    {
+      "path": "source_index.json",
+      "size": 1339,
+      "sha256": "46be18673405e063c0fe21d9c0de1dac6f7fc803916a8a16353fe9c3ee614843"
+    }
+  ],
+  "export_status": "partial",
+  "direction_name": "坐一整天 腰里也有余量",
+  "boundary_notice": "仅基于本地资料"
+}

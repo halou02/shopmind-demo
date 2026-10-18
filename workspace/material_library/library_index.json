@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "name": "library_index.json",
+      "relative_path": "library_index.json",
+      "category": "text",
+      "size_bytes": 5482,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "material_folders.json",
+      "relative_path": "material_folders.json",
+      "category": "text",
+      "size_bytes": 282,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "image_prompts.json",
+      "relative_path": "参考资料/image_prompts.json",
+      "category": "text",
+      "size_bytes": 2134,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "image_prompts.md",
+      "relative_path": "参考资料/image_prompts.md",
+      "category": "text",
+      "size_bytes": 2014,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "image_prompts_1.md",
+      "relative_path": "参考资料/image_prompts_1.md",
+      "category": "text",
+      "size_bytes": 2093,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "商品资料.xlsx",
+      "relative_path": "参考资料/商品资料.xlsx",
+      "category": "text",
+      "size_bytes": 7338,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "商品资料_1.xlsx",
+      "relative_path": "参考资料/商品资料_1.xlsx",
+      "category": "text",
+      "size_bytes": 7338,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "商品资料_2.xlsx",
+      "relative_path": "参考资料/商品资料_2.xlsx",
+      "category": "text",
+      "size_bytes": 7338,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "商品资料_3.xlsx",
+      "relative_path": "参考资料/商品资料_3.xlsx",
+      "category": "text",
+      "size_bytes": 7338,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "商品资料_8.xlsx",
+      "relative_path": "参考资料/商品资料_8.xlsx",
+      "category": "text",
+      "size_bytes": 7338,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "商品资料_9.xlsx",
+      "relative_path": "参考资料/商品资料_9.xlsx",
+      "category": "text",
+      "size_bytes": 7338,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "01_商品主图_云苔绿.png",
+      "relative_path": "商品图片/01_商品主图_云苔绿.png",
+      "category": "image",
+      "size_bytes": 1673319,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "01_牛仔裤平铺主图_1.png",
+      "relative_path": "商品图片/01_牛仔裤平铺主图_1.png",
+      "category": "image",
+      "size_bytes": 2585740,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "02_容量细节图.png",
+      "relative_path": "商品图片/02_容量细节图.png",
+      "category": "image",
+      "size_bytes": 2315903,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "02_正面上身图.png",
+      "relative_path": "商品图片/02_正面上身图.png",
+      "category": "image",
+      "size_bytes": 1841280,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "03_腰部细节图.png",
+      "relative_path": "商品图片/03_腰部细节图.png",
+      "category": "image",
+      "size_bytes": 4684752,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "03_通勤场景图.png",
+      "relative_path": "商品图片/03_通勤场景图.png",
+      "category": "image",
+      "size_bytes": 2061236,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "04_久坐咖啡馆场景图.png",
+      "relative_path": "商品图片/04_久坐咖啡馆场景图.png",
+      "category": "image",
+      "size_bytes": 2301473,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "04_咖啡馆场景图.png",
+      "relative_path": "商品图片/04_咖啡馆场景图.png",
+      "category": "image",
+      "size_bytes": 1942625,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "ai_01.png",
+      "relative_path": "商品图片/ai_01.png",
+      "category": "image",
+      "size_bytes": 1334056,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "ai_01.png",
+      "relative_path": "商品图片/创意生成/ai_01.png",
+      "category": "image",
+      "size_bytes": 1128007,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "ai_02.png",
+      "relative_path": "商品图片/创意生成/ai_02.png",
+      "category": "image",
+      "size_bytes": 1612231,
+      "source": "scan",
+      "uploaded_at": "2026-10-18T05:03:12+00:00"
+    },
+    {
+      "name": "商品资料_4.xlsx",
+      "relative_path": "参考资料/商品资料_4.xlsx",
+      "category": "text",
+      "size_bytes": 7338,
+      "source": "creative_task",
+      "uploaded_at": "2026-10-18T05:04:32+00:00"
+    }
+  ],
+  "updated_at": "2026-10-18T05:04:32+00:00"
+}

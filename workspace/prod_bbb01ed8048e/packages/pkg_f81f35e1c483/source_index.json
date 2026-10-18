@@ -1,0 +1,35 @@
+{
+  "index_version": "1.0",
+  "library_id": "lib_bbb01ed8048e",
+  "library_name": "20261018_130315",
+  "library_root": "D:/Users/20250/Desktop/demo/workspace/uploads/20261018_130315",
+  "given_root": "D:/Users/20250/Desktop/demo/workspace/uploads/20261018_130315",
+  "product_id": "prod_bbb01ed8048e",
+  "source_count": 2,
+  "sources": [
+    {
+      "source_id": "src_2a0e318918ba1e23",
+      "product_id": "prod_bbb01ed8048e",
+      "file_name": "03_通勤场景图.png",
+      "relative_path": "商品图片/03_通勤场景图.png",
+      "source_kind": "image",
+      "file_type": "png",
+      "file_hash": "bc5888ef2b82b89ce4dc5146778ddcea98e929357520aefa7389af87c0c617c1",
+      "parse_status": "ready",
+      "associated_product_id": null,
+      "source_folder": "商品图片"
+    },
+    {
+      "source_id": "src_67508a6659e5c50e",
+      "product_id": "prod_bbb01ed8048e",
+      "file_name": "商品资料.xlsx",
+      "relative_path": "商品资料.xlsx",
+      "source_kind": "unknown",
+      "file_type": "xlsx",
+      "file_hash": "432901dc91a4221afa7c3626c2ef6e735218ce35f8b6e79888b79599cc2cc8b3",
+      "parse_status": "needs_confirmation",
+      "associated_product_id": null,
+      "source_folder": null
+    }
+  ]
+}

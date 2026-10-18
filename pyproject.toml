@@ -1,0 +1,29 @@
+[project]
+name = "aipc-product-director"
+version = "0.1.0"
+description = "Local-first AIPC product creative director"
+requires-python = ">=3.11"
+dependencies = [
+    "openpyxl>=3.1",
+    "streamlit>=1.40",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "python-dotenv>=1.0",
+    "httpx>=0.28",
+    "pillow>=10.0",
+    "python-multipart>=0.0.20",
+]
+
+[project.scripts]
+aipc-demo = "app.main:main"
+aipc-web = "app.web_main:main"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["dev/tests"]

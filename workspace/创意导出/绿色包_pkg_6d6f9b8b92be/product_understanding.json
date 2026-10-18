@@ -1,0 +1,330 @@
+{
+  "product_id": "prod_0c33fa8336cb",
+  "product_name": "绿色包",
+  "boundary_notice": "仅基于本地资料",
+  "not_connected_notice": "未接入，不作判断",
+  "evidence_count": 21,
+  "global_gaps": [
+    "缺少浅色面料耐脏测试记录（资料不足）",
+    "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+    "本次未成功完成云端 AI 理解，当前为本地规则结果"
+  ],
+  "assets": [
+    {
+      "asset_id": "ast_ad52e3fdaf23ed3a",
+      "product_id": "prod_0c33fa8336cb",
+      "source_id": "src_37217fe34105530d",
+      "relative_path": "商品图片/01_商品主图_云苔绿.png",
+      "asset_type": "png",
+      "role": "main_image",
+      "file_hash": "16af5010b9f90367f3d66ffd4a1af36b991dc9635dabe4848e77735432c51364",
+      "processing_status": "ready"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "product_facts",
+      "title": "商品参数",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_c6c706c228f0",
+          "section_id": "product_facts",
+          "label": "商品名称",
+          "summary": "绿色包",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_f372dcb2b3e1",
+          "section_id": "product_facts",
+          "label": "建议价格",
+          "summary": "80-100",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_b68dd355174f",
+          "section_id": "product_facts",
+          "label": "材质",
+          "summary": "待补充",
+          "evidence_ids": [
+            "evd_f7f060871e85bbf4"
+          ],
+          "source_locators": [
+            "商品资料.xlsx!商品参数!B10"
+          ],
+          "status": "pending",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_a100c39cba1f",
+          "section_id": "product_facts",
+          "label": "主要场景",
+          "summary": "绿色清新，通勤可用",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_419c88c7dc86",
+          "section_id": "product_facts",
+          "label": "品类定位",
+          "summary": "箱包，绿色清新，通勤可用。 本次使用本地规则，未完成云端图片识别，颜色、材质与细节需人工核对。",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_a728757c939e",
+          "section_id": "product_facts",
+          "label": "商品类别",
+          "summary": "箱包",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_5057a83a43f0",
+          "section_id": "product_facts",
+          "label": "品牌名称",
+          "summary": "OKKK",
+          "evidence_ids": [],
+          "source_locators": [
+            "user_form"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_4431df4293ff",
+          "section_id": "product_facts",
+          "label": "颜色",
+          "summary": "描述提及绿色系",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_c4aa56fcc947",
+          "section_id": "product_facts",
+          "label": "已上传图片",
+          "summary": "1 张商品图待视觉分析",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_30b6f9fd589c",
+          "section_id": "product_facts",
+          "label": "图片类型",
+          "summary": "主图",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_8b43bc586485",
+          "section_id": "product_facts",
+          "label": "核心人群",
+          "summary": "关注箱包、预算约 80-100 元的消费者",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "review_insights",
+      "title": "评价洞察",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_181eeb6497af",
+          "section_id": "review_insights",
+          "label": "用户真正喜欢",
+          "summary": "绿色清新，通勤可用；面向箱包品类需求",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_94ffa377dd0f",
+          "section_id": "review_insights",
+          "label": "评价样本量",
+          "summary": "共 1 条本地评价",
+          "evidence_ids": [
+            "evd_5fa600cab0942bc5"
+          ],
+          "source_locators": [
+            "商品资料.xlsx!用户评价!A5"
+          ],
+          "status": "pending",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_9817aa469768",
+          "section_id": "review_insights",
+          "label": "被忽略的表达机会",
+          "summary": "绿色清新，通勤可用",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "brand_memory",
+      "title": "品牌记忆",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_844f053ff8d4",
+          "section_id": "brand_memory",
+          "label": "品牌语气",
+          "summary": "OKKK 品牌调性",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        },
+        {
+          "fact_id": "fact_83b48911c576",
+          "section_id": "brand_memory",
+          "label": "视觉关键词",
+          "summary": "绿色清新、通勤可用、1张商品图",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "confirmed",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "history_patterns",
+      "title": "历史重复表达",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_2d8e05891f29",
+          "section_id": "history_patterns",
+          "label": "历史重复表达风险",
+          "summary": "2026-01-01：低",
+          "evidence_ids": [
+            "evd_ba32f1088e39d75a"
+          ],
+          "source_locators": [
+            "商品资料.xlsx!历史内容!E5"
+          ],
+          "status": "pending",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "available_assets",
+      "title": "可用本地素材",
+      "gaps": [],
+      "facts": [
+        {
+          "fact_id": "fact_aac7ffdc439b",
+          "section_id": "available_assets",
+          "label": "main_image",
+          "summary": "商品图片/01_商品主图_云苔绿.png",
+          "evidence_ids": [],
+          "source_locators": [
+            "商品图片/01_商品主图_云苔绿.png"
+          ],
+          "status": "pending",
+          "is_gap": false
+        }
+      ]
+    },
+    {
+      "section_id": "data_gaps",
+      "title": "资料缺口",
+      "gaps": [
+        "缺少浅色面料耐脏测试记录（资料不足）",
+        "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+        "本次未成功完成云端 AI 理解，当前为本地规则结果"
+      ],
+      "facts": [
+        {
+          "fact_id": "fact_0684ae74ceee",
+          "section_id": "data_gaps",
+          "label": "资料不足",
+          "summary": "缺少浅色面料耐脏测试记录（资料不足）",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "pending",
+          "is_gap": true
+        },
+        {
+          "fact_id": "fact_67816abd3d2e",
+          "section_id": "data_gaps",
+          "label": "资料不足",
+          "summary": "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "pending",
+          "is_gap": true
+        },
+        {
+          "fact_id": "fact_e93b1d27dd88",
+          "section_id": "data_gaps",
+          "label": "资料不足",
+          "summary": "本次未成功完成云端 AI 理解，当前为本地规则结果",
+          "evidence_ids": [],
+          "source_locators": [
+            "ai_analysis"
+          ],
+          "status": "pending",
+          "is_gap": true
+        }
+      ]
+    }
+  ]
+}

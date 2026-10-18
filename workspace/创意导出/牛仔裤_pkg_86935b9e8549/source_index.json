@@ -1,0 +1,35 @@
+{
+  "index_version": "1.0",
+  "library_id": "lib_4cfd7da80b97",
+  "library_name": "20261018_110719",
+  "library_root": "D:/Users/20250/Desktop/ShopMind-发给同伴-带密钥-20261016/workspace/uploads/20261018_110719",
+  "given_root": "D:/Users/20250/Desktop/ShopMind-发给同伴-带密钥-20261016/workspace/uploads/20261018_110719",
+  "product_id": "prod_4cfd7da80b97",
+  "source_count": 2,
+  "sources": [
+    {
+      "source_id": "src_49d65c2611218a96",
+      "product_id": "prod_4cfd7da80b97",
+      "file_name": "02_正面上身图.png",
+      "relative_path": "商品图片/02_正面上身图.png",
+      "source_kind": "image",
+      "file_type": "png",
+      "file_hash": "701dd5764f5ef95f121e3bb6b905d2adc2e11d171408f2d0d7d9b88199f1c16d",
+      "parse_status": "ready",
+      "associated_product_id": null,
+      "source_folder": "商品图片"
+    },
+    {
+      "source_id": "src_02e34b4b9abd6f9b",
+      "product_id": "prod_4cfd7da80b97",
+      "file_name": "商品资料.xlsx",
+      "relative_path": "商品资料.xlsx",
+      "source_kind": "unknown",
+      "file_type": "xlsx",
+      "file_hash": "05bf30f6b67a03d3550b6aad72b07d68ca6c9b4685f12b35e78a9cb3fffd988c",
+      "parse_status": "needs_confirmation",
+      "associated_product_id": null,
+      "source_folder": null
+    }
+  ]
+}

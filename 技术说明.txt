@@ -1,0 +1,6 @@
+ShopMind AI 商品创意导演 Demo
+
+运行：Python 3.11+，先「首次安装.bat」再「启动网站.bat」，访问 http://127.0.0.1:8080。
+配置：.env 或网页「AI 设置」填 DASHSCOPE_API_KEY。
+目录：app/ 程序；workspace/ 数据；assets/demo_packs/ 演示素材。
+流程：创意五步（录入→理解→方向→生成→导出）；本地上传归档素材库，素材库选取不重复保存。

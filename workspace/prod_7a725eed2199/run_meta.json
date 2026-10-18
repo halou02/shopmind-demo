@@ -1,0 +1,16 @@
+{
+  "product_id": "prod_7a725eed2199",
+  "material_path": "D:\\Users\\20250\\Desktop\\demo\\workspace\\uploads\\20261018_130106",
+  "product_name": "包包测试",
+  "category": "箱包",
+  "brand": "okkk",
+  "price": "40",
+  "product_form": {
+    "product_name": "包包测试",
+    "product_category": "箱包",
+    "product_category_key": "bag",
+    "product_price": "40",
+    "product_desc": "好看",
+    "product_brand": "okkk"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "product_id": "prod_7a725eed2199",
+  "product_name": "包包测试",
+  "judgment_id": "jud_53206930278d",
+  "direction_count": 3,
+  "directions": [
+    {
+      "direction_id": "dir_75e3c7cb2e2a",
+      "product_id": "prod_7a725eed2199",
+      "name": "早八不慌的一包秩序",
+      "audience": "每天带电脑、通勤距离长的办公室新人和白领。",
+      "scenes": [
+        "早八出门",
+        "地铁通勤",
+        "装包整理"
+      ],
+      "main_selling_point": "把今天要用的东西，装得一目了然。",
+      "platform_expression": "抖音前 5 秒展示电脑、水杯、伞各归其位；小红书强调分区与拉链。",
+      "evidence_ids": [],
+      "asset_ids": [],
+      "risks": [
+        "历史内容高频“大容量”“通勤必备”，不宜再做空泛标题。"
+      ],
+      "open_questions": [
+        "缺少装包过程与地铁场景视频（资料不足）。",
+        "缺少浅色面料耐脏测试记录（资料不足）",
+        "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+        "本次未成功完成云端 AI 理解，当前为本地规则结果"
+      ],
+      "avoid_expression": "不要用“通勤必备”“大容量”做标题。"
+    },
+    {
+      "direction_id": "dir_f7eed0ef52af",
+      "product_id": "prod_7a725eed2199",
+      "name": "轻一点上班 留一点余裕",
+      "audience": "讨厌负担感、重视穿搭比例和轻松状态的城市女性。",
+      "scenes": [
+        "通勤肩背",
+        "步行换乘",
+        "轻量出门"
+      ],
+      "main_selling_point": "装下工作，也不把肩膀交给负担。",
+      "platform_expression": "先展示 380 g 重量感受，再展示装电脑后的上身比例。",
+      "evidence_ids": [
+        "evd_fa8f8390688d720d"
+      ],
+      "asset_ids": [
+        "ast_58b2e1091aa18695"
+      ],
+      "risks": [
+        "装物过多时包型略鼓的风险需在内容中如实提示。"
+      ],
+      "open_questions": [
+        "缺少厚外套装入后的肩带稳定性实拍（资料不足）。",
+        "缺少浅色面料耐脏测试记录（资料不足）",
+        "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+        "本次未成功完成云端 AI 理解，当前为本地规则结果"
+      ],
+      "avoid_expression": "不使用“显瘦神器”“天花板”等夸张说法。"
+    },
+    {
+      "direction_id": "dir_ccdb0df6c2a5",
+      "product_id": "prod_7a725eed2199",
+      "name": "下班不换包的城市续航",
+      "audience": "下班后会去咖啡馆、上课或见朋友的通勤女性。",
+      "scenes": [
+        "下班离开办公室",
+        "咖啡馆",
+        "城市晚间步行"
+      ],
+      "main_selling_point": "从工位到咖啡馆，包里还是今天的节奏。",
+      "platform_expression": "用“下班不换包”替代“百搭”，展示同一包跨场景使用。",
+      "evidence_ids": [
+        "evd_52db3e20c1d6a11c",
+        "evd_d650be206a6f6a60",
+        "evd_2c4bca2aed4ba915",
+        "evd_6829dc58c988bb44",
+        "evd_111a7774002b3652",
+        "evd_06afa5e772bd6041"
+      ],
+      "asset_ids": [
+        "ast_58b2e1091aa18695"
+      ],
+      "risks": [
+        "“百搭”在历史内容中出现多次，本方向需避免回到旧表达。",
+        "浅色面料耐脏顾虑需在内容中保守表述。"
+      ],
+      "open_questions": [
+        "缺少浅色面料耐脏测试记录（资料不足）。",
+        "缺少浅色面料耐脏测试记录（资料不足）",
+        "缺少厚外套装入后的肩带稳定性实拍（资料不足）",
+        "本次未成功完成云端 AI 理解，当前为本地规则结果"
+      ],
+      "avoid_expression": "不用“百搭”概括，改为具体展示“下班不换包”的过程。"
+    }
+  ]
+}

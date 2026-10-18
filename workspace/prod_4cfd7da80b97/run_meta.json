@@ -1,0 +1,20 @@
+{
+  "product_id": "prod_4cfd7da80b97",
+  "material_path": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\uploads\\20261018_110719",
+  "product_name": "牛仔裤",
+  "category": "裤子",
+  "brand": "OKK",
+  "price": "120-150",
+  "product_form": {
+    "product_name": "牛仔裤",
+    "product_category": "裤子",
+    "product_category_key": "pants",
+    "product_price": "120-150",
+    "product_desc": "牛仔裤，百搭，休闲，适合夏天",
+    "product_brand": "OKK"
+  },
+  "latest_package_id": "pkg_86935b9e8549",
+  "latest_export_folder": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\创意导出\\牛仔裤_pkg_86935b9e8549",
+  "library_saved_at": "2026-10-18T03:31:04+00:00",
+  "status": "completed"
+}

@@ -1,0 +1,206 @@
+{
+  "id": "task_20261018_110857",
+  "product_name": "牛仔裤",
+  "product_category": "裤子",
+  "product_id": "prod_4cfd7da80b97",
+  "direction_id": "dir_085f92994f09",
+  "direction_name": "坐一整天 腰里也有余量",
+  "main_selling_point": "高腰有边界，坐下有余量。",
+  "material_path": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\uploads\\20261018_110719",
+  "reference_images": [
+    "商品图片/02_正面上身图.png"
+  ],
+  "used_files": [
+    {
+      "name": "02_正面上身图.png",
+      "relative_path": "商品图片/02_正面上身图.png",
+      "category": "image",
+      "category_label": "图片",
+      "url": "/api/material-file?path=D:/Users/20250/Desktop/ShopMind-发给同伴-带密钥-20261016/workspace/uploads/20261018_110719/商品图片/02_正面上身图.png",
+      "is_reference_image": true,
+      "size_bytes": 1841280
+    },
+    {
+      "name": "商品资料.xlsx",
+      "relative_path": "商品资料.xlsx",
+      "category": "text",
+      "category_label": "text",
+      "url": "/api/material-file?path=D:/Users/20250/Desktop/ShopMind-发给同伴-带密钥-20261016/workspace/uploads/20261018_110719/商品资料.xlsx",
+      "is_reference_image": false,
+      "size_bytes": 7338
+    }
+  ],
+  "used_file_count": 2,
+  "reference_image_count": 1,
+  "package_root": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\prod_4cfd7da80b97\\packages\\pkg_86935b9e8549",
+  "package_id": "pkg_86935b9e8549",
+  "export_folder": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\创意导出\\牛仔裤_pkg_86935b9e8549",
+  "generated_text": [
+    {
+      "channel": "xiaohongshu",
+      "label": "小红书",
+      "title": "坐一整天腰里也有余量？这条牛仔裤真的懂久坐女孩！",
+      "body": "【AI 生成 · 基于商品理解】\n\n姐妹们，谁懂啊！每天在办公室坐8小时，腰被勒得又酸又胀，下班还要直接去见朋友，真的急需一条坐下不束缚的裤子。\n\n最近试了这条OKK牛仔裤，它的高腰设计真的有边界感，不会乱窜，但坐下时腰头居然有余量！我特意拍了前后对比，坐下后腰头依然服帖，不会鼓包或勒肉，太舒服了。\n\n面料偏挺但不会硬，久坐起身走动都自在，而且百搭休闲，夏天穿它从工位到会面无缝切换，省心又好看。\n\n价格在120-150元，性价比不错，适合追求舒适感的姐妹。当然，颜色和材质细节我这边资料不足，建议入手前核对下实物图～\n\n#牛仔裤 #久坐必备 #舒适穿搭 #百搭裤子 #适合夏天",
+      "preview": "【AI 生成 · 基于商品理解】\n\n姐妹们，谁懂啊！每天在办公室坐8小时，腰被勒得又酸又胀，下班还要直接去见朋友，真的急需一条坐下不束缚的裤子。\n\n最近试了这条OKK牛仔裤，它的高腰设计真的有边界感，不会乱窜，但坐下时腰头居然有余量！我特意拍了前后对比，坐下后腰头依然服帖，不会鼓包或勒肉，太舒服了。\n\n面料偏挺但不会硬，久坐起身走动都自在，而且百搭休闲，夏天穿它从工位到会面无缝切换，省心又好看。\n\n价格在120-150元，性价比不错，适合追求舒适感的姐妹。当然，颜色和材质细节我这边资料不足，建议入手前核对下实物图～\n\n#牛仔裤 #久坐必备 #舒适穿搭 #百搭裤子 #适合夏天"
+    },
+    {
+      "channel": "douyin",
+      "label": "抖音",
+      "title": "坐一整天腰里也有余量？20秒实测牛仔裤！",
+      "body": "【AI 生成 · 基于商品理解】\n\n0-3s｜画面：女性坐下瞬间，字幕/口播：“每天坐8小时，腰被勒得受不了？”\n3-8s｜画面：裤子腰头特写，口播：“这条牛仔裤，高腰有边界，坐下有余量！”\n8-15s｜画面：快速切换办公室、走动、会面场景，口播：“百搭休闲，适合夏天，工位到会面一条搞定！”\n15-20s｜画面：产品展示，口播：“OKK品牌，120-150元，舒适实用！点赞评论区聊聊你的久坐烦恼～”\n\n互动引导：点赞、评论“你最需要什么裤子？”",
+      "preview": "【AI 生成 · 基于商品理解】\n\n0-3s｜画面：女性坐下瞬间，字幕/口播：“每天坐8小时，腰被勒得受不了？”\n3-8s｜画面：裤子腰头特写，口播：“这条牛仔裤，高腰有边界，坐下有余量！”\n8-15s｜画面：快速切换办公室、走动、会面场景，口播：“百搭休闲，适合夏天，工位到会面一条搞定！”\n15-20s｜画面：产品展示，口播：“OKK品牌，120-150元，舒适实用！点赞评论区聊聊你的久坐烦恼～”\n\n互动引导：点赞、评论“你最需要什么裤子？”"
+    },
+    {
+      "channel": "kuaishou",
+      "label": "快手",
+      "title": "老铁们，这款牛仔裤实在！坐一天腰不勒",
+      "body": "【AI 生成 · 基于商品理解】\n\n老铁们，今天推荐个好东西，这款OKK牛仔裤，实在话不忽悠！\n\n核心卖点就是高腰有边界，坐下有余量，特别适合工作日久坐的姐妹，从工位直接去见朋友都行。面料耐穿好搭，百搭休闲风格，夏天穿正合适。\n\n价格120-150元，性价比杠杠的，耐穿不贵。当然，颜色材质细节我资料不足，得核对实物，但整体使用感是真实的。\n\n觉得实用的点个关注，评论区说说你最关心啥？老铁们别错过！",
+      "preview": "【AI 生成 · 基于商品理解】\n\n老铁们，今天推荐个好东西，这款OKK牛仔裤，实在话不忽悠！\n\n核心卖点就是高腰有边界，坐下有余量，特别适合工作日久坐的姐妹，从工位直接去见朋友都行。面料耐穿好搭，百搭休闲风格，夏天穿正合适。\n\n价格120-150元，性价比杠杠的，耐穿不贵。当然，颜色材质细节我资料不足，得核对实物，但整体使用感是真实的。\n\n觉得实用的点个关注，评论区说说你最关心啥？老铁们别错过！"
+    },
+    {
+      "channel": "shopping",
+      "label": "购物平台",
+      "title": "牛仔裤 | 高腰有边界，坐下有余量 久坐百搭休闲裤",
+      "body": "【核心卖点】\n1. 高腰有边界，坐下有余量：专为久坐设计，坐下时腰头不勒肉，保持舒适。\n2. 适用人群：工作日需要久坐、经常从工位直接去见朋友的女性。\n3. 场景覆盖：办公室久坐、起身走动、工位到会面，百搭休闲风格适合夏天。\n\n【规格与参数】\n- 品牌：OKK\n- 价格：120-150元\n- 材质：待补充（需人工核对）\n- 风格：牛仔裤、百搭、休闲、适合夏天\n\n【品质承诺】\n基于本地资料，商品证据为高腰有边界，坐下有余量。售后无忧，但建议购买前查看实物图确认细节。\n\n【避免表达】不强调显瘦，专注穿着舒适感，避免身材焦虑。",
+      "preview": "【核心卖点】\n1. 高腰有边界，坐下有余量：专为久坐设计，坐下时腰头不勒肉，保持舒适。\n2. 适用人群：工作日需要久坐、经常从工位直接去见朋友的女性。\n3. 场景覆盖：办公室久坐、起身走动、工位到会面，百搭休闲风格适合夏天。\n\n【规格与参数】\n- 品牌：OKK\n- 价格：120-150元\n- 材质：待补充（需人工核对）\n- 风格：牛仔裤、百搭、休闲、适合夏天\n\n【品质承诺】\n基于本地资料，商品证据为高腰有边界，坐下有余量。售后无忧，但建议购买前查看实物图确认细节。\n\n【避免表达】不强调显瘦，专注穿着舒适感，避免身材焦虑。"
+    },
+    {
+      "channel": "visual",
+      "label": "视觉方案",
+      "title": "坐一整天 腰里也有余量 · 视觉方案",
+      "body": "【视觉概念方案】\n商品：牛仔裤\n方向：坐一整天 腰里也有余量\n视觉关键词：牛仔裤、百搭、休闲、适合夏天（基于AI分析，但颜色/材质细节待人工核对）\n品牌调性：OKK 品牌调性\n画幅：9:16竖屏优先，辅3:4图文\n\n【镜头顺序】\n1. 待补拍 —— 当前缺少可用本地素材（资料不足），建议补拍不同身高与三档裤长的上身对照，以及坐下后腰头状态对比。\n\n【字幕主线】高腰有边界，坐下有余量。\n口播主线：小红书用前后对比展示坐下后的腰头状态；抖音前3秒先拍“坐下后”的真实感受。\n\n【待验证】缺少浅色面料耐脏测试记录、厚外套装入后的稳定性实拍等，需人工核对。本次使用本地规则，未完成云端图片识别。",
+      "preview": "【视觉概念方案】\n商品：牛仔裤\n方向：坐一整天 腰里也有余量\n视觉关键词：牛仔裤、百搭、休闲、适合夏天（基于AI分析，但颜色/材质细节待人工核对）\n品牌调性：OKK 品牌调性\n画幅：9:16竖屏优先，辅3:4图文\n\n【镜头顺序】\n1. 待补拍 —— 当前缺少可用本地素材（资料不足），建议补拍不同身高与三档裤长的上身对照，以及坐下后腰头状态对比。\n\n【字幕主线】高腰有边界，坐下有余量。\n口播主线：小红书用前后对比展示坐下后的腰头状态；抖音前3秒先拍“坐下后”的真实感受。\n\n【待验证】缺少浅色面料耐脏测试记录、厚外套装入后的稳定性实拍等，需人工核对。本次使用本地规则，未完成云端图片识别。"
+    },
+    {
+      "channel": "video",
+      "label": "视频脚本",
+      "title": "坐一整天 腰里也有余量 · 20秒脚本",
+      "body": "【AI 生成 · 基于商品理解】\n\n画幅：9:16竖屏\n\n0-3秒｜画面：待补拍（如女性坐下瞬间），口播：“钩子：每天坐久了，腰受得了吗？”\n3-8秒｜画面：待补拍（裤子腰头细节），口播：“高腰有边界，坐下有余量。”\n8-15秒｜画面：待补拍（切换办公室、走动场景），口播：“小红书用前后对比展示坐下后的腰头状态；抖音前3秒先拍‘坐下后’的真实感受。”\n15-20秒｜画面：待补拍（产品展示），口播：“牛仔裤，OKK品牌，120-150元，舒适百搭适合夏天！点击了解。”\n\n避免表达：不讲“显瘦神裤”，不把穿衣体验变成身材焦虑。待补拍素材包括不同身高对照等，资料不足。",
+      "preview": "【AI 生成 · 基于商品理解】\n\n画幅：9:16竖屏\n\n0-3秒｜画面：待补拍（如女性坐下瞬间），口播：“钩子：每天坐久了，腰受得了吗？”\n3-8秒｜画面：待补拍（裤子腰头细节），口播：“高腰有边界，坐下有余量。”\n8-15秒｜画面：待补拍（切换办公室、走动场景），口播：“小红书用前后对比展示坐下后的腰头状态；抖音前3秒先拍‘坐下后’的真实感受。”\n15-20秒｜画面：待补拍（产品展示），口播：“牛仔裤，OKK品牌，120-150元，舒适百搭适合夏天！点击了解。”\n\n避免表达：不讲“显瘦神裤”，不把穿衣体验变成身材焦虑。待补拍素材包括不同身高对照等，资料不足。"
+    }
+  ],
+  "generated_text_count": 6,
+  "image_prompts": [],
+  "generated_media": {
+    "images": []
+  },
+  "generated_images": [],
+  "generated_video": null,
+  "generated_storyboard": null,
+  "has_video": false,
+  "has_images": false,
+  "has_image_prompts": false,
+  "has_storyboard": false,
+  "content_summary": {
+    "item_count": 6,
+    "channels": [
+      "xiaohongshu",
+      "douyin",
+      "kuaishou",
+      "shopping",
+      "visual",
+      "video"
+    ]
+  },
+  "creative_archive": {
+    "export": {
+      "export_root": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\创意导出",
+      "folder_path": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\创意导出\\牛仔裤_pkg_86935b9e8549",
+      "zip_path": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\创意导出\\牛仔裤_pkg_86935b9e8549.zip",
+      "folder_name": "牛仔裤_pkg_86935b9e8549",
+      "files": [
+        {
+          "name": "business_judgment.json",
+          "relative_path": "business_judgment.json",
+          "size_bytes": 2017
+        },
+        {
+          "name": "douyin.md",
+          "relative_path": "content/douyin.md",
+          "size_bytes": 767
+        },
+        {
+          "name": "kuaishou.md",
+          "relative_path": "content/kuaishou.md",
+          "size_bytes": 734
+        },
+        {
+          "name": "shopping.md",
+          "relative_path": "content/shopping.md",
+          "size_bytes": 907
+        },
+        {
+          "name": "video.md",
+          "relative_path": "content/video.md",
+          "size_bytes": 937
+        },
+        {
+          "name": "visual.md",
+          "relative_path": "content/visual.md",
+          "size_bytes": 996
+        },
+        {
+          "name": "xiaohongshu.md",
+          "relative_path": "content/xiaohongshu.md",
+          "size_bytes": 1000
+        },
+        {
+          "name": "content_package.json",
+          "relative_path": "content_package.json",
+          "size_bytes": 10482
+        },
+        {
+          "name": "creative_directions.json",
+          "relative_path": "creative_directions.json",
+          "size_bytes": 4459
+        },
+        {
+          "name": "evidence.json",
+          "relative_path": "evidence.json",
+          "size_bytes": 12007
+        },
+        {
+          "name": "manifest.json",
+          "relative_path": "manifest.json",
+          "size_bytes": 2574
+        },
+        {
+          "name": "product_understanding.json",
+          "relative_path": "product_understanding.json",
+          "size_bytes": 9574
+        },
+        {
+          "name": "README.md",
+          "relative_path": "README.md",
+          "size_bytes": 650
+        },
+        {
+          "name": "source_index.json",
+          "relative_path": "source_index.json",
+          "size_bytes": 1339
+        }
+      ]
+    },
+    "product_library": {
+      "product_id": "prod_4cfd7da80b97",
+      "product_dir": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\prod_4cfd7da80b97",
+      "summary_sections": 6,
+      "has_generated_content": true
+    },
+    "material_library": {
+      "library_root": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\material_library",
+      "imported_count": 2,
+      "imported_files": [
+        "02_正面上身图_1.png",
+        "商品资料_11.xlsx"
+      ],
+      "categories": {
+        "image": 1,
+        "text": 1
+      },
+      "image_dir": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\material_library\\商品图片",
+      "reference_dir": "D:\\Users\\20250\\Desktop\\ShopMind-发给同伴-带密钥-20261016\\workspace\\material_library\\参考资料"
+    }
+  },
+  "archived_at": "2026-10-18T03:31:04.554455+00:00"
+}

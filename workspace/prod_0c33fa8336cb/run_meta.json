@@ -1,0 +1,20 @@
+{
+  "product_id": "prod_0c33fa8336cb",
+  "material_path": "D:\\Users\\20250\\Desktop\\demo\\workspace\\uploads\\20261018_120510",
+  "product_name": "绿色包",
+  "category": "箱包",
+  "brand": "OKKK",
+  "price": "80-100",
+  "product_form": {
+    "product_name": "绿色包",
+    "product_category": "箱包",
+    "product_category_key": "bag",
+    "product_price": "80-100",
+    "product_desc": "绿色清新，通勤可用",
+    "product_brand": "OKKK"
+  },
+  "latest_package_id": "pkg_6d6f9b8b92be",
+  "latest_export_folder": "D:\\Users\\20250\\Desktop\\demo\\workspace\\创意导出\\绿色包_pkg_6d6f9b8b92be",
+  "library_saved_at": "2026-10-18T04:06:28+00:00",
+  "status": "completed"
+}
