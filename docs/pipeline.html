@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>流水线 · ShopMind | 五步从资料到可交付内容包</title>
+<meta name="description" content="ShopMind 创意五步：录入、理解、方向、生成、导出。每一步的输入、主要输出、固定产物文件名与失败即停原则，全部可回溯。">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <div class="header-left">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+        <span class="menu-bars" aria-hidden="true"><i></i><i></i></span>
+        <span>菜单</span>
+      </button>
+      <a class="brand" href="index.html" aria-label="ShopMind 首页">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>ShopMind</span>
+      </a>
+    </div>
+    <nav class="desktop-nav" aria-label="主要导航">
+      <a href="index.html">首页</a>
+      <a href="capabilities.html">能力</a>
+      <a href="pipeline.html" class="is-active" aria-current="page">流水线</a>
+      <a href="demo.html">演示</a>
+      <a href="tech.html">技术</a>
+    </nav>
+    <div class="header-right">
+      <a class="header-gh" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">GitHub</a>
+      <a class="node-logo" href="index.html" aria-label="ShopMind 首页">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 5 5 17M12 5l7 12M5 17h14" stroke="rgba(244,241,236,.42)" stroke-width=".9"/>
+          <circle cx="12" cy="5" r="2.2" fill="#ff7a2f"/>
+          <circle cx="5" cy="17" r="1.8" fill="#ffb15c"/>
+          <circle cx="19" cy="17" r="1.8" fill="#ff3d2e"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="menu-overlay" id="site-menu" hidden>
+  <div class="menu-inner">
+    <div class="menu-top">
+      <span class="menu-label">SHOPMIND / INDEX</span>
+      <button class="menu-close" type="button" data-menu-close aria-label="关闭菜单">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav class="menu-nav" aria-label="全站导航">
+      <a class="menu-link" href="index.html"><span class="num">01</span>首页<small>Home</small></a>
+      <a class="menu-link" href="capabilities.html"><span class="num">02</span>能力<small>Capabilities</small></a>
+      <a class="menu-link" href="pipeline.html" aria-current="page"><span class="num">03</span>流水线<small>Pipeline</small></a>
+      <a class="menu-link" href="demo.html"><span class="num">04</span>演示<small>Live Demo</small></a>
+      <a class="menu-link" href="tech.html"><span class="num">05</span>技术<small>Technology</small></a>
+    </nav>
+    <div class="menu-foot">
+      <p>本地优先的 AI 商品创意导演。把你已经拥有的资料，变成一套可交付、可回溯的六渠道创意包。</p>
+      <a class="btn btn-ghost btn-small" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">
+        GitHub 仓库
+        <span class="arrow"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="page-main">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-index"><i aria-hidden="true"></i>03 / PIPELINE</div>
+      <h1>五步，<br>每一步都留下文件。</h1>
+      <div class="page-hero-foot">
+        <p class="lead">录入 → 理解 → 方向 → 生成 → 导出。每步都有明确输入、结构化输出与固定产物文件名，任一步骤失败即停，不会带着错误结果继续往下跑。</p>
+        <div class="page-meta">
+          <span class="chip chip-accent">Fail fast</span>
+          <span class="chip">Structured output</span>
+          <span class="chip chip-mono">7 artifacts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <div class="container">
+      <div class="pipeline-layout">
+
+        <aside class="pipeline-rail">
+          <p class="rail-label">STEPS / 01—05</p>
+          <nav aria-label="流水线步骤">
+            <a class="rail-step" href="#step-1" data-rail>
+              <span class="rn">01</span>
+              <span><b>录入</b><small>ingest</small></span>
+            </a>
+            <a class="rail-step" href="#step-2" data-rail>
+              <span class="rn">02</span>
+              <span><b>理解</b><small>understand</small></span>
+            </a>
+            <a class="rail-step" href="#step-3" data-rail>
+              <span class="rn">03</span>
+              <span><b>方向</b><small>direction</small></span>
+            </a>
+            <a class="rail-step" href="#step-4" data-rail>
+              <span class="rn">04</span>
+              <span><b>生成</b><small>generate</small></span>
+            </a>
+            <a class="rail-step" href="#step-5" data-rail>
+              <span class="rn">05</span>
+              <span><b>导出</b><small>export</small></span>
+            </a>
+          </nav>
+        </aside>
+
+        <div class="pipeline-steps">
+
+          <!-- STEP 1 -->
+          <article class="pipe-step" id="step-1">
+            <div class="pipe-step-head">
+              <span class="pipe-step-num" aria-hidden="true">01</span>
+              <div class="pipe-step-title">
+                <h2>录入</h2>
+                <span class="step-code">scan_sources · app/steps/scan_sources.py</span>
+              </div>
+            </div>
+            <div class="pipe-grid">
+              <div>
+                <p class="pipe-label">输入</p>
+                <ul class="pipe-list">
+                  <li>商品信息表（xlsx / csv 多 Sheet）</li>
+                  <li>用户评价、历史文案（txt / md）</li>
+                  <li>商品图片与短视频素材（png / jpg / webp / mp4）</li>
+                  <li>品牌规则与拍摄清单</li>
+                </ul>
+              </div>
+              <div>
+                <p class="pipe-label">主要输出</p>
+                <ul class="pipe-list">
+                  <li>来源索引：按扩展名与文件名语义分类</li>
+                  <li>每个来源的文件哈希与解析状态</li>
+                  <li>素材资产表：角色（主图 / 场景 / 细节）与路径</li>
+                </ul>
+                <div class="artifact-row">
+                  <span class="artifact">source_index.json</span>
+                </div>
+              </div>
+            </div>
+            <p class="pipe-fail"><b>失败即停：</b>来源不可读或目录缺失时写入索引失败，用 <code>index_write_failed</code> 中止，不产生后续产物。</p>
+          </article>
+
+          <!-- STEP 2 -->
+          <article class="pipe-step" id="step-2">
+            <div class="pipe-step-head">
+              <span class="pipe-step-num" aria-hidden="true">02</span>
+              <div class="pipe-step-title">
+                <h2>理解</h2>
+                <span class="step-code">extract_evidence · understand_product · judge_business</span>
+              </div>
+            </div>
+            <div class="pipe-grid">
+              <div>
+                <p class="pipe-label">输入</p>
+                <ul class="pipe-list">
+                  <li>来源索引与解析出的文本片段</li>
+                  <li>商品图片（视觉能力开启时参与理解）</li>
+                  <li>工作区品牌规则（仅启用时作为只读上下文）</li>
+                </ul>
+              </div>
+              <div>
+                <p class="pipe-label">主要输出</p>
+                <ul class="pipe-list">
+                  <li>证据集：ID、原文、来源定位与状态</li>
+                  <li>商品理解卡：参数、卖点、人群、待验证项</li>
+                  <li>经营判断：机会、风险、开放问题与下一步</li>
+                </ul>
+                <div class="artifact-row">
+                  <span class="artifact">evidence.json</span>
+                  <span class="artifact">product_understanding.json</span>
+                  <span class="artifact">business_judgment.json</span>
+                </div>
+              </div>
+            </div>
+            <p class="pipe-fail"><b>失败即停：</b>抽取或写入失败时用 <code>evidence_write_failed</code> / <code>understanding_write_failed</code> 中止；理解卡可在界面上手动修正后重跑。</p>
+          </article>
+
+          <!-- STEP 3 -->
+          <article class="pipe-step" id="step-3">
+            <div class="pipe-step-head">
+              <span class="pipe-step-num" aria-hidden="true">03</span>
+              <div class="pipe-step-title">
+                <h2>方向</h2>
+                <span class="step-code">generate_directions · app/steps/generate_directions.py</span>
+              </div>
+            </div>
+            <div class="pipe-grid">
+              <div>
+                <p class="pipe-label">输入</p>
+                <ul class="pipe-list">
+                  <li>商品理解卡与经营判断</li>
+                  <li>证据白名单（可用证据 ID）</li>
+                  <li>素材资产表（可用图片与视频）</li>
+                </ul>
+              </div>
+              <div>
+                <p class="pipe-label">主要输出</p>
+                <ul class="pipe-list">
+                  <li>多个创意方向：人群、洞察、核心表达</li>
+                  <li>每个方向的 evidence_ids 与 asset_ids 绑定</li>
+                  <li>每个方向的禁忌表达与待验证项</li>
+                </ul>
+                <div class="artifact-row">
+                  <span class="artifact">creative_directions.json</span>
+                </div>
+              </div>
+            </div>
+            <p class="pipe-fail"><b>失败即停：</b>方向写入失败用 <code>directions_write_failed</code> 中止；方向白名单为空时不进入生成阶段。</p>
+          </article>
+
+          <!-- STEP 4 -->
+          <article class="pipe-step" id="step-4">
+            <div class="pipe-step-head">
+              <span class="pipe-step-num" aria-hidden="true">04</span>
+              <div class="pipe-step-title">
+                <h2>生成</h2>
+                <span class="step-code">generate_content · app/steps/generate_content.py</span>
+              </div>
+            </div>
+            <div class="pipe-grid">
+              <div>
+                <p class="pipe-label">输入</p>
+                <ul class="pipe-list">
+                  <li>选定的创意方向（必须先选定）</li>
+                  <li>商品理解、证据集与素材路径</li>
+                  <li>工作区品牌规则（仅启用时作为只读上下文）</li>
+                </ul>
+              </div>
+              <div>
+                <p class="pipe-label">主要输出</p>
+                <ul class="pipe-list">
+                  <li>六个渠道的内容条目，逐条标注校验等级</li>
+                  <li>每条内容的 evidence_ids 与 asset_ids 引用</li>
+                  <li>生成来源、失败数与警告数汇总</li>
+                </ul>
+                <div class="artifact-row">
+                  <span class="artifact">content_package.json</span>
+                  <span class="artifact">content/*.md</span>
+                </div>
+              </div>
+            </div>
+            <p class="pipe-fail"><b>失败即停：</b>任一渠道校验为 FAIL 即计入 <code>fail_count</code>，步骤状态置为失败；写入失败用 <code>content_write_failed</code> 中止。</p>
+          </article>
+
+          <!-- STEP 5 -->
+          <article class="pipe-step" id="step-5">
+            <div class="pipe-step-head">
+              <span class="pipe-step-num" aria-hidden="true">05</span>
+              <div class="pipe-step-title">
+                <h2>导出</h2>
+                <span class="step-code">export_content_package · app/export/content_package.py</span>
+              </div>
+            </div>
+            <div class="pipe-grid">
+              <div>
+                <p class="pipe-label">输入</p>
+                <ul class="pipe-list">
+                  <li>商品理解、经营判断、创意方向与证据集</li>
+                  <li>内容生成报告（六渠道条目）</li>
+                  <li>来源索引与输出目录（必须与素材包隔离）</li>
+                </ul>
+              </div>
+              <div>
+                <p class="pipe-label">主要输出</p>
+                <ul class="pipe-list">
+                  <li>标准内容包目录：结构化 JSON + 六渠道 Markdown</li>
+                  <li>清单与逐文件 SHA256 校验</li>
+                  <li>导出状态（ready / partial / blocked）与原因</li>
+                </ul>
+                <div class="artifact-row">
+                  <span class="artifact">manifest.json</span>
+                  <span class="artifact">README.md</span>
+                  <span class="artifact">source_index.json</span>
+                </div>
+              </div>
+            </div>
+            <p class="pipe-fail"><b>失败即停：</b>导出目录位于素材包内、存在 stale 证据或内容 FAIL 时，标记为 <code>blocked</code> 并清理暂存目录；校验不一致则不落盘。</p>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTIFACTS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Fixed Artifacts</p>
+          <h2>固定产物，<br>文件名就是接口。</h2>
+        </div>
+        <p class="lead">不依赖界面就能审阅：产物文件名固定，字段结构稳定，可以直接接进你自己的工具链或人工复核流程。</p>
+      </div>
+
+      <div class="artifact-grid" data-reveal>
+        <div class="artifact-card">
+          <span class="a-step">STEP 01</span>
+          <code>source_index.json</code>
+          <p>来源索引：文件类型、语义分类、哈希与解析状态。</p>
+        </div>
+        <div class="artifact-card">
+          <span class="a-step">STEP 02</span>
+          <code>evidence.json</code>
+          <p>证据集：ID、原文、来源定位与 confirmed / pending / conflict / stale 状态。</p>
+        </div>
+        <div class="artifact-card">
+          <span class="a-step">STEP 02</span>
+          <code>product_understanding.json</code>
+          <p>商品理解卡：参数、卖点、人群与待验证项。</p>
+        </div>
+        <div class="artifact-card">
+          <span class="a-step">STEP 02</span>
+          <code>business_judgment.json</code>
+          <p>经营判断：机会、风险、开放问题与下一步动作。</p>
+        </div>
+        <div class="artifact-card">
+          <span class="a-step">STEP 03</span>
+          <code>creative_directions.json</code>
+          <p>创意方向：人群、洞察、核心表达与证据 / 素材绑定。</p>
+        </div>
+        <div class="artifact-card">
+          <span class="a-step">STEP 04</span>
+          <code>content_package.json</code>
+          <p>六渠道内容条目与逐条校验结果。</p>
+        </div>
+        <div class="artifact-card">
+          <span class="a-step">STEP 05</span>
+          <code>manifest.json</code>
+          <p>包清单：文件列表、SHA256、证据计数与导出状态。</p>
+        </div>
+        <div class="artifact-card">
+          <span class="a-step">STEP 04—05</span>
+          <code>content/*.md</code>
+          <p>六个渠道的可读正文，带品牌与边界声明。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE -->
+  <section class="section">
+    <div class="container section-narrow">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Fail Fast</p>
+          <h2>宁可停下，<br>不带着错误往下跑。</h2>
+        </div>
+      </div>
+      <div class="quote-panel" data-reveal>
+        <blockquote>如果某一步的产物不合格，后面所有漂亮的文案都只是建立在错误前提上。</blockquote>
+        <p class="quote-meta">因此每一步都写入独立产物、独立校验：上游不通过，下游不会自动「脑补」补齐。</p>
+      </div>
+      <div class="boundary-grid mt-24" data-reveal>
+        <div class="boundary-card">
+          <h3>产物可回滚</h3>
+          <p>每步输出独立文件，修正上游后重跑即可，不需要从头重来。</p>
+        </div>
+        <div class="boundary-card">
+          <h3>状态可读</h3>
+          <p>complete / partial / failed / blocked 明确写入步骤结果，界面直接展示。</p>
+        </div>
+        <div class="boundary-card">
+          <h3>目录可审计</h3>
+          <p>SHA256 校验逐文件比对，任何改动都会被发现。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <p class="eyebrow" data-reveal><span class="dot"></span>Next</p>
+      <h2 data-reveal>想看看它真的跑一遍？</h2>
+      <p class="lead" data-reveal>演示页里有真机录屏、五步截图，以及同一次任务导出的六渠道成品。</p>
+      <div class="cta-actions" data-reveal>
+        <a class="btn btn-light" href="demo.html">
+          查看真实演示
+          <span class="arrow"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="btn btn-ghost" href="tech.html">查看技术实现</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <p class="footer-word">Shop<span class="wm-m">M</span>ind</p>
+        <p class="footer-line">Mind your commerce. Power your creativity.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <p class="footer-label">页面</p>
+          <a href="index.html">首页</a>
+          <a href="capabilities.html">能力</a>
+          <a href="pipeline.html">流水线</a>
+          <a href="demo.html">演示</a>
+          <a href="tech.html">技术</a>
+        </div>
+        <div>
+          <p class="footer-label">项目</p>
+          <a href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">GitHub 仓库</a>
+          <a href="https://github.com/halou02/shopmind-demo#readme" target="_blank" rel="noopener">README</a>
+          <a href="tech.html#run">本地运行</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer">说明：品牌、商品参数、评价与历史内容均为比赛演示数据，不代表真实用户反馈或真实经营表现。本作品仅基于本地资料生成内容，未接入市场、利润、广告与实时竞品数据，不作相关判断。仅用于天猫 AI 黑客松比赛演示用途。</p>
+      <p class="copyright">Tmall AI Hackathon · 2026</p>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/site.js" defer></script>
+</body>
+</html>

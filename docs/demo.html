@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>演示 · ShopMind | 真机录屏、五步截图与六渠道成品</title>
+<meta name="description" content="ShopMind 本地真实运行录屏与五步截图：从新建任务到导出内容包，配合小红书图文、抖音 20 秒脚本与方向证据说明，均为同一次真实任务。">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <div class="header-left">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+        <span class="menu-bars" aria-hidden="true"><i></i><i></i></span>
+        <span>菜单</span>
+      </button>
+      <a class="brand" href="index.html" aria-label="ShopMind 首页">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>ShopMind</span>
+      </a>
+    </div>
+    <nav class="desktop-nav" aria-label="主要导航">
+      <a href="index.html">首页</a>
+      <a href="capabilities.html">能力</a>
+      <a href="pipeline.html">流水线</a>
+      <a href="demo.html" class="is-active" aria-current="page">演示</a>
+      <a href="tech.html">技术</a>
+    </nav>
+    <div class="header-right">
+      <a class="header-gh" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">GitHub</a>
+      <a class="node-logo" href="index.html" aria-label="ShopMind 首页">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 5 5 17M12 5l7 12M5 17h14" stroke="rgba(244,241,236,.42)" stroke-width=".9"/>
+          <circle cx="12" cy="5" r="2.2" fill="#ff7a2f"/>
+          <circle cx="5" cy="17" r="1.8" fill="#ffb15c"/>
+          <circle cx="19" cy="17" r="1.8" fill="#ff3d2e"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="menu-overlay" id="site-menu" hidden>
+  <div class="menu-inner">
+    <div class="menu-top">
+      <span class="menu-label">SHOPMIND / INDEX</span>
+      <button class="menu-close" type="button" data-menu-close aria-label="关闭菜单">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav class="menu-nav" aria-label="全站导航">
+      <a class="menu-link" href="index.html"><span class="num">01</span>首页<small>Home</small></a>
+      <a class="menu-link" href="capabilities.html"><span class="num">02</span>能力<small>Capabilities</small></a>
+      <a class="menu-link" href="pipeline.html"><span class="num">03</span>流水线<small>Pipeline</small></a>
+      <a class="menu-link" href="demo.html" aria-current="page"><span class="num">04</span>演示<small>Live Demo</small></a>
+      <a class="menu-link" href="tech.html"><span class="num">05</span>技术<small>Technology</small></a>
+    </nav>
+    <div class="menu-foot">
+      <p>本地优先的 AI 商品创意导演。把你已经拥有的资料，变成一套可交付、可回溯的六渠道创意包。</p>
+      <a class="btn btn-ghost btn-small" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">
+        GitHub 仓库
+        <span class="arrow"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="page-main">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-index"><i aria-hidden="true"></i>04 / LIVE DEMO</div>
+      <h1>真机跑一遍，<br>不是概念图。</h1>
+      <div class="page-hero-foot">
+        <p class="lead">下面是 ShopMind 在本地真实运行的录屏与逐步截图 —— 从新建任务到导出内容包，全程可回溯，全部来自同一次真实任务。</p>
+        <div class="page-meta">
+          <span class="chip chip-accent">127.0.0.1:8080</span>
+          <span class="chip">同一次真实任务</span>
+          <span class="chip">非概念图</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Screen Recording</p>
+          <h2>五步走完，<br>一整套创意包就绪。</h2>
+        </div>
+        <p class="lead">录屏默认静音，进入视口时自动播放，滚出视口暂停。它记录的是本地 8080 端口上的真实操作，而非设计的动效演示。</p>
+      </div>
+
+      <div class="video-shell" data-reveal>
+        <div class="video-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>http://127.0.0.1:8080 &nbsp;·&nbsp; demo-tour.mp4</span>
+          <span>MUTED</span>
+        </div>
+        <video data-autoplay-video muted loop playsinline preload="metadata" poster="./assets/demo-tour-poster.jpg" aria-label="ShopMind 本地运行录屏">
+          <source src="./assets/demo-tour.mp4" type="video/mp4">
+          你的浏览器不支持内嵌视频，可下载 demo-tour.mp4 查看。
+        </video>
+      </div>
+      <p class="video-note" data-reveal>录屏为演示数据，界面中的品牌、商品与评价均不代表真实用户反馈。</p>
+    </div>
+  </section>
+
+  <!-- TOUR -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Step by Step</p>
+          <h2>点开每一步，<br>看它到底做了什么。</h2>
+        </div>
+        <p class="lead">五张截图取自同一次真实任务，可以手动切换，也可以让它自动轮播。键盘方向键同样可用。</p>
+      </div>
+
+      <div class="tour" data-tour>
+        <div class="tour-nav">
+          <div class="tour-nav-head">
+            <span class="rail-label m-0">STEPS</span>
+            <button class="tour-toggle" type="button" data-tour-toggle aria-pressed="false">暂停轮播</button>
+          </div>
+          <div class="tour-buttons" role="tablist" aria-label="演示步骤">
+            <button class="tour-step is-active" type="button" role="tab" id="tour-tab-1" aria-selected="true" aria-controls="tour-panel" data-tour-step>
+              <span class="tn">01</span>
+              <span><b>录入商品资料</b><small>填写信息 / 从素材库挑选</small></span>
+            </button>
+            <button class="tour-step" type="button" role="tab" id="tour-tab-2" aria-selected="false" aria-controls="tour-panel" tabindex="-1" data-tour-step>
+              <span class="tn">02</span>
+              <span><b>AI 理解商品</b><small>抽取证据 · 生成理解卡</small></span>
+            </button>
+            <button class="tour-step" type="button" role="tab" id="tour-tab-3" aria-selected="false" aria-controls="tour-panel" tabindex="-1" data-tour-step>
+              <span class="tn">03</span>
+              <span><b>生成创意方向</b><small>多个带证据的方向可选</small></span>
+            </button>
+            <button class="tour-step" type="button" role="tab" id="tour-tab-4" aria-selected="false" aria-controls="tour-panel" tabindex="-1" data-tour-step>
+              <span class="tn">04</span>
+              <span><b>生成多平台内容</b><small>文案 / 脚本 / 视觉方案</small></span>
+            </button>
+            <button class="tour-step" type="button" role="tab" id="tour-tab-5" aria-selected="false" aria-controls="tour-panel" tabindex="-1" data-tour-step>
+              <span class="tn">05</span>
+              <span><b>导出标准内容包</b><small>manifest + SHA256 校验</small></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="tour-stage" id="tour-panel" role="tabpanel" aria-labelledby="tour-tab-1">
+          <div class="tour-screen">
+            <img class="is-active" src="./assets/shot-step1.jpg" alt="新建创意任务，录入商品资料界面" loading="lazy" data-tour-img aria-hidden="false">
+            <img src="./assets/shot-step2.jpg" alt="AI 理解商品，商品理解报告界面" loading="lazy" data-tour-img aria-hidden="true">
+            <img src="./assets/shot-step3.jpg" alt="选择创意方向界面" loading="lazy" data-tour-img aria-hidden="true">
+            <img src="./assets/shot-step4.jpg" alt="创意内容生成结果界面" loading="lazy" data-tour-img aria-hidden="true">
+            <img src="./assets/shot-step5.jpg" alt="导出创意内容包界面" loading="lazy" data-tour-img aria-hidden="true">
+          </div>
+          <div class="tour-meta">
+            <span class="cap-k" data-tour-k>STEP 01</span>
+            <b data-tour-title>录入商品资料</b>
+            <p data-tour-desc>填写商品名称、类别与价格，或从素材库挑选图片、参数表与文档，作为 AI 的参考资料。</p>
+          </div>
+          <div class="tour-progress"><i data-tour-bar></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UI GALLERY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Product Tour</p>
+          <h2>界面走一遍。</h2>
+        </div>
+        <p class="lead">原生 HTML / CSS / JS 前端，零构建依赖。界面中的每个结论都能点开查看本地依据。</p>
+      </div>
+
+      <div class="gallery" data-reveal>
+        <div class="shot span-12">
+          <img src="./assets/shot-steps.jpg" alt="新建创意任务五步流程界面" loading="lazy">
+          <div class="cap"><b>新建创意任务 · 五步流程</b><span>商品录入 → AI 理解 → 创意方向 → 内容生成 → 导出，进度一目了然</span></div>
+        </div>
+        <div class="shot span-6">
+          <img src="./assets/shot-home.jpg" alt="ShopMind 首页界面" loading="lazy">
+          <div class="cap"><b>首页</b><span>演示素材包与本地创作项目的统一入口</span></div>
+        </div>
+        <div class="shot span-6">
+          <img src="./assets/shot-detail.jpg" alt="生成的小红书图文与抖音口播内容" loading="lazy">
+          <div class="cap"><b>生成结果 · 小红书图文 / 抖音口播</b><span>每条内容都标注「AI 生成 · 基于商品理解」</span></div>
+        </div>
+        <div class="shot span-6">
+          <img src="./assets/shot-detail2.jpg" alt="商品理解卡与视觉方案界面" loading="lazy">
+          <div class="cap"><b>理解卡 · 视觉方案与证据</b><span>商品事实、可用素材、镜头顺序与待补拍清单</span></div>
+        </div>
+        <div class="shot span-6">
+          <img src="./assets/shot-materials.jpg" alt="素材库界面" loading="lazy">
+          <div class="cap"><b>素材库</b><span>图片 / 视频 / 文本资料统一管理，支持自定义素材夹</span></div>
+        </div>
+        <div class="shot span-6">
+          <img src="./assets/shot-library.jpg" alt="商品库界面" loading="lazy">
+          <div class="cap"><b>商品库</b><span>聚合演示素材与本地创作项目，一键发起创意任务</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTPUT -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Real Output · 演示数据</p>
+          <h2>成品长这样。</h2>
+        </div>
+        <p class="lead">以下内容来自演示素材包「轻序 Daily Tote 01 云苔绿」，由 ShopMind 基于该商品资料与评价生成，方向与证据一并在界面上可查。</p>
+      </div>
+
+      <div class="sample-grid">
+        <div class="sample-visual" data-reveal>
+          <figure class="sample-figure">
+            <img src="./assets/product-bag.jpg" alt="云苔绿通勤托特包商品主图" loading="lazy">
+            <figcaption>01 · 商品主图 · 云苔绿</figcaption>
+          </figure>
+          <figure class="sample-figure landscape">
+            <img src="./assets/product-bag-scene.jpg" alt="咖啡馆场景中的云苔绿托特包" loading="lazy">
+            <figcaption>04 · 咖啡馆场景图 · 下班不换包</figcaption>
+          </figure>
+        </div>
+
+        <div data-reveal>
+          <div class="sample-copy">
+            <div class="meta">
+              <span class="chip chip-accent">AI 生成 · 基于商品理解</span>
+              <span class="chip">小红书图文</span>
+              <span class="chip chip-mono">xiaohongshu.md</span>
+            </div>
+            <h3>下班后不想换包的人，终于被这只云苔绿托特理解了</h3>
+            <div class="body">以前我选通勤包，只看能不能装电脑。
+
+后来才发现，真正让我每天背下去的，是它不会让我在下班后立刻想换包。
+
+这只云苔绿托特包，<em>电脑、水杯、伞和零碎小物都能分开放好</em>；拉上拉链去挤地铁，也更有安全感。重点是它的体积没有把人压得很「上班」，拎去咖啡馆也很自然。
+
+我最喜欢的是那种<em>不用重新整理、不用重新搭配</em>的轻松感：从工位出发，直接把晚上的时间还给自己。</div>
+            <div class="hashtags">#通勤包　#托特包　#上班族好物　#通勤穿搭　#包包分享</div>
+          </div>
+
+          <div class="sample-copy mt-16">
+            <div class="meta">
+              <span class="chip chip-accent">AI 生成 · 基于商品理解</span>
+              <span class="chip">抖音短视频脚本 · 20 秒 · 9:16</span>
+              <span class="chip chip-mono">douyin.md</span>
+            </div>
+            <h3>方向 A · 早八不慌的一包秩序</h3>
+            <div class="script-row"><span class="t">0–3s</span><span>画面：桌面上一堆电脑、水杯、伞、耳机。字幕：<em>早八最怕的不是迟到，是东西找不到。</em></span></div>
+            <div class="script-row"><span class="t">3–8s</span><span>画面：依次放入包内，展示电脑位、侧边水杯位与内部分区。字幕：<em>电脑、水杯、伞，各归各位。</em></span></div>
+            <div class="script-row"><span class="t">8–12s</span><span>画面：拉上拉链，再将手机放进前侧口袋。字幕：<em>地铁里，拉上就安心一点。</em></span></div>
+            <div class="script-row"><span class="t">12–17s</span><span>画面：肩背出办公楼。字幕：<em>不需要大到笨重，刚好装下今天。</em></span></div>
+            <div class="script-row"><span class="t">17–20s</span><span>画面：包与人物半身特写。字幕：轻序 Daily Tote 01。</span></div>
+          </div>
+
+          <div class="sample-copy mt-16">
+            <div class="meta">
+              <span class="chip chip-accent">可溯源</span>
+              <span class="chip">创意方向 · 绑定证据与素材</span>
+              <span class="chip chip-mono">creative_directions.json</span>
+            </div>
+            <h3>方向 B · 轻一点上班，留一点余裕</h3>
+            <div class="body">目标人群：讨厌负担感、重视穿搭比例的城市女性。
+核心洞察：用户不想背一个功能多却显笨重的包；轻量既是身体负担，也是一种从容感。
+核心表达：<em>装下工作，也不把肩膀交给负担。</em></div>
+            <ul class="evidence-lines">
+              <li><b>证据</b><span>评价高频提及「轻」「不压肩」；商品参数约 380 g。</span></li>
+              <li><b>素材</b><span>03 通勤场景图、视频 1 空包拎起、视频 4 肩背出门。</span></li>
+              <li><b>禁忌</b><span>不使用「显瘦神器」「一秒显瘦」等夸张说法。</span></li>
+            </ul>
+          </div>
+
+          <div class="compact-samples">
+            <div class="compact-sample">
+              <span class="cs-en">Kuaishou</span>
+              <h4>老铁们，这个通勤包真的实在</h4>
+              <p>更直接的价格锚点与生活化口语，少形容词，多实在话。</p>
+            </div>
+            <div class="compact-sample">
+              <span class="cs-en">Taobao PDP</span>
+              <h4>分区收纳轻便托特包</h4>
+              <p>卖点、规格、适用人群与使用场景，结构化到可扫读。</p>
+            </div>
+            <div class="compact-sample">
+              <span class="cs-en">Visual Prompt</span>
+              <h4>早八不慌的一包秩序 · 视觉概念</h4>
+              <p>画幅、色彩、材质与镜头概念，附待补拍清单与资料缺口。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout mt-24" data-reveal>
+        <span class="co-mark">声明</span>
+        <span>以上品牌、商品参数、评价与生成内容均为<b>比赛演示数据</b>，不代表真实用户反馈或真实经营表现。内容仍需人工审阅后发布。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <p class="eyebrow" data-reveal><span class="dot"></span>Next</p>
+      <h2 data-reveal>想知道它<br>是怎么搭的？</h2>
+      <p class="lead" data-reveal>分层架构、端云协同、四类能力配置与本地运行方式，都在技术页。</p>
+      <div class="cta-actions" data-reveal>
+        <a class="btn btn-light" href="tech.html">
+          查看技术实现
+          <span class="arrow"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">GitHub 仓库</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <p class="footer-word">Shop<span class="wm-m">M</span>ind</p>
+        <p class="footer-line">Mind your commerce. Power your creativity.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <p class="footer-label">页面</p>
+          <a href="index.html">首页</a>
+          <a href="capabilities.html">能力</a>
+          <a href="pipeline.html">流水线</a>
+          <a href="demo.html">演示</a>
+          <a href="tech.html">技术</a>
+        </div>
+        <div>
+          <p class="footer-label">项目</p>
+          <a href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">GitHub 仓库</a>
+          <a href="https://github.com/halou02/shopmind-demo#readme" target="_blank" rel="noopener">README</a>
+          <a href="tech.html#run">本地运行</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer">说明：品牌、商品参数、评价与历史内容均为比赛演示数据，不代表真实用户反馈或真实经营表现。本作品仅基于本地资料生成内容，未接入市场、利润、广告与实时竞品数据，不作相关判断。仅用于天猫 AI 黑客松比赛演示用途。</p>
+      <p class="copyright">Tmall AI Hackathon · 2026</p>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>能力 · ShopMind | 证据链、六渠道与内容校验</title>
+<meta name="description" content="ShopMind 的能力不是「会写文案」，而是证据先行、结构先行、校验兜底：证据状态、六渠道输出、校验码、品牌记忆 C1 边界与合规声明。">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <div class="header-left">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+        <span class="menu-bars" aria-hidden="true"><i></i><i></i></span>
+        <span>菜单</span>
+      </button>
+      <a class="brand" href="index.html" aria-label="ShopMind 首页">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>ShopMind</span>
+      </a>
+    </div>
+    <nav class="desktop-nav" aria-label="主要导航">
+      <a href="index.html">首页</a>
+      <a href="capabilities.html" class="is-active" aria-current="page">能力</a>
+      <a href="pipeline.html">流水线</a>
+      <a href="demo.html">演示</a>
+      <a href="tech.html">技术</a>
+    </nav>
+    <div class="header-right">
+      <a class="header-gh" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">GitHub</a>
+      <a class="node-logo" href="index.html" aria-label="ShopMind 首页">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 5 5 17M12 5l7 12M5 17h14" stroke="rgba(244,241,236,.42)" stroke-width=".9"/>
+          <circle cx="12" cy="5" r="2.2" fill="#ff7a2f"/>
+          <circle cx="5" cy="17" r="1.8" fill="#ffb15c"/>
+          <circle cx="19" cy="17" r="1.8" fill="#ff3d2e"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="menu-overlay" id="site-menu" hidden>
+  <div class="menu-inner">
+    <div class="menu-top">
+      <span class="menu-label">SHOPMIND / INDEX</span>
+      <button class="menu-close" type="button" data-menu-close aria-label="关闭菜单">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav class="menu-nav" aria-label="全站导航">
+      <a class="menu-link" href="index.html"><span class="num">01</span>首页<small>Home</small></a>
+      <a class="menu-link" href="capabilities.html" aria-current="page"><span class="num">02</span>能力<small>Capabilities</small></a>
+      <a class="menu-link" href="pipeline.html"><span class="num">03</span>流水线<small>Pipeline</small></a>
+      <a class="menu-link" href="demo.html"><span class="num">04</span>演示<small>Live Demo</small></a>
+      <a class="menu-link" href="tech.html"><span class="num">05</span>技术<small>Technology</small></a>
+    </nav>
+    <div class="menu-foot">
+      <p>本地优先的 AI 商品创意导演。把你已经拥有的资料，变成一套可交付、可回溯的六渠道创意包。</p>
+      <a class="btn btn-ghost btn-small" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">
+        GitHub 仓库
+        <span class="arrow"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="page-main">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-index"><i aria-hidden="true"></i>02 / CAPABILITIES</div>
+      <h1>不是会写文案，<br>是每一句都有出处。</h1>
+      <div class="page-hero-foot">
+        <p class="lead">ShopMind 先建立证据，再谈表达。模型只允许在证据白名单内写作，校验不通过的内容不会进入导出包。</p>
+        <div class="page-meta">
+          <span class="chip chip-accent">Evidence first</span>
+          <span class="chip">Structure first</span>
+          <span class="chip">Validation last</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Evidence Chain</p>
+          <h2>从一条评价，<br>到一句可交付的文案。</h2>
+        </div>
+        <p class="lead">每条证据都有 ID、来源定位、原文与状态。方向与内容只能引用白名单内的证据和素材，点开就能回到本地依据。</p>
+      </div>
+
+      <div class="evidence-board" data-reveal>
+        <div class="evidence-head">
+          <span>Evidence ID</span>
+          <span>Status</span>
+          <span>Claim</span>
+          <span>Source locator</span>
+        </div>
+        <div class="evidence-row">
+          <span class="ev-id">ev_0142</span>
+          <span class="status confirmed"><i aria-hidden="true"></i>confirmed</span>
+          <span class="ev-claim">装得下 14 寸电脑，水杯和伞也有独立位置。</span>
+          <span class="ev-loc">用户评价.csv<br>第 18 行</span>
+        </div>
+        <div class="evidence-row">
+          <span class="ev-id">ev_0167</span>
+          <span class="status pending"><i aria-hidden="true"></i>pending</span>
+          <span class="ev-claim">通勤一整天，肩膀没有明显负担。</span>
+          <span class="ev-loc">商品信息.xlsx<br>卖点页 / 第 6 行</span>
+        </div>
+        <div class="evidence-row">
+          <span class="ev-id">ev_0191</span>
+          <span class="status conflict"><i aria-hidden="true"></i>conflict</span>
+          <span class="ev-claim">重量一处写 380 g，另一处写 520 g。</span>
+          <span class="ev-loc">商品信息.xlsx<br>vs 详情文案.md</span>
+        </div>
+        <div class="evidence-row">
+          <span class="ev-id">ev_0204</span>
+          <span class="status stale"><i aria-hidden="true"></i>stale</span>
+          <span class="ev-claim">云苔绿配色，来源已变更，需重新扫描。</span>
+          <span class="ev-loc">商品主图 / 旧版<br>source_hash 失配</span>
+        </div>
+        <div class="evidence-foot">
+          <div class="legend">
+            <span class="status confirmed"><i aria-hidden="true"></i>confirmed 可引用</span>
+            <span class="status pending"><i aria-hidden="true"></i>pending 待确认</span>
+            <span class="status conflict"><i aria-hidden="true"></i>conflict 有冲突</span>
+            <span class="status stale"><i aria-hidden="true"></i>stale 已失效</span>
+          </div>
+          <span>示意数据 · 真实运行时由扫描与抽取自动生成</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY NOT PURE LLM -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Not Just a Chat Model</p>
+          <h2>为什么不是<br>「纯大模型」？</h2>
+        </div>
+        <p class="lead">大模型负责表达，ShopMind 负责它能不能说、该说什么、说完有没有出处。四件事把「生成」变成「可交付」。</p>
+      </div>
+
+      <div class="principle-grid" data-reveal>
+        <div class="principle">
+          <span class="p-num">01 / EVIDENCE FIRST</span>
+          <h3>证据先行</h3>
+          <p>先扫描来源、抽取证据，再让模型在证据白名单内写作。没有依据的卖点不会被当成事实，也不会被写成「用户都说好」。</p>
+        </div>
+        <div class="principle">
+          <span class="p-num">02 / STRUCTURE FIRST</span>
+          <h3>结构先行</h3>
+          <p>商品理解、经营判断与创意方向都是结构化数据，字段可审阅、可修正；不是一段不可控的长文本，而是一条能回滚的流水线。</p>
+        </div>
+        <div class="principle">
+          <span class="p-num">03 / VALIDATION LAST</span>
+          <h3>校验兜底</h3>
+          <p>禁用词、越界证据、越界素材、待确认证据都会触发 PASS / WARN / FAIL。FAIL 不是提示，而是阻断导出。</p>
+        </div>
+        <div class="principle">
+          <span class="p-num">04 / OFFLINE READY</span>
+          <h3>离线可用</h3>
+          <p>未配置 Key 时走规则与模板，五步仍可完整走通。断网、换机器或现场网络不稳定，都不影响演示主流程。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIX CHANNELS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Six Channels</p>
+          <h2>六个渠道，<br>不是六份复制。</h2>
+        </div>
+        <p class="lead">同一方向、同一组证据，按平台重写语气与结构。六个渠道共享事实，不共享模板。</p>
+      </div>
+
+      <div class="channel-grid" data-reveal>
+        <div class="channel-cell">
+          <div class="ch-top"><span class="ch-en">Douyin</span><span class="ch-num">01</span></div>
+          <h3>抖音</h3>
+          <p>20 秒竖屏口播。前三秒给冲突或场景，随后用画面与字幕推进，结尾落在具体商品名。</p>
+          <div class="ch-out">语气 · 快、具体、有钩子</div>
+        </div>
+        <div class="channel-cell">
+          <div class="ch-top"><span class="ch-en">Kuaishou</span><span class="ch-num">02</span></div>
+          <h3>快手</h3>
+          <p>更直接的口语与价格锚点。少一点形容词，多一点「实在」「不忽悠」的生活化表达。</p>
+          <div class="ch-out">语气 · 直白、可信、接地气</div>
+        </div>
+        <div class="channel-cell">
+          <div class="ch-top"><span class="ch-en">Xiaohongshu</span><span class="ch-num">03</span></div>
+          <h3>小红书</h3>
+          <p>第一人称图文笔记。从真实使用感受切入，正文分段，标签自然收束而不是堆砌。</p>
+          <div class="ch-out">语气 · 松弛、具体、有生活感</div>
+        </div>
+        <div class="channel-cell">
+          <div class="ch-top"><span class="ch-en">Taobao PDP</span><span class="ch-num">04</span></div>
+          <h3>淘宝详情</h3>
+          <p>卖点、规格、适用人群与使用场景，结构化到可以扫读，也方便直接贴进详情页。</p>
+          <div class="ch-out">语气 · 清晰、信息密度高</div>
+        </div>
+        <div class="channel-cell">
+          <div class="ch-top"><span class="ch-en">Video Script</span><span class="ch-num">05</span></div>
+          <h3>视频脚本</h3>
+          <p>镜头、时长、字幕与素材顺序明确，直接交给拍摄或剪辑，不依赖额外解释。</p>
+          <div class="ch-out">语气 · 可执行、分镜化</div>
+        </div>
+        <div class="channel-cell">
+          <div class="ch-top"><span class="ch-en">Visual Prompt</span><span class="ch-num">06</span></div>
+          <h3>视觉提示词</h3>
+          <p>画幅、色彩、材质与镜头概念，附待补拍清单。资料不足的地方会明确写「待验证」，而不是编造。</p>
+          <div class="ch-out">语气 · 视觉化、可拍摄</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALIDATION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Validation Codes</p>
+          <h2>把「感觉不对」，<br>变成可阻断的条件。</h2>
+        </div>
+        <p class="lead">校验不是给文案打分，而是守住品牌与事实的边界。每一条结论都对应一个可解释的 code。</p>
+      </div>
+
+      <div class="code-wrap" data-reveal>
+        <div class="code-head">
+          <span>content_generator.py / validate_content_item</span>
+          <span>PASS · WARN · FAIL</span>
+        </div>
+        <table class="code-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Level</th>
+              <th>触发条件</th>
+              <th>处理方式</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>forbidden_word</code></td>
+              <td><span class="level fail">FAIL</span></td>
+              <td>命中品牌禁用词。</td>
+              <td>阻断该条内容，修正后重新生成。</td>
+            </tr>
+            <tr>
+              <td><code>evidence_outside_direction</code></td>
+              <td><span class="level fail">FAIL</span></td>
+              <td>引用了当前方向白名单之外的证据。</td>
+              <td>阻断，回到方向页重新绑定证据。</td>
+            </tr>
+            <tr>
+              <td><code>asset_outside_direction</code></td>
+              <td><span class="level fail">FAIL</span></td>
+              <td>引用了白名单之外的图片或视频素材。</td>
+              <td>阻断，替换为方向推荐素材。</td>
+            </tr>
+            <tr>
+              <td><code>pending_evidence</code></td>
+              <td><span class="level warn">WARN</span></td>
+              <td>部分依据仍为待确认状态。</td>
+              <td>保留内容并标注，提示人工复核。</td>
+            </tr>
+            <tr>
+              <td><code>open_questions</code></td>
+              <td><span class="level warn">WARN</span></td>
+              <td>方向仍有未补齐的资料缺口。</td>
+              <td>在正文中显式标注「资料不足」。</td>
+            </tr>
+            <tr>
+              <td><code>checks_passed</code></td>
+              <td><span class="level pass">PASS</span></td>
+              <td>未发现客观阻断问题。</td>
+              <td>可进入导出；仍需人工审阅。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout mt-16" data-reveal>
+        <span class="co-mark">NOTE</span>
+        <span><b>stale 证据不参与表达，并会在导出阶段阻断整包。</b> 宁可停下来补一条证据，也不让一句没有出处的话进入内容包。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND MEMORY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Brand Memory · C1</p>
+          <h2>品牌记忆：<br>只读接入，不越界。</h2>
+        </div>
+        <p class="lead">品牌规则可以统一语气与表达边界，但不能冒充商品事实或证据。C1 只把它放进商品理解与内容生成两个模型请求。</p>
+      </div>
+
+      <div class="memory-panel" data-reveal>
+        <div class="memory-flow">
+          <div class="mem-node primary">
+            <b>工作区 brand_memory.json</b>
+            <span>只读快照 · 超过 2000 字符截断 · 不写入系统提示词</span>
+          </div>
+          <div class="mem-arrow">服务端开关（默认关闭）</div>
+          <div class="mem-branch">
+            <div class="mem-node">
+              <b>商品理解请求</b>
+              <span>统一语气 / 取舍表达 / 避免重复</span>
+            </div>
+            <div class="mem-node">
+              <b>内容生成请求</b>
+              <span>遵守品牌语气与表达边界</span>
+            </div>
+          </div>
+          <div class="memory-note">可追溯标记：brand_memory_applied / brand_memory_updated_at。未启用时明确显示「未生效」，不谎称使用。</div>
+        </div>
+        <div class="memory-boundary">
+          <div class="chip-row">
+            <span class="chip chip-accent">C1 已接入</span>
+            <span class="chip">C2 未做</span>
+          </div>
+          <p class="lead mt-16 fs-12">品牌规则明确<strong class="ink">不进入</strong>以下环节：</p>
+          <ul class="boundary-list">
+            <li>经营判断：不改变本地规则与判断结论。</li>
+            <li>创意方向：不参与方向生成或白名单。</li>
+            <li>离线模板：不修改规则与模板正文。</li>
+            <li>图片 / 视频提示词：不改变媒体生成内容。</li>
+          </ul>
+          <div class="memory-note">边界来自实现约束，不是能力宣传：C1 只覆盖两个模型请求；开关关闭时，请求与改动前保持一致。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUNDARY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Boundaries</p>
+          <h2>能力边界，<br>写在产品里。</h2>
+        </div>
+        <p class="lead">明确不做什么，和明确能做什么同样重要。以下声明同时出现在界面、导出包与页脚。</p>
+      </div>
+
+      <div class="boundary-grid" data-reveal>
+        <div class="boundary-card">
+          <h3>仅基于本地资料</h3>
+          <p>所有内容来自你提供的商品资料、评价与图片，不做外部市场推断，也不编造用户反馈。</p>
+        </div>
+        <div class="boundary-card">
+          <h3>未接入市场 / 利润 / 竞品</h3>
+          <p>因此不对市场规模、利润空间与实时竞品作任何判断；相关结论需要你另行补充数据。</p>
+        </div>
+        <div class="boundary-card">
+          <h3>演示数据为虚构</h3>
+          <p>仓库内品牌、商品参数与评价均为比赛演示数据，不代表真实用户反馈或真实经营表现。</p>
+        </div>
+      </div>
+
+      <p class="lead mt-24 maxw-760" data-reveal>生成内容仍需人工审阅后发布。ShopMind 不替代品牌决策，也不承诺投放效果；它做的是把资料整理成可检查、可修改、可交付的创意初稿。</p>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <p class="eyebrow" data-reveal><span class="dot"></span>Next</p>
+      <h2 data-reveal>看完能力，<br>看看它怎么跑。</h2>
+      <p class="lead" data-reveal>五步流水线如何失败即停，六渠道成品长什么样，都可以继续往下看。</p>
+      <div class="cta-actions" data-reveal>
+        <a class="btn btn-light" href="pipeline.html">
+          查看五步流水线
+          <span class="arrow"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="btn btn-ghost" href="demo.html">直接看真实演示</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <p class="footer-word">Shop<span class="wm-m">M</span>ind</p>
+        <p class="footer-line">Mind your commerce. Power your creativity.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <p class="footer-label">页面</p>
+          <a href="index.html">首页</a>
+          <a href="capabilities.html">能力</a>
+          <a href="pipeline.html">流水线</a>
+          <a href="demo.html">演示</a>
+          <a href="tech.html">技术</a>
+        </div>
+        <div>
+          <p class="footer-label">项目</p>
+          <a href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">GitHub 仓库</a>
+          <a href="https://github.com/halou02/shopmind-demo#readme" target="_blank" rel="noopener">README</a>
+          <a href="tech.html#run">本地运行</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer">说明：品牌、商品参数、评价与历史内容均为比赛演示数据，不代表真实用户反馈或真实经营表现。本作品仅基于本地资料生成内容，未接入市场、利润、广告与实时竞品数据，不作相关判断。仅用于天猫 AI 黑客松比赛演示用途。</p>
+      <p class="copyright">Tmall AI Hackathon · 2026</p>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/site.js" defer></script>
+</body>
+</html>

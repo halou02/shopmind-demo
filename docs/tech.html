@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技术 · ShopMind | 分层架构、端云协同与本地运行</title>
+<meta name="description" content="ShopMind 技术说明：四层架构、文本云端与视觉端侧回环、四类 AI 能力配置、Python 3.10+ 本地运行两步启动，以及 800+ 自动化用例的测试规模说明。">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <div class="header-left">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+        <span class="menu-bars" aria-hidden="true"><i></i><i></i></span>
+        <span>菜单</span>
+      </button>
+      <a class="brand" href="index.html" aria-label="ShopMind 首页">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>ShopMind</span>
+      </a>
+    </div>
+    <nav class="desktop-nav" aria-label="主要导航">
+      <a href="index.html">首页</a>
+      <a href="capabilities.html">能力</a>
+      <a href="pipeline.html">流水线</a>
+      <a href="demo.html">演示</a>
+      <a href="tech.html" class="is-active" aria-current="page">技术</a>
+    </nav>
+    <div class="header-right">
+      <a class="header-gh" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">GitHub</a>
+      <a class="node-logo" href="index.html" aria-label="ShopMind 首页">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 5 5 17M12 5l7 12M5 17h14" stroke="rgba(244,241,236,.42)" stroke-width=".9"/>
+          <circle cx="12" cy="5" r="2.2" fill="#ff7a2f"/>
+          <circle cx="5" cy="17" r="1.8" fill="#ffb15c"/>
+          <circle cx="19" cy="17" r="1.8" fill="#ff3d2e"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="menu-overlay" id="site-menu" hidden>
+  <div class="menu-inner">
+    <div class="menu-top">
+      <span class="menu-label">SHOPMIND / INDEX</span>
+      <button class="menu-close" type="button" data-menu-close aria-label="关闭菜单">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav class="menu-nav" aria-label="全站导航">
+      <a class="menu-link" href="index.html"><span class="num">01</span>首页<small>Home</small></a>
+      <a class="menu-link" href="capabilities.html"><span class="num">02</span>能力<small>Capabilities</small></a>
+      <a class="menu-link" href="pipeline.html"><span class="num">03</span>流水线<small>Pipeline</small></a>
+      <a class="menu-link" href="demo.html"><span class="num">04</span>演示<small>Live Demo</small></a>
+      <a class="menu-link" href="tech.html" aria-current="page"><span class="num">05</span>技术<small>Technology</small></a>
+    </nav>
+    <div class="menu-foot">
+      <p>本地优先的 AI 商品创意导演。把你已经拥有的资料，变成一套可交付、可回溯的六渠道创意包。</p>
+      <a class="btn btn-ghost btn-small" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">
+        GitHub 仓库
+        <span class="arrow"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="page-main">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-index"><i aria-hidden="true"></i>05 / TECHNOLOGY</div>
+      <h1>本机跑完，<br>云端只是可选。</h1>
+      <div class="page-hero-foot">
+        <p class="lead">ShopMind 是本地优先的 AIPC 应用：资料、索引、历史与导出包留在本机；文本与视觉能力可以分别选择云端或端侧，配置项随时可替换。</p>
+        <div class="page-meta">
+          <span class="chip chip-accent">Python 3.10+</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Local-first</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Layered Architecture</p>
+          <h2>四层，<br>每层只做一件事。</h2>
+        </div>
+        <p class="lead">前端保持零构建，接口层只负责编排，核心层把理解与生成拆成可测试的步骤，持久层把每个产物落成可审阅的文件。</p>
+      </div>
+
+      <div class="arch-stack" data-reveal>
+        <div class="arch-layer">
+          <span class="ln">01 / UI</span>
+          <div><h3>交互层</h3><div class="arch-tags"><span class="chip">127.0.0.1:8080</span><span class="chip">零构建</span></div></div>
+          <div class="arch-body">
+            <p>原生 HTML / CSS / JavaScript，11+ 业务界面。素材录入、五步流水线、商品库、理解卡、内容生成与导出都在同一套本地工作台里完成。</p>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <span class="ln">02 / API</span>
+          <div><h3>接口层</h3><div class="arch-tags"><span class="chip">FastAPI</span><span class="chip">Uvicorn</span></div></div>
+          <div class="arch-body">
+            <p>REST 接口承载上传、分析、发布、AI 设置、品牌记忆与历史查询。接口层不写业务规则，只负责把工作区上下文交给流水线。</p>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <span class="ln">03 / CORE</span>
+          <div><h3>核心层</h3><div class="arch-tags"><span class="chip">Steps</span><span class="chip">Pipeline</span></div></div>
+          <div class="arch-body">
+            <p>来源扫描、证据抽取、商品理解、经营判断、创意方向、内容生成、内容包导出。分析链与发布链分离，每一步独立校验、独立失败。</p>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <span class="ln">04 / DATA</span>
+          <div><h3>持久层</h3><div class="arch-tags"><span class="chip">workspace/</span><span class="chip">SHA256</span></div></div>
+          <div class="arch-body">
+            <p>上传、素材库、商品目录、任务历史与导出包都落在本地文件系统。结构化 JSON 与 Markdown 并存，可直接审阅或接入外部工具。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- END-CLOUD -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Device–Cloud</p>
+          <h2>端云协同：<br>默认不出机。</h2>
+        </div>
+        <p class="lead">只有用户授权并开启对应能力时，才发送必要的文本摘要、图片或提示词。视觉能力可以走本机 Ollama 回环，不经过云端。</p>
+      </div>
+
+      <div class="topology" data-reveal>
+        <div class="topo-node local">
+          <span class="tn-k">DEVICE / UI</span>
+          <b>本机浏览器</b>
+          <span>原生前端 · 127.0.0.1:8080 · 所有交互与审阅</span>
+        </div>
+        <div class="topo-arrow">HTTP<span>→</span></div>
+        <div class="topo-node local">
+          <span class="tn-k">DEVICE / SERVICE</span>
+          <b>FastAPI + Pipeline</b>
+          <span>来源索引 · 证据 · 理解 · 方向 · 生成 · 导出</span>
+        </div>
+        <div class="topo-arrow">可选<span>→</span></div>
+        <div class="topo-node cloud">
+          <span class="tn-k">OPTIONAL</span>
+          <b>文本云端 / 视觉端侧</b>
+          <span>文本：OpenAI 兼容接口<br>视觉：本机 Ollama 回环<br>图片 / 视频适配器：已接入，未启用</span>
+        </div>
+      </div>
+
+      <div class="g4 mt-24" data-reveal>
+        <div class="card">
+          <span class="card-index">TEXT</span>
+          <h3>文本云端</h3>
+          <p>商品理解、经营判断、创意方向与多平台文案，使用用户配置的 OpenAI 兼容接口。</p>
+        </div>
+        <div class="card">
+          <span class="card-index">VISION</span>
+          <h3>视觉端侧回环</h3>
+          <p>本机 Ollama 视觉模型读取商品图，请求走 127.0.0.1 回环，不默认上传原图。</p>
+        </div>
+        <div class="card">
+          <span class="card-index">IMAGE</span>
+          <h3>图片适配器</h3>
+          <p>接口已接入，本次演示未启用；配置服务后可在内容页生成配图预览。</p>
+        </div>
+        <div class="card">
+          <span class="card-index">VIDEO</span>
+          <h3>视频适配器</h3>
+          <p>接口已接入，本次演示未启用；开启后用于短视频相关能力。</p>
+        </div>
+      </div>
+
+      <div class="callout" data-reveal>
+        <span class="co-mark">DATA</span>
+        <span>密钥只保存在本机 <code>.env</code> 或私有配置文件中；分发包不包含 <code>workspace/</code> 个人历史与密钥。发送给模型的只有当前任务必要的片段。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIG -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>AI Capabilities</p>
+          <h2>四类能力，<br>分开配置。</h2>
+        </div>
+        <p class="lead">文本、视觉、图片、视频各自独立开关与确认状态。下面只是本次演示机的配置，不是代码默认值；可在网页「AI 设置」中替换。</p>
+      </div>
+
+      <div class="table-wrap" data-reveal>
+        <table class="config-table">
+          <thead>
+            <tr>
+              <th>能力</th>
+              <th>本次演示机配置</th>
+              <th>状态</th>
+              <th>时间口径</th>
+              <th>用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>文本</td>
+              <td><code>dots3-note-prev</code></td>
+              <td><span class="state on"><i aria-hidden="true"></i>已启用</span></td>
+              <td>单次请求预算 200 秒，可在「AI 设置」调整</td>
+              <td>商品理解、经营判断、方向与多平台文案</td>
+            </tr>
+            <tr>
+              <td>视觉</td>
+              <td><code>qwen2.5vl:3b</code></td>
+              <td><span class="state on"><i aria-hidden="true"></i>已启用</span></td>
+              <td>单次请求预算 600 秒，可在「AI 设置」调整</td>
+              <td>本机 Ollama 回环，读取商品图与场景图</td>
+            </tr>
+            <tr>
+              <td>图片</td>
+              <td>适配器已接入</td>
+              <td><span class="state off"><i aria-hidden="true"></i>未启用</span></td>
+              <td>—</td>
+              <td>配置服务后可生成内容页配图预览</td>
+            </tr>
+            <tr>
+              <td>视频</td>
+              <td>适配器已接入</td>
+              <td><span class="state off"><i aria-hidden="true"></i>未启用</span></td>
+              <td>—</td>
+              <td>配置服务后可启用短视频相关能力</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout" data-reveal>
+        <span class="co-mark">TIME</span>
+        <span><b>「单次请求预算」是上限，不是固定耗时。</b> 实际响应取决于本机硬件配置与云端模型性能，不同演示机实测会有差异；预算与模型均可在「AI 设置」中调整。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUN -->
+  <section class="section" id="run">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Run Locally</p>
+          <h2>两步启动，<br>或者从源码开始。</h2>
+        </div>
+        <p class="lead">GitHub Pages 只承载这个静态展示站。要体验完整流水线，请在 Windows 本地运行；需要 Python 3.10+。</p>
+      </div>
+
+      <div class="run-grid" data-reveal>
+        <div class="run-col">
+          <h3>Windows 快速开始</h3>
+          <p class="run-sub">双击两个 .bat，不需要命令行</p>
+          <ol class="run-steps">
+            <li>双击 <b>首次安装.bat</b>：检测 Python 3.10+、创建 <code>.venv</code>、安装依赖。</li>
+            <li>双击 <b>启动网站.bat</b>：启动服务并自动打开浏览器。</li>
+            <li>访问 <b>http://127.0.0.1:8080</b> 开始创作。</li>
+          </ol>
+          <div class="callout">
+            <span class="co-mark">AI</span>
+            <span>配置 Key 是可选项。未配置时，仍可基于本地资料走完五步，生成离线演示内容包。</span>
+          </div>
+        </div>
+        <div class="run-col">
+          <h3>从源码运行</h3>
+          <p class="run-sub">Python 3.10+ · Windows / macOS / Linux</p>
+<pre class="code"><span class="c"># 1. 克隆仓库</span>
+git clone https://github.com/halou02/shopmind-demo.git
+cd shopmind-demo
+
+<span class="c"># 2. 创建环境并安装依赖</span>
+python -m venv .venv
+.venv\Scripts\activate
+pip install -e .
+
+<span class="c"># 3. 启动</span>
+<span class="k">python -m app.web_main</span>
+<span class="c"># → http://127.0.0.1:8080</span></pre>
+          <p class="micro mt-16">开发依赖可运行 <code>pip install -e ".[dev]"</code>，随后执行 <code>pytest</code>。Linux / macOS 将激活命令替换为 <code>source .venv/bin/activate</code>。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCALE & BOUNDARY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="dot"></span>Test Scale</p>
+          <h2>测试规模，<br>按实际说。</h2>
+        </div>
+        <p class="lead">覆盖来源扫描、证据抽取、方向绑定、内容校验、导出清单、API 与前端契约。这里描述的是测试规模与覆盖范围，不宣称全部通过。</p>
+      </div>
+
+      <div class="g3" data-reveal>
+        <div class="card">
+          <span class="card-index">PYTEST</span>
+          <h3><span data-count="800">800</span>+ 自动化用例</h3>
+          <p>包含参数化用例，覆盖核心步骤、契约、接口与前端关键路径。基线以仓库实际运行结果为准。</p>
+        </div>
+        <div class="card">
+          <span class="card-index">CONTRACTS</span>
+          <h3>7 个固定产物</h3>
+          <p>每类产物都有结构契约与导出校验，清单逐文件生成 SHA256，避免「看起来导出了」。</p>
+        </div>
+        <div class="card">
+          <span class="card-index">BOUNDARY</span>
+          <h3>边界写进产物</h3>
+          <p>理解卡与导出包都带 boundary_notice：「仅基于本地资料」，不把演示数据当成经营结论。</p>
+        </div>
+      </div>
+
+      <div class="boundary-grid mt-24" data-reveal>
+        <div class="boundary-card">
+          <h3>仅基于本地资料</h3>
+          <p>内容来自用户提供的商品资料、评价与图片；不编造评价，不做外部市场推断。</p>
+        </div>
+        <div class="boundary-card">
+          <h3>未接入市场 / 利润 / 竞品</h3>
+          <p>不对市场规模、利润空间与实时竞品作判断；需要这些结论时应另行补充数据。</p>
+        </div>
+        <div class="boundary-card">
+          <h3>演示数据为虚构</h3>
+          <p>品牌、参数、评价与历史内容均为比赛演示数据，不代表真实用户反馈或经营表现。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <p class="eyebrow" data-reveal><span class="dot"></span>Run it</p>
+      <h2 data-reveal>把这套流水线，<br>跑在你的机器上。</h2>
+      <p class="lead" data-reveal>克隆仓库，双击两个 .bat，或者从源码启动。资料不出本机，也能完整走完五步。</p>
+      <div class="cta-actions" data-reveal>
+        <a class="btn btn-light" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">
+          打开 GitHub 仓库
+          <span class="arrow"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="btn btn-ghost" href="index.html">返回首页</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <p class="footer-word">Shop<span class="wm-m">M</span>ind</p>
+        <p class="footer-line">Mind your commerce. Power your creativity.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <p class="footer-label">页面</p>
+          <a href="index.html">首页</a>
+          <a href="capabilities.html">能力</a>
+          <a href="pipeline.html">流水线</a>
+          <a href="demo.html">演示</a>
+          <a href="tech.html">技术</a>
+        </div>
+        <div>
+          <p class="footer-label">项目</p>
+          <a href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">GitHub 仓库</a>
+          <a href="https://github.com/halou02/shopmind-demo#readme" target="_blank" rel="noopener">README</a>
+          <a href="tech.html#run">本地运行</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer">说明：品牌、商品参数、评价与历史内容均为比赛演示数据，不代表真实用户反馈或真实经营表现。本作品仅基于本地资料生成内容，未接入市场、利润、广告与实时竞品数据，不作相关判断。仅用于天猫 AI 黑客松比赛演示用途。</p>
+      <p class="copyright">Tmall AI Hackathon · 2026</p>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/site.js" defer></script>
+</body>
+</html>
