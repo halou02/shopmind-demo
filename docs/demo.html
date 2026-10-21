@@ -7,8 +7,9 @@
 <meta name="description" content="ShopMind 本地真实运行录屏与五步截图：从新建任务到导出内容包，配合小红书图文、抖音 20 秒脚本与方向证据说明，均为同一次真实任务。">
 <meta name="theme-color" content="#060606">
 <meta name="view-transition" content="same-origin">
-<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="./assets/favicon-192.png">
+<link rel="icon" href="./assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="./assets/brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="./assets/brand/favicon-192.png">
 <link rel="preload" href="./assets/fonts/michroma-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./assets/site.css">
 </head>
@@ -37,14 +38,7 @@
     <div class="header-right">
       <a class="header-gh" href="https://github.com/halou02/shopmind-demo" target="_blank" rel="noopener">GitHub</a>
       <a class="node-logo" href="index.html" aria-label="ShopMind 首页">
-        <svg width="22" height="22" viewBox="0 0 96 96" fill="none" aria-hidden="true">
-          <defs><linearGradient id="nl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb15c"/><stop offset=".54" stop-color="#ff6a2a"/><stop offset="1" stop-color="#ff3d2e"/></linearGradient></defs>
-          <circle cx="48" cy="27" r="10" fill="url(#nl)"/>
-          <circle cx="27" cy="61" r="8" fill="url(#nl)" opacity=".82"/>
-          <circle cx="69" cy="61" r="8" fill="url(#nl)" opacity=".9"/>
-          <circle cx="48" cy="47" r="5.5" fill="#ffe0c2"/>
-          <circle cx="36" cy="38" r="4" fill="url(#nl)" opacity=".7"/>
-        </svg>
+        <img src="./assets/brand/mark.png" width="22" height="22" alt="" aria-hidden="true" class="node-logo-img">
       </a>
     </div>
   </div>
@@ -164,11 +158,11 @@
 
         <div class="tour-stage" id="tour-panel" role="tabpanel" aria-labelledby="tour-tab-1">
           <div class="tour-screen">
-            <picture><source type="image/avif" srcset="./assets/shot-step1.avif"><source type="image/webp" srcset="./assets/shot-step1.webp"><img class="is-active" src="./assets/shot-step1.jpg" alt="新建创意任务，录入商品资料界面" loading="lazy" data-tour-img aria-hidden="false"></picture>
-            <picture><source type="image/avif" srcset="./assets/shot-step2.avif"><source type="image/webp" srcset="./assets/shot-step2.webp"><img src="./assets/shot-step2.jpg" alt="AI 理解商品，商品理解报告界面" loading="lazy" data-tour-img aria-hidden="true"></picture>
-            <picture><source type="image/avif" srcset="./assets/shot-step3.avif"><source type="image/webp" srcset="./assets/shot-step3.webp"><img src="./assets/shot-step3.jpg" alt="选择创意方向界面" loading="lazy" data-tour-img aria-hidden="true"></picture>
-            <picture><source type="image/avif" srcset="./assets/shot-step4.avif"><source type="image/webp" srcset="./assets/shot-step4.webp"><img src="./assets/shot-step4.jpg" alt="创意内容生成结果界面" loading="lazy" data-tour-img aria-hidden="true"></picture>
-            <picture><source type="image/avif" srcset="./assets/shot-step5.avif"><source type="image/webp" srcset="./assets/shot-step5.webp"><img src="./assets/shot-step5.jpg" alt="导出创意内容包界面" loading="lazy" data-tour-img aria-hidden="true"></picture>
+            <picture><source type="image/avif" srcset="./assets/shot-step1.avif"><source type="image/webp" srcset="./assets/shot-step1.webp"><img class="is-active" src="./assets/shot-step1.jpg" alt="新建创意任务，录入商品资料界面" loading="lazy" decoding="async" fetchpriority="low" data-tour-img aria-hidden="false"></picture>
+            <picture><source type="image/avif" srcset="./assets/shot-step2.avif"><source type="image/webp" srcset="./assets/shot-step2.webp"><img src="./assets/shot-step2.jpg" alt="AI 理解商品，商品理解报告界面" loading="lazy" decoding="async" fetchpriority="low" data-tour-img aria-hidden="true"></picture>
+            <picture><source type="image/avif" srcset="./assets/shot-step3.avif"><source type="image/webp" srcset="./assets/shot-step3.webp"><img src="./assets/shot-step3.jpg" alt="选择创意方向界面" loading="lazy" decoding="async" fetchpriority="low" data-tour-img aria-hidden="true"></picture>
+            <picture><source type="image/avif" srcset="./assets/shot-step4.avif"><source type="image/webp" srcset="./assets/shot-step4.webp"><img src="./assets/shot-step4.jpg" alt="创意内容生成结果界面" loading="lazy" decoding="async" fetchpriority="low" data-tour-img aria-hidden="true"></picture>
+            <picture><source type="image/avif" srcset="./assets/shot-step5.avif"><source type="image/webp" srcset="./assets/shot-step5.webp"><img src="./assets/shot-step5.jpg" alt="导出创意内容包界面" loading="lazy" decoding="async" fetchpriority="low" data-tour-img aria-hidden="true"></picture>
           </div>
           <div class="tour-meta">
             <span class="cap-k" data-tour-k>STEP 01</span>
@@ -194,28 +188,44 @@
 
       <div class="gallery" data-reveal>
         <div class="shot span-12">
-          <picture><source type="image/avif" srcset="./assets/shot-steps.avif"><source type="image/webp" srcset="./assets/shot-steps.webp"><img src="./assets/shot-steps.jpg" alt="新建创意任务五步流程界面" loading="lazy"></picture>
+          <picture><source type="image/avif" srcset="./assets/shot-steps.avif"><source type="image/webp" srcset="./assets/shot-steps.webp"><img src="./assets/shot-steps.jpg" alt="新建创意任务五步流程界面" loading="lazy" decoding="async" fetchpriority="low"></picture>
           <div class="cap"><b>新建创意任务 · 五步流程</b><span>商品录入 → AI 理解 → 创意方向 → 内容生成 → 导出，进度一目了然</span></div>
         </div>
         <div class="shot span-6">
-          <picture><source type="image/avif" srcset="./assets/shot-home.avif"><source type="image/webp" srcset="./assets/shot-home.webp"><img src="./assets/shot-home.jpg" alt="ShopMind 首页界面" loading="lazy"></picture>
+          <picture><source type="image/avif" srcset="./assets/shot-home.avif"><source type="image/webp" srcset="./assets/shot-home.webp"><img src="./assets/shot-home.jpg" alt="ShopMind 首页界面" loading="lazy" decoding="async" fetchpriority="low"></picture>
           <div class="cap"><b>首页</b><span>演示素材包与本地创作项目的统一入口</span></div>
         </div>
         <div class="shot span-6">
-          <picture><source type="image/avif" srcset="./assets/shot-detail.avif"><source type="image/webp" srcset="./assets/shot-detail.webp"><img src="./assets/shot-detail.jpg" alt="生成的小红书图文与抖音口播内容" loading="lazy"></picture>
+          <picture><source type="image/avif" srcset="./assets/shot-detail.avif"><source type="image/webp" srcset="./assets/shot-detail.webp"><img src="./assets/shot-detail.jpg" alt="生成的小红书图文与抖音口播内容" loading="lazy" decoding="async" fetchpriority="low"></picture>
           <div class="cap"><b>生成结果 · 小红书图文 / 抖音口播</b><span>每条内容都标注「AI 生成 · 基于商品理解」</span></div>
         </div>
         <div class="shot span-6">
-          <picture><source type="image/avif" srcset="./assets/shot-detail2.avif"><source type="image/webp" srcset="./assets/shot-detail2.webp"><img src="./assets/shot-detail2.jpg" alt="商品理解卡与视觉方案界面" loading="lazy"></picture>
+          <picture><source type="image/avif" srcset="./assets/shot-detail2.avif"><source type="image/webp" srcset="./assets/shot-detail2.webp"><img src="./assets/shot-detail2.jpg" alt="商品理解卡与视觉方案界面" loading="lazy" decoding="async" fetchpriority="low"></picture>
           <div class="cap"><b>理解卡 · 视觉方案与证据</b><span>商品事实、可用素材、镜头顺序与待补拍清单</span></div>
         </div>
         <div class="shot span-6">
-          <picture><source type="image/avif" srcset="./assets/shot-materials.avif"><source type="image/webp" srcset="./assets/shot-materials.webp"><img src="./assets/shot-materials.jpg" alt="素材库界面" loading="lazy"></picture>
+          <picture><source type="image/avif" srcset="./assets/shot-materials.avif"><source type="image/webp" srcset="./assets/shot-materials.webp"><img src="./assets/shot-materials.jpg" alt="素材库界面" loading="lazy" decoding="async" fetchpriority="low"></picture>
           <div class="cap"><b>素材库</b><span>图片 / 视频 / 文本资料统一管理，支持自定义素材夹</span></div>
         </div>
         <div class="shot span-6">
-          <picture><source type="image/avif" srcset="./assets/shot-library.avif"><source type="image/webp" srcset="./assets/shot-library.webp"><img src="./assets/shot-library.jpg" alt="商品库界面" loading="lazy"></picture>
+          <picture><source type="image/avif" srcset="./assets/shot-library.avif"><source type="image/webp" srcset="./assets/shot-library.webp"><img src="./assets/shot-library.jpg" alt="商品库界面" loading="lazy" decoding="async" fetchpriority="low"></picture>
           <div class="cap"><b>商品库</b><span>聚合演示素材与本地创作项目，一键发起创意任务</span></div>
+        </div>
+        <div class="shot span-6">
+          <picture><source type="image/avif" srcset="./assets/shot-judgment.avif"><source type="image/webp" srcset="./assets/shot-judgment.webp"><img src="./assets/shot-judgment.jpg" alt="经营判断界面，展示机会、风险、下一步行动与判断边界" loading="lazy" decoding="async" fetchpriority="low"></picture>
+          <div class="cap"><b>经营判断 · 机会与风险</b><span>机会、风险与停止条件、下一步行动、判断边界分栏呈现</span></div>
+        </div>
+        <div class="shot span-6">
+          <picture><source type="image/avif" srcset="./assets/shot-export-done.avif"><source type="image/webp" srcset="./assets/shot-export-done.webp"><img src="./assets/shot-export-done.jpg" alt="内容包导出完成界面" loading="lazy" decoding="async" fetchpriority="low"></picture>
+          <div class="cap"><b>导出完成</b><span>内容包与六渠道正文已归档，可直接交给运营</span></div>
+        </div>
+        <div class="shot span-6">
+          <picture><source type="image/avif" srcset="./assets/shot-history.avif"><source type="image/webp" srcset="./assets/shot-history.webp"><img src="./assets/shot-history.jpg" alt="历史任务界面，列出已完成与草稿中的创意任务" loading="lazy" decoding="async" fetchpriority="low"></picture>
+          <div class="cap"><b>历史任务</b><span>草稿与已导出一眼区分，随时回到任意一步继续</span></div>
+        </div>
+        <div class="shot span-6">
+          <picture><source type="image/avif" srcset="./assets/shot-brand.avif"><source type="image/webp" srcset="./assets/shot-brand.webp"><img src="./assets/shot-brand.jpg" alt="品牌记忆界面，展示品牌语气关键词与场景表达" loading="lazy" decoding="async" fetchpriority="low"></picture>
+          <div class="cap"><b>品牌记忆</b><span>品牌语气、场景与要避开的表达，存在当前工作区里</span></div>
         </div>
       </div>
     </div>
@@ -235,11 +245,11 @@
       <div class="sample-grid">
         <div class="sample-visual" data-reveal>
           <figure class="sample-figure">
-            <img src="./assets/product-bag.jpg" alt="云苔绿通勤托特包商品主图" loading="lazy">
+            <img src="./assets/product-bag.jpg" alt="云苔绿通勤托特包商品主图" loading="lazy" decoding="async" fetchpriority="low">
             <figcaption>01 · 商品主图 · 云苔绿</figcaption>
           </figure>
           <figure class="sample-figure landscape">
-            <img src="./assets/product-bag-scene.jpg" alt="咖啡馆场景中的云苔绿托特包" loading="lazy">
+            <img src="./assets/product-bag-scene.jpg" alt="咖啡馆场景中的云苔绿托特包" loading="lazy" decoding="async" fetchpriority="low">
             <figcaption>04 · 咖啡馆场景图 · 下班不换包</figcaption>
           </figure>
         </div>

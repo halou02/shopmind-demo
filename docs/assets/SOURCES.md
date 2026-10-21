@@ -33,7 +33,23 @@
 
 `product-bag.jpg`、`product-bag-scene.jpg`、`product-jeans.jpg`、`ai-01.jpg`、`shot-*.jpg`、`demo-tour-poster.jpg`、`demo-tour.mp4` 为项目原有演示素材，本轮未改动其来源与授权状态。
 
-## 由原有素材派生的压缩版本（本轮新增，无外部来源）
+## 应用截图与录屏（2026-10-22 重拍）
+
+此前 `shot-*.jpg` 与 `demo-tour.mp4` 是 2026-10-18 的产物，界面已按 PSD 重做，故整体重拍。
+
+| 项 | 值 |
+| --- | --- |
+| 捕获日期 | 2026-10-22 |
+| 服务 | 隔离副本 `%TEMP%\shopmind-capture` 上运行 `app.web_main`，端口 8767；真实 workspace 未被读写 |
+| 数据 | 项目 `prod_c9304218d3cb`（轻序 Daily Tote 01 云苔绿通勤托特包） |
+| 视口 / DPR | 1600×1000 @ dpr 2，降采样到画廊 1600×1000、轮播 1100×688；录屏 1280×716 @ 30fps |
+| 工具 | Playwright 驱动本机 Edge + `dev/design/tools/shot.py` 的防抖手法（networkidle → 图片 complete → fonts.ready → 注入 animation:none → scrollTo(0,0)） |
+| 路由 | 通过 `showPage(id)` 逐页切换，并显式调用 `renderUnderstanding` / `renderDirections` / `renderContent` / `renderExportInfo` / `renderJudgmentPage` / `renderExportDonePage` / `renderBrandPage` / `refreshHistoryPage` / `refreshMaterialPage` / `refreshProductPage`。载入项目后 App 不会自动重绘这些页，必须显式调用才显示真实数据 |
+| 视频 | Playwright `record_video_dir` 出 webm，ffmpeg 8.1.1 转 H.264 / 1280×716 / 30fps / CRF 25，37.4 秒；海报取第 12 秒帧 |
+
+**关于素材路径的一处数据不一致（如实记录）**：项目 `run_meta.json` 记录的 `material_path` 指向 `workspace/uploads/20261018_185928`，但该目录**只含 prompt 与 xlsx、不含任何商品图**，导致「商品理解」页显示"暂无商品图"。同一批次的 `20261018_190121` 含 `商品资料_1.xlsx`（字节数与前者一致）以及真实商品图 `01_商品主图_云苔绿.png`、`01_牛仔裤平铺主图_1.png`。截图使用后者，页面才呈现真实商品图；已通过实拍确认（换前"暂无商品图"，换后出现 3 张真实图）。
+
+
 
 为把首页手机档 LCP 从 5558ms 压进预算，对上述项目自有 JPEG 做了格式与尺寸派生。**原图一律保留**，`<picture>` 只把它们排在 AVIF/WebP 之后当兜底。
 
