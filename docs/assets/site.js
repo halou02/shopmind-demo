@@ -292,4 +292,214 @@
       pipeSteps.forEach(function (step) { railObserver.observe(step); });
     }
   }
+
+  /* ==========================================================================
+     Cinematic layer — intro, scroll progress, line reveals, scramble,
+     pointer parallax, magnetic buttons, tilt + spotlight.
+     Everything here is additive: if a hook is absent the block no-ops.
+     ========================================================================== */
+  var finePointer = false;
+  try { finePointer = window.matchMedia("(pointer: fine)").matches; } catch (err) {}
+
+  /* ---------------- Intro curtain: once per tab, skippable, never under reduce ---------- */
+  var intro = document.getElementById("intro");
+  var introSkip = qs("[data-intro-skip]");
+  var INTRO_KEY = "shopmind.intro.seen";
+  if (intro) {
+    var alreadyPlayed = false;
+    try { alreadyPlayed = !!sessionStorage.getItem(INTRO_KEY); } catch (err) { alreadyPlayed = false; }
+    if (reduce || alreadyPlayed) {
+      intro.remove();
+      intro = null;
+    } else {
+      document.documentElement.classList.add("is-intro-lock");
+      intro.hidden = false;
+      var finish = function () {
+        if (!intro || intro.classList.contains("is-out")) return;
+        intro.classList.add("is-out");
+        document.documentElement.classList.remove("is-intro-lock");
+        try { sessionStorage.setItem(INTRO_KEY, "1"); } catch (err) {}
+        setTimeout(function () { if (intro) intro.remove(); }, 520);
+        if (introSkip) introSkip.removeEventListener("click", finish);
+      };
+      if (introSkip) introSkip.addEventListener("click", finish);
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") finish(); });
+      window.setTimeout(finish, 1180);
+    }
+  }
+
+  /* ---------------- Scroll progress ---------------- */
+  var progress = document.createElement("div");
+  progress.className = "scroll-progress";
+  progress.setAttribute("aria-hidden", "true");
+  document.body.appendChild(progress);
+  var progressQueued = false;
+  function paintProgress() {
+    progressQueued = false;
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    var ratio = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    progress.style.transform = "scaleX(" + ratio.toFixed(4) + ")";
+  }
+  window.addEventListener("scroll", function () {
+    if (progressQueued) return;
+    progressQueued = true;
+    window.requestAnimationFrame(paintProgress);
+  }, { passive: true });
+  paintProgress();
+
+  /* ---------------- Per-line reveal: split only after the webfont settles ---------- */
+  var lineHosts = qsa('[data-reveal="line"]');
+  function splitLines(host) {
+    if (host.dataset.splitDone === "1") return;
+    var lines = qsa(".ln", host);
+    if (!lines.length) return;
+    host.dataset.splitDone = "1";
+    lines.forEach(function (ln) {
+      var inner = ln.firstElementChild;
+      if (!inner || inner.tagName !== "SPAN") {
+        var text = ln.textContent;
+        ln.textContent = "";
+        inner = document.createElement("span");
+        inner.textContent = text;
+        ln.appendChild(inner);
+      }
+    });
+  }
+  if (lineHosts.length) {
+    if (document.fonts && document.fonts.ready && typeof document.fonts.ready.then === "function") {
+      document.fonts.ready.then(function () { lineHosts.forEach(splitLines); });
+    } else {
+      lineHosts.forEach(splitLines);
+    }
+  }
+
+  /* ---------------- Scramble / decode ---------------- */
+  var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\\<>*#·";
+  qsa("[data-scramble]").forEach(function (el) {
+    var finalText = el.getAttribute("data-scramble") || el.textContent;
+    if (reduce) { el.textContent = finalText; return; }
+    var chars = finalText.split("");
+    var frame = 0;
+    var revealEvery = 2;
+    // keep the resolved string in the DOM for assistive tech once we are done
+    el.setAttribute("aria-label", finalText);
+    var id = window.setInterval(function () {
+      frame += 1;
+      var done = frame * revealEvery;
+      el.textContent = chars.map(function (c, i) {
+        if (c === " ") return " ";
+        if (i < done) return c;
+        return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+      }).join("");
+      if (done >= chars.length) {
+        window.clearInterval(id);
+        el.textContent = finalText;
+      }
+    }, 34);
+  });
+
+  /* ---------------- WELCOME letter cascade ---------------- */
+  var welcome = qs("[data-welcome]");
+  if (welcome && !reduce) {
+    var wText = welcome.textContent.trim();
+    welcome.textContent = "";
+    wText.split("").forEach(function (ch, i) {
+      var s = document.createElement("span");
+      s.className = "ch";
+      s.textContent = ch;
+      s.style.opacity = "0";
+      s.style.transform = "translateY(.5em) rotateX(-70deg)";
+      s.style.transition = "opacity .5s ease " + (i * 0.045 + 0.25) + "s, transform .7s cubic-bezier(.16,1,.3,1) " + (i * 0.045 + 0.25) + "s";
+      welcome.appendChild(s);
+    });
+    window.setTimeout(function () {
+      qsa(".ch", welcome).forEach(function (s) { s.style.opacity = "1"; s.style.transform = "none"; });
+    }, intro ? 1150 : 60);
+  }
+
+  /* ---------------- Pointer parallax + magnetic + tilt, one shared loop ---------- */
+  var pointer = { x: 0, y: 0, tx: 0, ty: 0, active: false };
+  var parallaxTargets = [];
+  function registerParallax(sel, depth) {
+    var el = qs(sel);
+    if (el) parallaxTargets.push({ el: el, depth: depth, cx: 0, cy: 0 });
+  }
+  if (finePointer && !reduce) {
+    registerParallax(".hero-art", -14);
+    registerParallax(".hero-bloom", 10);
+    registerParallax(".hero-brand", 7);
+    registerParallax(".hero-left", 4);
+
+    var heroSection = qs(".hero");
+    window.addEventListener("pointermove", function (e) {
+      if (e.pointerType !== "mouse") return;
+      pointer.tx = (e.clientX / window.innerWidth - 0.5) * 2;
+      pointer.ty = (e.clientY / window.innerHeight - 0.5) * 2;
+      pointer.active = true;
+      kick();
+    }, { passive: true });
+    if (heroSection) {
+      heroSection.addEventListener("pointerleave", function () {
+        pointer.tx = 0; pointer.ty = 0;
+        kick();
+      });
+    }
+  }
+
+  var magnets = finePointer && !reduce ? qsa("[data-magnetic]") : [];
+  magnets.forEach(function (el) {
+    el.addEventListener("pointermove", function (e) {
+      var r = el.getBoundingClientRect();
+      var dx = (e.clientX - (r.left + r.width / 2)) * 0.22;
+      var dy = (e.clientY - (r.top + r.height / 2)) * 0.3;
+      el.style.transform = "translate(" + Math.max(-14, Math.min(14, dx)) + "px," + Math.max(-10, Math.min(10, dy)) + "px)";
+    });
+    el.addEventListener("pointerleave", function () { el.style.transform = ""; });
+  });
+
+  var tilts = finePointer && !reduce ? qsa(".tilt") : [];
+  tilts.forEach(function (el) {
+    el.addEventListener("pointermove", function (e) {
+      var r = el.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width;
+      var py = (e.clientY - r.top) / r.height;
+      el.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
+      el.style.setProperty("--my", (py * 100).toFixed(1) + "%");
+      el.style.transform = "perspective(760px) rotateY(" + ((px - 0.5) * 9).toFixed(2) + "deg) rotateX(" + ((0.5 - py) * 9).toFixed(2) + "deg) translateZ(0)";
+    });
+    el.addEventListener("pointerleave", function () { el.style.transform = ""; });
+  });
+
+  qsa(".spot").forEach(function (el) {
+    if (!finePointer) return;
+    el.addEventListener("pointermove", function (e) {
+      var r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", (((e.clientX - r.left) / r.width) * 100).toFixed(1) + "%");
+      el.style.setProperty("--my", (((e.clientY - r.top) / r.height) * 100).toFixed(1) + "%");
+    });
+  });
+
+  var rafId = 0;
+  function kick() {
+    if (!rafId && pointer.active) rafId = window.requestAnimationFrame(loop);
+  }
+  function loop() {
+    rafId = 0;
+    var dx = pointer.tx - pointer.x;
+    var dy = pointer.ty - pointer.y;
+    pointer.x += dx * 0.075;
+    pointer.y += dy * 0.075;
+    for (var i = 0; i < parallaxTargets.length; i++) {
+      var t = parallaxTargets[i];
+      t.cx = pointer.x * t.depth;
+      t.cy = pointer.y * t.depth;
+      t.el.style.transform = "translate3d(" + t.cx.toFixed(2) + "px," + t.cy.toFixed(2) + "px,0)";
+    }
+    if (Math.abs(dx) > 0.0015 || Math.abs(dy) > 0.0015) {
+      rafId = window.requestAnimationFrame(loop);
+    } else {
+      pointer.active = false;
+    }
+  }
 })();

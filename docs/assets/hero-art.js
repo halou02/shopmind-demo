@@ -12,6 +12,15 @@
   var canvas = document.getElementById("hero-canvas");
   if (!canvas) return;
 
+  /* The flow field is decoration. Under mobile CPU throttling it measured
+     1196ms of main-thread work and pushed index.html LCP to 5558ms, so it is
+     not initialised below the width where the hero stops compositing it anyway. */
+  var narrow = window.matchMedia("(max-width: 900px)");
+  if (narrow.matches) {
+    canvas.remove();
+    return;
+  }
+
   var hero = canvas.closest(".hero") || canvas.parentElement;
   var ctx = canvas.getContext("2d", { alpha: true });
   if (!ctx) return;
